@@ -1,0 +1,157 @@
+---
+import config from '../data/config.json';
+import complaints from '../data/complaints.json';
+---
+
+<section class="regulatory-section" id="regulatory" aria-labelledby="regulatory-heading">
+  <div class="container">
+    <div class="regulatory-card reveal-on-scroll">
+      <div class="section-head text-center">
+        <div class="badge-pill">Mandatory Disclosure</div>
+        <h2 id="regulatory-heading" class="section-title">
+          Investor Complaints Data
+        </h2>
+        <p class="section-lead">
+          In strict compliance with SEBI circular <strong>{complaints.circularRef}</strong>, the complaints data for {config.brandName} is updated by the 7th of every month. Last updated: <strong>{complaints.lastUpdated}</strong>.
+        </p>
+      </div>
+
+      <!-- Table A: Monthly Record -->
+      <div class="table-block">
+        <h3 class="table-subtitle">A. Monthly Complaints Status</h3>
+        <div class="table-responsive" tabindex="0" role="region" aria-label="Monthly Investor Complaints Data Table">
+          <table>
+            <caption>Monthly record of complaints received, resolved, and pending for {config.brandName}</caption>
+            <thead>
+              <tr>
+                <th scope="col">Sr No.</th>
+                <th scope="col">Received From</th>
+                <th scope="col">Carried Forward</th>
+                <th scope="col">Received</th>
+                <th scope="col">Resolved*</th>
+                <th scope="col">Pending**</th>
+                <th scope="col">Pending &lt; 3 Mos</th>
+                <th scope="col">Pending &gt; 3 Mos</th>
+              </tr>
+            </thead>
+            <tbody>
+              {complaints.monthly.map((row) => (
+                <tr>
+                  <th scope="row">{row.srNo}</th>
+                  <td>{row.receivedFrom}</td>
+                  <td>{row.carriedForward}</td>
+                  <td>{row.received}</td>
+                  <td>{row.resolved}</td>
+                  <td>{row.pending}</td>
+                  <td>{row.pendingLT3Months}</td>
+                  <td>{row.pendingGT3Months}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="table-footnote">
+          *Resolved includes complaints resolved in the current month. **Pending complaints include those unresolved at the end of the month.
+        </p>
+      </div>
+
+      <!-- Table B: Annual Trend -->
+      <div class="table-block mt-8">
+        <h3 class="table-subtitle">B. Annual Complaints Trend</h3>
+        <div class="table-responsive" tabindex="0" role="region" aria-label="Annual Investor Complaints Trend Table">
+          <table>
+            <caption>Annual historical trend of investor complaints for {config.brandName}</caption>
+            <thead>
+              <tr>
+                <th scope="col">Sr No.</th>
+                <th scope="col">Financial Year</th>
+                <th scope="col">Carried Forward</th>
+                <th scope="col">Received During Year</th>
+                <th scope="col">Resolved During Year</th>
+                <th scope="col">Pending at Year End</th>
+              </tr>
+            </thead>
+            <tbody>
+              {complaints.annual.map((row) => (
+                <tr>
+                  <th scope="row">{row.srNo}</th>
+                  <td>{row.financialYear}</td>
+                  <td>{row.carriedForward}</td>
+                  <td>{row.receivedDuringYear}</td>
+                  <td>{row.resolvedDuringYear}</td>
+                  <td>{row.pendingAtEndOfYear}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .regulatory-section {
+    padding: 100px 0;
+    background-color: var(--bg-primary);
+  }
+
+  .regulatory-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-light);
+    border-radius: 20px;
+    padding: 48px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .section-head {
+    max-width: 760px;
+    margin: 0 auto 48px auto;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    margin: 16px 0 16px 0;
+    letter-spacing: -0.02em;
+  }
+
+  .section-lead {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
+
+  .section-lead strong {
+    color: var(--text-primary);
+  }
+
+  .table-block {
+    margin-bottom: 24px;
+  }
+
+  .table-subtitle {
+    font-size: 1.1875rem;
+    margin-bottom: 12px;
+  }
+
+  .table-footnote {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 8px;
+  }
+
+  .mt-8 {
+    margin-top: 36px;
+  }
+
+  @media (max-width: 640px) {
+    .regulatory-card {
+      padding: 24px 16px;
+    }
+  }
+</style>

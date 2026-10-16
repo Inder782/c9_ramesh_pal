@@ -1,0 +1,491 @@
+---
+import config from '../data/config.json';
+const phoneDigits = config.phone.replace(/[^0-9]/g, '');
+const whatsappCta = `https://wa.me/${phoneDigits}?text=Hello%20${encodeURIComponent(config.analystName)},%20I%20would%20like%20to%20know%20more%20about%20your%20SEBI-registered%20research%20services.`;
+---
+
+<div class="nav-wrapper">
+  <header class="floating-header" id="main-header" role="banner">
+    <div class="nav-container">
+      <!-- Brand Logo -->
+      <a href="#home" class="brand-link" aria-label={`${config.brandName} Home`}>
+        <img src="/logo.svg" alt={`${config.brandName} Logo`} class="brand-logo-img" width="160" height="32" />
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav" role="navigation" aria-label="Main Navigation">
+        <ul class="nav-list" id="main-nav-list">
+          <div class="sliding-pill" id="sliding-pill" aria-hidden="true"></div>
+          
+          <li><a href="#home" class="nav-link pill-active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#philosophy" class="nav-link">Philosophy</a></li>
+          <li><a href="#offerings" class="nav-link">Offerings</a></li>
+          <li><a href="#compliance" class="nav-link">Compliance</a></li>
+          <li><a href="#regulatory" class="nav-link">Investor Data</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="nav-actions">
+        <a href={whatsappCta} target="_blank" rel="noopener noreferrer" class="btn-lean-cta" aria-label="Consult Analyst">
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.487-1.761-1.66-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+          </svg>
+          <span>Consult Analyst</span>
+        </a>
+
+        <!-- Mobile Hamburger Trigger -->
+        <button class="hamburger-btn" id="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav-drawer">
+          <span class="hamburger-bar" aria-hidden="true"></span>
+          <span class="hamburger-bar" aria-hidden="true"></span>
+          <span class="hamburger-bar" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<!-- Mobile Navigation Drawer & Backdrop (Rendered outside fixed wrapper) -->
+<div class="drawer-backdrop" id="drawer-backdrop" aria-hidden="true"></div>
+<aside class="mobile-drawer" id="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation" aria-hidden="true" inert>
+  <div class="drawer-head">
+    <a href="#home" class="brand-link" aria-label={`${config.brandName} Home`}>
+      <img src="/logo.svg" alt={`${config.brandName} Logo`} width="140" height="28" />
+    </a>
+    <button class="drawer-close" id="drawer-close" type="button" aria-label="Close navigation menu">
+      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  <nav class="drawer-nav" role="navigation" aria-label="Mobile Navigation Links">
+    <ul class="drawer-links">
+      <li><a href="#home" class="drawer-link">Home</a></li>
+      <li><a href="#about" class="drawer-link">About</a></li>
+      <li><a href="#philosophy" class="drawer-link">Philosophy</a></li>
+      <li><a href="#offerings" class="drawer-link">Offerings</a></li>
+      <li><a href="#compliance" class="drawer-link">Compliance</a></li>
+      <li><a href="#regulatory" class="drawer-link">Investor Data</a></li>
+    </ul>
+  </nav>
+
+  <div class="drawer-foot">
+    <div class="drawer-sebi-badge">
+      <span class="sebi-tag">SEBI RA</span>
+      <span class="sebi-num">{config.sebiRegNo}</span>
+    </div>
+    <a href={whatsappCta} target="_blank" rel="noopener noreferrer" class="btn-primary w-full">
+      Consult on WhatsApp
+    </a>
+  </div>
+</aside>
+
+<style>
+  .nav-wrapper {
+    position: fixed;
+    top: 16px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 0 16px;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  .floating-header {
+    pointer-events: auto;
+    width: 100%;
+    max-width: 1140px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 9999px;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0 16px 0 24px;
+  }
+
+  .brand-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .brand-logo-img {
+    height: 30px;
+    width: auto;
+    display: block;
+  }
+
+  /* Desktop Nav */
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-list {
+    position: relative;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 4px;
+    background: rgba(15, 23, 42, 0.03);
+    border-radius: 9999px;
+  }
+
+  .nav-link {
+    position: relative;
+    z-index: 2;
+    display: block;
+    padding: 7px 16px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+    border-radius: 9999px;
+  }
+
+  .nav-link:hover {
+    color: var(--text-primary);
+  }
+
+  .nav-link.pill-active {
+    color: #FFFFFF;
+  }
+
+  .sliding-pill {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    height: calc(100% - 8px);
+    background: var(--text-primary);
+    border-radius: 9999px;
+    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* Actions */
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .btn-lean-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--accent-primary);
+    color: #FFFFFF;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 9999px;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(6, 95, 70, 0.2);
+  }
+
+  .btn-lean-cta:hover {
+    background: var(--accent-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(6, 95, 70, 0.3);
+  }
+
+  .hamburger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 0;
+    color: var(--text-primary);
+  }
+
+  .hamburger-bar {
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  /* Mobile Drawer & Backdrop */
+  .drawer-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .drawer-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobile-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    max-width: 85vw;
+    height: 100vh;
+    background: var(--bg-secondary);
+    z-index: 1002;
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .mobile-drawer.active {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  .drawer-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .drawer-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+    border-radius: 8px;
+  }
+
+  .drawer-close:hover {
+    color: var(--text-primary);
+    background: var(--bg-tertiary);
+  }
+
+  .drawer-nav {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px;
+  }
+
+  .drawer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .drawer-link {
+    display: block;
+    padding: 12px 16px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    border-radius: 8px;
+    transition: background 0.15s ease;
+  }
+
+  .drawer-link:hover, .drawer-link:focus {
+    background: var(--bg-tertiary);
+    color: var(--accent-primary);
+  }
+
+  .drawer-foot {
+    padding: 24px;
+    border-top: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .drawer-sebi-badge {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    background: var(--bg-tertiary);
+    border-radius: 8px;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+  }
+
+  .sebi-tag {
+    font-weight: 700;
+    color: var(--accent-primary);
+  }
+
+  .sebi-num {
+    font-family: monospace;
+    font-weight: 600;
+  }
+
+  .w-full {
+    width: 100%;
+  }
+
+  /* Responsive Rules */
+  @media (max-width: 900px) {
+    .desktop-nav {
+      display: none;
+    }
+
+    .hamburger-btn {
+      display: flex;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .btn-lean-cta span {
+      display: none;
+    }
+    
+    .btn-lean-cta {
+      padding: 10px 12px;
+    }
+
+    .nav-container {
+      padding: 0 12px 0 16px;
+    }
+  }
+</style>
+
+<script>
+  // Dynamic sliding pill indicator
+  const navList = document.getElementById('main-nav-list');
+  const slidingPill = document.getElementById('sliding-pill');
+  const links = document.querySelectorAll<HTMLAnchorElement>('.desktop-nav .nav-link');
+
+  function updatePillPosition(element: HTMLElement) {
+    if (!slidingPill || !navList) return;
+    const navRect = navList.getBoundingClientRect();
+    const linkRect = element.getBoundingClientRect();
+
+    slidingPill.style.width = `${linkRect.width}px`;
+    slidingPill.style.transform = `translateX(${linkRect.left - navRect.left - 4}px)`;
+  }
+
+  // Position pill initially on the active link
+  const activeLink = document.querySelector<HTMLElement>('.desktop-nav .nav-link.pill-active');
+  if (activeLink) {
+    updatePillPosition(activeLink);
+  }
+
+  links.forEach(link => {
+    link.addEventListener('mouseenter', () => updatePillPosition(link));
+    link.addEventListener('focus', () => updatePillPosition(link));
+  });
+
+  if (navList) {
+    navList.addEventListener('mouseleave', () => {
+      const currentActive = document.querySelector<HTMLElement>('.desktop-nav .nav-link.pill-active');
+      if (currentActive) updatePillPosition(currentActive);
+    });
+  }
+
+  // Active section scroll spy
+  const sections = document.querySelectorAll<HTMLElement>('section[id], div[id]');
+  window.addEventListener('scroll', () => {
+    let currentId = '';
+    const scrollPos = window.scrollY + 140;
+
+    sections.forEach(section => {
+      const top = section.offsetTop;
+      const height = section.offsetHeight;
+      if (scrollPos >= top && scrollPos < top + height) {
+        currentId = section.getAttribute('id') || '';
+      }
+    });
+
+    if (currentId) {
+      links.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === `#${currentId}`) {
+          links.forEach(l => l.classList.remove('pill-active'));
+          link.classList.add('pill-active');
+          updatePillPosition(link);
+        }
+      });
+    }
+  }, { passive: true });
+
+  // Accessible Mobile Drawer Logic
+  const toggleBtn = document.getElementById('nav-toggle');
+  const drawer = document.getElementById('mobile-nav-drawer');
+  const backdrop = document.getElementById('drawer-backdrop');
+  const closeBtn = document.getElementById('drawer-close');
+  const drawerLinks = document.querySelectorAll('.drawer-link');
+
+  function openDrawer() {
+    if (!drawer || !backdrop || !toggleBtn) return;
+    drawer.classList.add('active');
+    backdrop.classList.add('active');
+    drawer.removeAttribute('inert');
+    drawer.setAttribute('aria-hidden', 'false');
+    toggleBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    closeBtn?.focus();
+  }
+
+  function closeDrawer() {
+    if (!drawer || !backdrop || !toggleBtn) return;
+    drawer.classList.remove('active');
+    backdrop.classList.remove('active');
+    drawer.setAttribute('inert', '');
+    drawer.setAttribute('aria-hidden', 'true');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    toggleBtn.focus();
+  }
+
+  toggleBtn?.addEventListener('click', openDrawer);
+  closeBtn?.addEventListener('click', closeDrawer);
+  backdrop?.addEventListener('click', closeDrawer);
+
+  drawerLinks.forEach(l => {
+    l.addEventListener('click', closeDrawer);
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer?.classList.contains('active')) {
+      closeDrawer();
+    }
+  });
+</script>

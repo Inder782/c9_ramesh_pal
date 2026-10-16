@@ -1,0 +1,342 @@
+---
+import config from '../data/config.json';
+const phoneDigits = config.phone.replace(/[^0-9]/g, '');
+const whatsappCta = `https://wa.me/${phoneDigits}?text=Hello%20${encodeURIComponent(config.analystName)},%20I%20would%20like%20to%20discuss%20your%20equity%20research%20offerings.`;
+---
+
+<section class="hero-section" id="home" aria-labelledby="hero-main-title">
+  <!-- Subtle Architectural Grid Background -->
+  <div class="hero-pattern-bg" aria-hidden="true"></div>
+  <div class="hero-ambient-glow" aria-hidden="true"></div>
+
+  <div class="container hero-container">
+    <div class="hero-inner">
+      <!-- Trust Verification Pill (WCAG AA Contrast Compliant) -->
+      <div class="hero-badge reveal-on-scroll">
+        <div class="badge-status">
+          <span class="status-indicator-dot" aria-hidden="true"></span>
+          <span class="badge-status-text">SEBI Registered Research Analyst</span>
+        </div>
+        <span class="badge-sep" aria-hidden="true">/</span>
+        <span class="analyst-name">{config.analystName}</span>
+        <span class="badge-sep" aria-hidden="true">/</span>
+        <span class="reg-code" aria-label={`Registration Number ${config.sebiRegNo}`}>{config.sebiRegNo}</span>
+      </div>
+
+      <!-- Main Heading: The Educator's Signature Philosophy -->
+      <h1 class="hero-title reveal-on-scroll" id="hero-main-title">
+        Repeat a Pattern Until It Becomes Your <span class="signature-highlight">Signature.</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="hero-subtitle reveal-on-scroll">
+        Mastery in equity markets is not about guessing tops or bottoms. Engineered by an accredited educator, our institutional-grade research distills complex price action into systematic, repeatable frameworks with uncompromised risk control.
+      </p>
+
+      <!-- 3 Pedagogical Value Pillars -->
+      <ul class="hero-pillars-list reveal-on-scroll" aria-label="Core Research Pillars">
+        <li>
+          <div class="pillar-bullet" aria-hidden="true">
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <span><strong>Disciplined Repetition:</strong> High-probability structural setups executed with zero deviation.</span>
+        </li>
+        <li>
+          <div class="pillar-bullet" aria-hidden="true">
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <span><strong>Risk-First Pedagogy:</strong> Pre-defined stop-losses and strict capital protection on every idea.</span>
+        </li>
+        <li>
+          <div class="pillar-bullet" aria-hidden="true">
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <span><strong>Zero Noise:</strong> Clean, actionable research notes without speculative hyperbole.</span>
+        </li>
+      </ul>
+
+      <!-- Primary & Secondary Actions -->
+      <div class="hero-actions reveal-on-scroll">
+        <a href="#offerings" class="btn-primary">
+          <span>Explore Research Offerings</span>
+          <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+        </a>
+        <a href="#about" class="btn-secondary">
+          <span>The Educator's Journey</span>
+        </a>
+      </div>
+
+      <!-- Quick Trust Indicators Strip -->
+      <div class="hero-metrics-strip reveal-on-scroll">
+        <div class="metric-card">
+          <span class="metric-value">15+</span>
+          <span class="metric-label">Years Teaching Rigor</span>
+        </div>
+        <div class="metric-divider" aria-hidden="true"></div>
+        <div class="metric-card">
+          <span class="metric-value">100%</span>
+          <span class="metric-label">Rule-Based Analysis</span>
+        </div>
+        <div class="metric-divider" aria-hidden="true"></div>
+        <div class="metric-card">
+          <span class="metric-value">SEBI</span>
+          <span class="metric-label">Registered Individual RA</span>
+        </div>
+        <div class="metric-divider" aria-hidden="true"></div>
+        <div class="metric-card">
+          <span class="metric-value">Zero</span>
+          <span class="metric-label">Hidden Agendas or Tips</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    position: relative;
+    padding: 160px 0 100px;
+    background-color: var(--bg-primary);
+    overflow: hidden;
+  }
+
+  /* Architectural Grid Pattern (Clean geometric lines) */
+  .hero-pattern-bg {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 60%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 60%, transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .hero-ambient-glow {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 650px;
+    height: 400px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .hero-container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Verified Trust Pill */
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-light);
+    border-radius: 9999px;
+    padding: 6px 16px;
+    font-size: 0.8125rem;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .badge-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .status-indicator-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px var(--accent-border);
+  }
+
+  .badge-status-text {
+    font-weight: 600;
+    color: var(--accent-primary);
+  }
+
+  .badge-sep {
+    color: var(--border-strong);
+  }
+
+  .analyst-name {
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .reg-code {
+    font-family: monospace;
+    font-weight: 600;
+    color: var(--text-secondary);
+    background: var(--bg-tertiary);
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+
+  /* Hero Typography */
+  .hero-title {
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    line-height: 1.18;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+  }
+
+  .signature-highlight {
+    font-style: italic;
+    color: var(--accent-primary);
+    position: relative;
+    white-space: nowrap;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.0625rem, 2vw, 1.25rem);
+    line-height: 1.65;
+    color: var(--text-secondary);
+    max-width: 720px;
+    margin-bottom: 36px;
+  }
+
+  /* 3 Pillars */
+  .hero-pillars-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 36px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    text-align: left;
+    max-width: 680px;
+    width: 100%;
+  }
+
+  .hero-pillars-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .pillar-bullet {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    color: var(--accent-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+  }
+
+  .hero-pillars-list strong {
+    color: var(--text-primary);
+  }
+
+  /* Actions */
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn-arrow {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+
+  .btn-primary:hover .btn-arrow {
+    transform: translateX(3px);
+  }
+
+  /* Metrics Strip */
+  .hero-metrics-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 800px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: 20px 24px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .metric-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .metric-value {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent-primary);
+    line-height: 1.2;
+  }
+
+  .metric-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .metric-divider {
+    width: 1px;
+    height: 36px;
+    background: var(--border-light);
+  }
+
+  @media (max-width: 640px) {
+    .hero-metrics-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      text-align: center;
+      padding: 24px 16px;
+    }
+
+    .metric-divider {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,169 @@
+---
+import config from '../data/config.json';
+---
+
+<div id="onboarding-overlay" class="overlay-backdrop" role="dialog" aria-modal="true" aria-labelledby="overlay-title">
+  <div class="overlay-modal">
+    <div class="overlay-header">
+      <div class="header-status-pill">
+        <span class="warning-dot" aria-hidden="true"></span>
+        <span class="warning-label">Regulatory Notice</span>
+      </div>
+      <h2 id="overlay-title">Mandatory SEBI Risk Disclosure</h2>
+    </div>
+    
+    <div class="overlay-content">
+      <p><strong>Securities Market Warning &amp; Risk Disclosure:</strong></p>
+      <p>Investments in the securities market are subject to market risks. Read all the related documents carefully before investing.</p>
+      <p>Registration granted by SEBI, enlistment with BSE, and certification from NISM in no way guarantee the performance of the intermediary or provide any assurance of returns to investors.</p>
+      <p>There are no guaranteed returns, assured profits, or fixed gains in the stock market. Research recommendations reflect systematic analytical views and carry inherent market risks.</p>
+      <p class="mt-4">
+        By proceeding, you acknowledge that you are accessing the official platform of <strong>{config.brandName}</strong> ({config.analystName}, SEBI Reg. No: <strong>{config.sebiRegNo}</strong>) solely for informational and research purposes.
+      </p>
+    </div>
+
+    <div class="overlay-footer">
+      <button id="onboarding-btn" class="btn-primary" type="button">I Acknowledge and Proceed</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .overlay-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(11, 15, 25, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s;
+  }
+
+  .overlay-backdrop.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .overlay-modal {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-light);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 580px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .overlay-header {
+    background: var(--bg-tertiary);
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .header-status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 0.5rem;
+  }
+
+  .warning-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #DC2626;
+  }
+
+  .warning-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #991B1B;
+  }
+
+  .overlay-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    font-family: 'Lora', Georgia, serif;
+    font-weight: 600;
+  }
+
+  .overlay-content {
+    padding: 1.75rem 2rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    font-size: 0.9375rem;
+    max-height: 55vh;
+    overflow-y: auto;
+  }
+
+  .overlay-content p {
+    margin: 0 0 1rem 0;
+  }
+
+  .overlay-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  .overlay-content strong {
+    color: var(--text-primary);
+  }
+
+  .mt-4 {
+    margin-top: 1rem;
+  }
+
+  .overlay-footer {
+    padding: 1.25rem 2rem;
+    border-top: 1px solid var(--border-light);
+    display: flex;
+    justify-content: flex-end;
+    background: var(--bg-primary);
+  }
+</style>
+
+<script>
+  const overlay = document.getElementById('onboarding-overlay');
+  const btn = document.getElementById('onboarding-btn');
+
+  if (overlay && btn) {
+    const trapFocus = (e: KeyboardEvent) => {
+      if (e.key === 'Tab') {
+        e.preventDefault();
+        btn.focus();
+      }
+    };
+
+    if (!sessionStorage.getItem('rameshpal-disclaimer-acknowledged')) {
+      overlay.classList.add('show');
+      document.body.style.overflow = 'hidden';
+      document.addEventListener('keydown', trapFocus);
+      setTimeout(() => btn.focus(), 100);
+    }
+    
+    btn.addEventListener('click', () => {
+      sessionStorage.setItem('rameshpal-disclaimer-acknowledged', 'true');
+      overlay.classList.remove('show');
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', trapFocus);
+      
+      const skipLink = document.querySelector('.skip-link') as HTMLElement | null;
+      if (skipLink) {
+        skipLink.focus();
+      }
+    });
+  }
+</script>

@@ -1,0 +1,378 @@
+---
+import config from '../data/config.json';
+---
+
+<section class="about-section" id="about" aria-labelledby="about-heading">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="section-head reveal-on-scroll">
+      <div class="badge-pill">Educator &amp; Research Analyst</div>
+      <h2 id="about-heading" class="section-title">
+        Bridging the Rigor of Pedagogy with Market Precision
+      </h2>
+      <p class="section-lead">
+        Before analyzing balance sheets or chart patterns, Ramesh Pal spent over a decade in education. In the classroom, one universal truth stands out: true competence is never an accident—it is the direct outcome of disciplined, structured repetition.
+      </p>
+    </div>
+
+    <!-- Main Grid: Narrative & Credentials Card -->
+    <div class="about-grid">
+      <!-- Left: Narrative -->
+      <div class="narrative-col reveal-on-scroll">
+        <h3 class="narrative-title">Why an Educator Thinks Differently in the Market</h3>
+        
+        <p>
+          Most market participants approach trading and investing with an emotional lottery mindset: seeking shortcuts, chasing hot tips, and jumping erratically between unverified strategies.
+        </p>
+        <p>
+          In academic education, that approach leads to failure. A student cannot master calculus or physics by guessing questions on the day of the exam. They master it by understanding core principles, breaking problems down into repeatable components, and practicing until the framework becomes intuitive.
+        </p>
+        <p class="quote-box">
+          <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+          <em>"When you repeat a pattern until it becomes your signature, you eliminate emotional decision-making. You stop reacting to daily volatility and begin executing a proven statistical edge."</em>
+        </p>
+        <p>
+          As an accredited educator and SEBI Registered Research Analyst, Ramesh Pal brings this exact classroom discipline to equity research. Every research note is transparently structured with predefined risk limits, logical rationale, and structured follow-ups.
+        </p>
+
+        <!-- 4 Teaching Axioms -->
+        <div class="axioms-grid">
+          <div class="axiom-item">
+            <span class="axiom-num" aria-hidden="true">01</span>
+            <div>
+              <h4 class="axiom-heading">First-Principles Logic</h4>
+              <p class="axiom-desc">No black-box indicators. Every recommendation has clear structural and fundamental reasoning.</p>
+            </div>
+          </div>
+          <div class="axiom-item">
+            <span class="axiom-num" aria-hidden="true">02</span>
+            <div>
+              <h4 class="axiom-heading">Disciplined Homework</h4>
+              <p class="axiom-desc">Rigorous post-market analysis, journaled setups, and objective invalidation criteria.</p>
+            </div>
+          </div>
+          <div class="axiom-item">
+            <span class="axiom-num" aria-hidden="true">03</span>
+            <div>
+              <h4 class="axiom-heading">Capital Protection First</h4>
+              <p class="axiom-desc">In pedagogy, unlearning bad habits is essential; in markets, cutting bad trades quickly protects your future.</p>
+            </div>
+          </div>
+          <div class="axiom-item">
+            <span class="axiom-num" aria-hidden="true">04</span>
+            <div>
+              <h4 class="axiom-heading">Zero Speculative Hype</h4>
+              <p class="axiom-desc">We do not promise unrealistic overnight fortunes. We build sustainable market compounding.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Credentials & Trust Profile Card -->
+      <div class="profile-col reveal-on-scroll">
+        <div class="profile-card">
+          <div class="card-top">
+            <div class="analyst-avatar" aria-hidden="true">
+              <span class="avatar-initials">RP</span>
+            </div>
+            <div class="profile-info">
+              <h3 class="profile-name">{config.analystName}</h3>
+              <p class="profile-role">SEBI Registered Research Analyst</p>
+              <span class="badge-active">
+                <span class="dot-active" aria-hidden="true"></span>
+                Active SEBI Registration
+              </span>
+            </div>
+          </div>
+
+          <div class="card-divider" aria-hidden="true"></div>
+
+          <div class="credentials-list">
+            <div class="cred-row">
+              <span class="cred-label">SEBI Reg. No.</span>
+              <span class="cred-value mono-val">{config.sebiRegNo}</span>
+            </div>
+            <div class="cred-row">
+              <span class="cred-label">Registration Type</span>
+              <span class="cred-value">{config.registrationType}</span>
+            </div>
+            <div class="cred-row">
+              <span class="cred-label">BSE Enlistment</span>
+              <span class="cred-value mono-val">{config.bseEnlistmentNo}</span>
+            </div>
+            <div class="cred-row">
+              <span class="cred-label">Primary Philosophy</span>
+              <span class="cred-value font-serif">Pattern Mastery</span>
+            </div>
+            <div class="cred-row">
+              <span class="cred-label">Official Email</span>
+              <a href={`mailto:${config.email}`} class="content-link">{config.email}</a>
+            </div>
+          </div>
+
+          <div class="statutory-notice">
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            <p>
+              Registration granted by SEBI and certification from NISM in no way guarantee the performance of the intermediary or provide any assurance of returns.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-section {
+    padding: 100px 0;
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .section-head {
+    max-width: 760px;
+    margin: 0 auto 64px auto;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    margin: 16px 0 20px 0;
+    letter-spacing: -0.02em;
+  }
+
+  .section-lead {
+    font-size: 1.125rem;
+    line-height: 1.68;
+    color: var(--text-secondary);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 0.85fr;
+    gap: 56px;
+    align-items: start;
+  }
+
+  .narrative-title {
+    font-size: 1.625rem;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+
+  .quote-box {
+    position: relative;
+    padding: 24px 28px 24px 44px;
+    background: var(--bg-primary);
+    border-left: 4px solid var(--accent-primary);
+    border-radius: 0 12px 12px 0;
+    margin: 28px 0;
+  }
+
+  .quote-mark {
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    font-size: 3rem;
+    line-height: 1;
+    font-family: Georgia, serif;
+    color: var(--accent-primary);
+    opacity: 0.35;
+  }
+
+  .quote-box em {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.125rem;
+    color: var(--text-primary);
+    line-height: 1.6;
+    display: block;
+  }
+
+  .axioms-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 36px;
+  }
+
+  .axiom-item {
+    display: flex;
+    gap: 14px;
+    background: var(--bg-primary);
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+  }
+
+  .axiom-num {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent-primary);
+    line-height: 1.2;
+    flex-shrink: 0;
+  }
+
+  .axiom-heading {
+    font-size: 0.9375rem;
+    margin: 0 0 6px 0;
+    font-weight: 600;
+  }
+
+  .axiom-desc {
+    font-size: 0.8125rem;
+    margin: 0;
+    line-height: 1.5;
+    color: var(--text-secondary);
+  }
+
+  /* Profile Card */
+  .profile-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-light);
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: var(--shadow-md);
+    position: sticky;
+    top: 100px;
+  }
+
+  .card-top {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .analyst-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: var(--dark-surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .avatar-initials {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #A7F3D0;
+  }
+
+  .profile-name {
+    font-size: 1.25rem;
+    margin: 0 0 4px 0;
+  }
+
+  .profile-role {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin: 0 0 8px 0;
+  }
+
+  .badge-active {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent-primary);
+    background: var(--accent-soft);
+    padding: 2px 8px;
+    border-radius: 9999px;
+  }
+
+  .dot-active {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--accent-primary);
+  }
+
+  .card-divider {
+    height: 1px;
+    background: var(--border-light);
+    margin: 24px 0;
+  }
+
+  .credentials-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .cred-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+  }
+
+  .cred-label {
+    color: var(--text-muted);
+  }
+
+  .cred-value {
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .mono-val {
+    font-family: monospace;
+    background: var(--bg-secondary);
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid var(--border-light);
+  }
+
+  .statutory-notice {
+    margin-top: 24px;
+    padding: 12px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-light);
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .statutory-notice svg {
+    color: var(--accent-primary);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .statutory-notice p {
+    font-size: 0.75rem;
+    line-height: 1.45;
+    margin: 0;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 900px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .profile-card {
+      position: static;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .axioms-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

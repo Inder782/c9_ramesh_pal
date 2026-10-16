@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <rect width="48" height="48" rx="12" fill="#0F172A" />
+  <!-- Repeating structural pattern arches symbolizing education, rhythm & consistency -->
+  <path d="M12 36V16C12 13.7909 13.7909 12 16 12H24C28.4183 12 32 15.5817 32 20C32 24.4183 28.4183 28 24 28H12" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M22 28L33 36" stroke="#0D9488" stroke-width="3" stroke-linecap="round"/>
+  <path d="M18 20H24C26.2091 20 28 21.7909 28 24" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 3"/>
+</svg>

@@ -1,0 +1,111 @@
+---
+import '../styles/global.css';
+import config from '../data/config.json';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = `${config.brandName} | SEBI Registered Research Analyst`,
+  description = config.subtagline
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} — Reg. No. {config.sebiRegNo}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#065F46" />
+    
+    <!-- Open Graph / Meta -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={`${config.brandName} — ${config.tagline}`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/logo.svg" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <slot />
+
+    <!-- RA Sahayak Digital Accessibility Tool (RPwD Act & WCAG 2.1 Compliant) -->
+    <script src="/js/accessibility-tool.js" data-accent="#065F46" data-position="left" defer></script>
+
+    <!-- Global Scroll Reveal Observer & Native Dialog Manager -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // Intersection Observer for Scroll Reveals
+        const revealElements = document.querySelectorAll('.reveal-on-scroll');
+        if ('IntersectionObserver' in window) {
+          const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, {
+            rootMargin: '0px 0px -10% 0px',
+            threshold: 0.05
+          });
+
+          revealElements.forEach(el => revealObserver.observe(el));
+        } else {
+          revealElements.forEach(el => el.classList.add('is-visible'));
+        }
+
+        // Native Dialog Triggers
+        document.querySelectorAll('[data-open-dialog]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const dialogId = btn.getAttribute('data-open-dialog');
+            if (dialogId) {
+              const dialog = document.getElementById(dialogId) as HTMLDialogElement | null;
+              if (dialog && typeof dialog.showModal === 'function') {
+                dialog.showModal();
+                document.body.style.overflow = 'hidden';
+              }
+            }
+          });
+        });
+
+        // Close dialog on backdrop click or close button
+        document.querySelectorAll('dialog').forEach(dialog => {
+          dialog.addEventListener('click', (e) => {
+            const rect = dialog.getBoundingClientRect();
+            const isInDialog = (
+              rect.top <= e.clientY &&
+              e.clientY <= rect.top + rect.height &&
+              rect.left <= e.clientX &&
+              e.clientX <= rect.left + rect.width
+            );
+            if (!isInDialog) {
+              dialog.close();
+              document.body.style.overflow = '';
+            }
+          });
+
+          dialog.addEventListener('close', () => {
+            document.body.style.overflow = '';
+          });
+        });
+
+        document.querySelectorAll('.dialog-close-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const dialog = btn.closest('dialog');
+            if (dialog) {
+              dialog.close();
+              document.body.style.overflow = '';
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

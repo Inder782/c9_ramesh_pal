@@ -1,0 +1,39 @@
+{
+  "brandName": "Ramesh Pal Research",
+  "tradeName": "Ramesh Pal Research",
+  "analystName": "Ramesh Pal",
+  "designation": "Individual SEBI Registered Research Analyst",
+  "sebiRegNo": "INH0000XXXXX",
+  "bseEnlistmentNo": "XXXX",
+  "registrationType": "Individual",
+  "validity": "Perpetual / Active",
+  "registeredAddress": "Mumbai, Maharashtra, India - 400001",
+  "email": "contact@rameshpal.in",
+  "phone": "+91 98765 43210",
+  "whatsappPhone": "919876543210",
+  "tagline": "Repeat a pattern until it becomes your signature.",
+  "subtagline": "Systematic, rule-based equity research engineered by an accredited educator. No speculative noise, no emotional gambits—just disciplined pattern repetition and institutional risk management.",
+  "founders": [
+    {
+      "name": "Ramesh Pal",
+      "role": "Founder & Principal Research Analyst",
+      "experience": "15+ Years in Education & Systematic Market Research",
+      "bio": "An accredited educator whose pedagogical rigor translates directly into rule-based market research. Ramesh Pal believes that successful market participation is a teachable, repeatable discipline rooted in pattern recognition, statistical edge, and uncompromising risk control."
+    }
+  ],
+  "socials": {
+    "telegram": "https://t.me/rameshpalresearch",
+    "whatsapp": "https://wa.me/919876543210",
+    "twitter": "https://x.com/rameshpal",
+    "youtube": "https://youtube.com/@rameshpal",
+    "linkedin": "https://linkedin.com/in/rameshpal"
+  },
+  "compliance": {
+    "officerName": "Ramesh Pal",
+    "officerPhone": "+91 98765 43210",
+    "officerEmail": "compliance@rameshpal.in",
+    "grievanceTurnaround": "21 working days",
+    "scoresUrl": "https://scores.sebi.gov.in",
+    "smartOdrUrl": "https://smartodr.in"
+  }
+}

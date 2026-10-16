@@ -1,0 +1,422 @@
+---
+import config from '../data/config.json';
+import LegalModals from './LegalModals.astro';
+
+const phoneDigits = config.phone.replace(/[^0-9]/g, '');
+const whatsappCta = `https://wa.me/${phoneDigits}?text=Hi%20${encodeURIComponent(config.analystName)},%20I%20am%20contacting%20you%20from%20your%20official%20website.`;
+---
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container footer-container">
+    
+    <!-- Investor Fit Qualification Matrix -->
+    <div class="footer-fit-card reveal-on-scroll">
+      <div class="fit-card-head">
+        <span class="fit-badge">Investor Qualification</span>
+        <h3 class="fit-title">Is Ramesh Pal Research Right For You?</h3>
+      </div>
+
+      <div class="fit-grid">
+        <div class="fit-col ideal-col">
+          <h4 class="fit-col-head">
+            <span class="icon-indicator" aria-hidden="true">✓</span>
+            Ideal Partnership Profile (This is for you if:)
+          </h4>
+          <ul class="fit-list">
+            <li>You value structured pedagogical rules over emotional gambling and speculative tips.</li>
+            <li>You have patience to repeat proven patterns until consistency compounds capital.</li>
+            <li>You accept that stop-losses are the essential tuition fee of disciplined market participation.</li>
+            <li>You want independent, objective research directly from a SEBI-registered professional.</li>
+          </ul>
+        </div>
+
+        <div class="fit-col exclusion-col">
+          <h4 class="fit-col-head">
+            <span class="icon-indicator" aria-hidden="true">&times;</span>
+            Strict Exclusion Criteria (NOT for you if:)
+          </h4>
+          <ul class="fit-list">
+            <li>You are looking for guaranteed profits, assured returns, or fixed gain promises.</li>
+            <li>You want rapid intraday calls, high-leverage F&amp;O gambling, or overnight get-rich schemes.</li>
+            <li>You expect every single trade idea to be a winner without tolerating standard risk invalidations.</li>
+            <li>You refuse to perform basic homework and study the provided research rationale.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Footer Grid -->
+    <div class="footer-grid">
+      <!-- Col 1: Identity -->
+      <div class="footer-col">
+        <a href="#home" class="footer-brand" aria-label={`${config.brandName} Home`}>
+          <img src="/logo.svg" alt={`${config.brandName} Logo`} width="180" height="36" class="footer-logo-img" />
+        </a>
+        <p class="footer-about-text">
+          Institutional-grade equity research governed by the discipline of an accredited educator. We eliminate emotional guesswork through systematic pattern repetition and mathematical risk control.
+        </p>
+        <div class="analyst-sebi-meta">
+          <p><strong>SEBI Reg. No:</strong> {config.sebiRegNo}</p>
+          <p><strong>BSE Enlistment:</strong> {config.bseEnlistmentNo}</p>
+          <p><strong>Registration Type:</strong> Individual Research Analyst</p>
+        </div>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Navigation</h4>
+        <ul class="footer-links-list">
+          <li><a href="#home" class="footer-link">Home</a></li>
+          <li><a href="#about" class="footer-link">About Analyst</a></li>
+          <li><a href="#philosophy" class="footer-link">Signature Framework</a></li>
+          <li><a href="#offerings" class="footer-link">Research Offerings</a></li>
+          <li><a href="#investor-charter" class="footer-link">Investor Charter</a></li>
+          <li><a href="#compliance" class="footer-link">Grievance Redressal</a></li>
+          <li><a href="#regulatory" class="footer-link">Investor Complaints</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Statutory Modals -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Statutory Documents</h4>
+        <ul class="footer-links-list">
+          <li>
+            <button type="button" class="modal-link-btn" data-open-dialog="dialog-disclosures">
+              SEBI Statutory Disclosures
+            </button>
+          </li>
+          <li>
+            <button type="button" class="modal-link-btn" data-open-dialog="dialog-terms">
+              Terms &amp; Conditions
+            </button>
+          </li>
+          <li>
+            <button type="button" class="modal-link-btn" data-open-dialog="dialog-privacy">
+              Privacy Policy
+            </button>
+          </li>
+          <li>
+            <button type="button" class="modal-link-btn" data-open-dialog="dialog-refund">
+              Refund &amp; Cancellation
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Contact & Regulatory Portals -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Regulatory &amp; Support</h4>
+        <div class="contact-card-footer">
+          <p><strong>Email:</strong> <a href={`mailto:${config.email}`} class="footer-link">{config.email}</a></p>
+          <p><strong>Phone:</strong> {config.phone}</p>
+          <p><strong>Registered Office:</strong> {config.registeredAddress}</p>
+          <div class="ext-portals">
+            <a href={config.compliance.scoresUrl} target="_blank" rel="noopener noreferrer" class="portal-link">
+              <span>SEBI SCORES 2.0</span>
+              <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+            <a href={config.compliance.smartOdrUrl} target="_blank" rel="noopener noreferrer" class="portal-link">
+              <span>SMART ODR Portal</span>
+              <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mandatory Statutory Disclaimer Banner -->
+    <div class="footer-regulatory-disclaimer">
+      <p>
+        <strong>Mandatory Securities Market Disclaimer:</strong> Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI, enlistment with BSE, and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. The securities quoted are for illustration only and are not recommendatory.
+      </p>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <p class="copyright-text">
+        &copy; {new Date().getFullYear()} {config.brandName}. All rights reserved. SEBI Registration No: {config.sebiRegNo}.
+      </p>
+      <p class="accessibility-note">
+        Built strictly in compliance with WCAG 2.2 Level AA &amp; IAAP Accessibility Standards.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Include Native Legal Modals in DOM -->
+  <LegalModals />
+</footer>
+
+<style>
+  .site-footer {
+    background-color: var(--dark-surface);
+    color: #F8FAFC;
+    padding: 80px 0 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+  }
+
+  /* Fit Qualification Card */
+  .footer-fit-card {
+    background: #111827;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 36px 32px;
+  }
+
+  .fit-card-head {
+    margin-bottom: 24px;
+  }
+
+  .fit-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #A7F3D0;
+    background: rgba(6, 95, 70, 0.4);
+    padding: 3px 10px;
+    border-radius: 9999px;
+    margin-bottom: 8px;
+  }
+
+  .fit-title {
+    font-size: 1.5rem;
+    color: #F8FAFC;
+    margin: 0;
+  }
+
+  .fit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .fit-col {
+    padding: 20px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .ideal-col {
+    border-left: 3px solid #059669;
+  }
+
+  .exclusion-col {
+    border-left: 3px solid #DC2626;
+  }
+
+  .fit-col-head {
+    font-size: 0.9375rem;
+    margin: 0 0 14px 0;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .ideal-col .fit-col-head {
+    color: #34D399;
+  }
+
+  .exclusion-col .fit-col-head {
+    color: #F87171;
+  }
+
+  .fit-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .fit-list li {
+    font-size: 0.8125rem;
+    line-height: 1.55;
+    color: #CBD5E1;
+  }
+
+  /* Main Grid */
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.25fr;
+    gap: 40px;
+  }
+
+  .footer-logo-img {
+    filter: brightness(0) invert(1);
+    height: 32px;
+    width: auto;
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .footer-about-text {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: #94A3B8;
+    margin-bottom: 20px;
+  }
+
+  .analyst-sebi-meta {
+    font-size: 0.8125rem;
+    color: #CBD5E1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .analyst-sebi-meta p {
+    margin: 0;
+  }
+
+  .footer-col-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #F8FAFC;
+    margin: 0 0 20px 0;
+    letter-spacing: -0.01em;
+  }
+
+  .footer-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-link {
+    font-size: 0.875rem;
+    color: #CBD5E1;
+    text-decoration: underline;
+    text-decoration-color: rgba(203, 213, 225, 0.4);
+    text-underline-offset: 3px;
+    transition: color 0.2s, text-decoration-color 0.2s;
+  }
+
+  .footer-link:hover {
+    color: #34D399;
+    text-decoration-color: #34D399;
+  }
+
+  .modal-link-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    font-size: 0.875rem;
+    color: #CBD5E1;
+    text-decoration: underline;
+    text-decoration-color: rgba(203, 213, 225, 0.4);
+    text-underline-offset: 3px;
+    cursor: pointer;
+    font-family: inherit;
+    text-align: left;
+    transition: color 0.2s, text-decoration-color 0.2s;
+  }
+
+  .modal-link-btn:hover {
+    color: #34D399;
+    text-decoration-color: #34D399;
+  }
+
+  .contact-card-footer {
+    font-size: 0.875rem;
+    color: #94A3B8;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .contact-card-footer p {
+    margin: 0;
+    color: #CBD5E1;
+  }
+
+  .contact-card-footer strong {
+    color: #F8FAFC;
+  }
+
+  .ext-portals {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+
+  .portal-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #CBD5E1;
+    padding: 5px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .portal-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+  }
+
+  /* Regulatory Disclaimer */
+  .footer-regulatory-disclaimer {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 20px;
+  }
+
+  .footer-regulatory-disclaimer p {
+    font-size: 0.75rem;
+    line-height: 1.6;
+    color: #94A3B8;
+    margin: 0;
+  }
+
+  .footer-regulatory-disclaimer strong {
+    color: #CBD5E1;
+  }
+
+  /* Bottom Bar */
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .copyright-text, .accessibility-note {
+    font-size: 0.75rem;
+    color: #64748B;
+    margin: 0;
+  }
+
+  @media (max-width: 900px) {
+    .fit-grid, .footer-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>
