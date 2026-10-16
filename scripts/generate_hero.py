@@ -2,98 +2,106 @@ import math
 import os
 
 def build_topography_svg():
-    # 1. Left Mesh System (10 contour lines + 3 hairline guides + 4 transverse lines)
-    left_contours = []
-    # Main longitudinal contours
-    for k in range(10):
-        # Parametric control points for line k
-        # Asymmetrical sweep from left edge downward to lower-center
-        y0 = 70 + k * 44
-        p0 = (-50, y0)
-        p1 = (130 + k * 22, y0 + 60 + k * 8)
-        p2 = (330 + k * 20, 360 + k * 40)
-        p3 = (530 + k * 16, 660 + k * 24)
+    # 1. Left Mesh System (12 contours: combination of dotted and solid hairline waves + 5 transverse lines)
+    left_elements = []
+    
+    for k in range(12):
+        y0 = 50 + k * 42
+        p0 = (-60, y0)
+        p1 = (140 + k * 20, y0 + 65 + k * 6)
+        p2 = (350 + k * 18, 350 + k * 36)
+        p3 = (560 + k * 14, 650 + k * 22)
         
         d = f"M {p0[0]} {p0[1]} C {p1[0]} {p1[1]}, {p2[0]} {p2[1]}, {p3[0]} {p3[1]}"
         grad = "url(#contourSageToGold)" if k % 2 == 0 else "url(#contourGoldToSage)"
-        op = 0.55 - k * 0.025
         
-        # Dotted contour
-        left_contours.append(
-            f'      <path d="{d}" stroke="{grad}" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0.1 14" opacity="{op:.2f}" />'
+        # Primary dotted contour: bold, crisp dots
+        op = 0.72 - k * 0.025
+        left_elements.append(
+            f'      <path d="{d}" stroke="{grad}" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="0.1 13" opacity="{op:.2f}" />'
         )
-        # Hairline guide path on every 3rd contour
-        if k in (1, 4, 7):
-            left_contours.append(
-                f'      <path d="{d}" stroke="{grad}" stroke-width="0.75" opacity="0.30" />'
+        
+        # Companion fine hairline for true 3D contour appearance
+        if k % 2 == 1:
+            left_elements.append(
+                f'      <path d="{d}" stroke="{grad}" stroke-width="0.85" opacity="0.38" />'
             )
 
-    # Left transverse cross-contours (4 lines cutting across the longitudinal flow)
+    # Left transverse cross-contours (5 intersecting lines creating mathematical wireframe)
     left_transverse = [
-        "M 80 180 C 180 270, 260 380, 310 520",
-        "M 140 230 C 240 330, 330 450, 390 600",
-        "M 210 290 C 310 400, 410 530, 470 690",
-        "M 280 360 C 390 480, 490 610, 560 770"
+        "M 60 140 C 160 240, 250 360, 310 510",
+        "M 120 190 C 220 300, 320 430, 390 590",
+        "M 190 250 C 300 370, 400 510, 470 680",
+        "M 260 320 C 380 450, 480 590, 560 760",
+        "M 340 400 C 460 540, 560 680, 640 840"
     ]
     for idx, d in enumerate(left_transverse):
-        left_contours.append(
-            f'      <path d="{d}" stroke="url(#contourSageToGold)" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="0.1 18" opacity="0.25" />'
+        left_elements.append(
+            f'      <path d="{d}" stroke="url(#contourSageToGold)" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="0.1 16" opacity="0.35" />'
         )
 
-    # 2. Right Mesh System (10 contour lines + 3 hairline guides + 4 transverse lines)
-    right_contours = []
-    for k in range(10):
-        # Asymmetrical control points: right side sweeps with slightly steeper angle
-        y0 = 60 + k * 44
-        p0 = (1490, y0)
-        p1 = (1310 - k * 22, y0 + 55 + k * 8)
-        p2 = (1110 - k * 20, 350 + k * 40)
-        p3 = (910 - k * 16, 650 + k * 24)
+    # 2. Right Mesh System (12 contours: dotted + solid hairlines + 5 transverse lines)
+    right_elements = []
+    for k in range(12):
+        y0 = 40 + k * 42
+        p0 = (1500, y0)
+        p1 = (1300 - k * 20, y0 + 60 + k * 6)
+        p2 = (1090 - k * 18, 340 + k * 36)
+        p3 = (880 - k * 14, 640 + k * 22)
         
         d = f"M {p0[0]} {p0[1]} C {p1[0]} {p1[1]}, {p2[0]} {p2[1]}, {p3[0]} {p3[1]}"
         grad = "url(#contourGoldToSage)" if k % 2 == 0 else "url(#contourSageToGold)"
-        op = 0.55 - k * 0.025
+        op = 0.72 - k * 0.025
         
-        right_contours.append(
-            f'      <path d="{d}" stroke="{grad}" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0.1 14" opacity="{op:.2f}" />'
+        right_elements.append(
+            f'      <path d="{d}" stroke="{grad}" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="0.1 13" opacity="{op:.2f}" />'
         )
-        if k in (2, 5, 8):
-            right_contours.append(
-                f'      <path d="{d}" stroke="{grad}" stroke-width="0.75" opacity="0.30" />'
+        if k % 2 == 0:
+            right_elements.append(
+                f'      <path d="{d}" stroke="{grad}" stroke-width="0.85" opacity="0.38" />'
             )
 
     # Right transverse cross-contours
     right_transverse = [
-        "M 1360 170 C 1260 260, 1180 370, 1130 510",
-        "M 1300 220 C 1200 320, 1110 440, 1050 590",
-        "M 1230 280 C 1130 390, 1030 520, 970 680",
-        "M 1160 350 C 1050 470, 950 600, 880 760"
+        "M 1380 130 C 1280 230, 1190 350, 1130 500",
+        "M 1320 180 C 1220 290, 1120 420, 1050 580",
+        "M 1250 240 C 1140 360, 1040 500, 970 670",
+        "M 1180 310 C 1060 440, 960 580, 880 750",
+        "M 1100 390 C 980 530, 880 670, 800 830"
     ]
     for idx, d in enumerate(right_transverse):
-        right_contours.append(
-            f'      <path d="{d}" stroke="url(#contourGoldToSage)" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="0.1 18" opacity="0.25" />'
+        right_elements.append(
+            f'      <path d="{d}" stroke="url(#contourGoldToSage)" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="0.1 16" opacity="0.35" />'
         )
 
-    # 3. Lower Mesh System (5 shallow undulating wave contours across the lower apron)
-    lower_contours = []
+    # 3. Lower Mesh System (6 undulating harmonic wave contours across the lower apron)
+    lower_elements = []
     lower_paths = [
-        "M 60 740 C 380 710, 720 780, 1060 720 S 1380 750, 1420 740",
-        "M 40 770 C 360 740, 700 810, 1040 750 S 1360 780, 1440 770",
-        "M 50 800 C 370 770, 710 840, 1050 780 S 1370 810, 1430 800",
-        "M 30 830 C 350 800, 690 870, 1030 810 S 1350 840, 1450 830",
-        "M 60 860 C 380 830, 720 900, 1060 840 S 1380 870, 1420 860"
+        "M 40 720 C 360 680, 720 760, 1080 700 S 1400 730, 1440 720",
+        "M 20 750 C 340 710, 700 790, 1060 730 S 1380 760, 1460 750",
+        "M 30 780 C 350 740, 710 820, 1070 760 S 1390 790, 1450 780",
+        "M 10 810 C 330 770, 690 850, 1050 790 S 1370 820, 1470 810",
+        "M 40 840 C 360 800, 720 880, 1080 820 S 1400 850, 1440 840",
+        "M 20 870 C 340 830, 700 910, 1060 850 S 1380 880, 1460 870"
     ]
     for idx, d in enumerate(lower_paths):
         grad = "url(#contourSageToGold)" if idx % 2 == 0 else "url(#contourGoldToSage)"
-        op = 0.32 - idx * 0.04
-        lower_contours.append(
-            f'      <path d="{d}" stroke="{grad}" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="0.1 16" opacity="{op:.2f}" />'
+        op = 0.48 - idx * 0.05
+        lower_elements.append(
+            f'      <path d="{d}" stroke="{grad}" stroke-width="2.0" stroke-linecap="round" stroke-dasharray="0.1 15" opacity="{op:.2f}" />'
         )
+        if idx in (0, 2):
+            lower_elements.append(
+                f'      <path d="{d}" stroke="{grad}" stroke-width="0.8" opacity="0.30" />'
+            )
 
-    # 4. Upper celestial connecting arc (whisper-thin hairline)
-    celestial_arc = '      <path d="M 80 140 C 440 40, 1000 40, 1360 140" stroke="url(#contourSageToGold)" stroke-width="0.75" stroke-dasharray="3 7" opacity="0.26" />'
+    # 4. Upper celestial connecting arcs
+    celestial_arcs = [
+        '      <path d="M 60 120 C 420 20, 1020 20, 1380 120" stroke="url(#contourSageToGold)" stroke-width="0.85" stroke-dasharray="4 8" opacity="0.40" />',
+        '      <path d="M 120 160 C 460 70, 980 70, 1320 160" stroke="url(#contourGoldToSage)" stroke-width="0.75" stroke-dasharray="3 6" opacity="0.35" />'
+    ]
 
-    all_paths = left_contours + right_contours + lower_contours + [celestial_arc]
+    all_paths = left_elements + right_elements + lower_elements + celestial_arcs
     return '\n'.join(all_paths)
 
 topography_markup = build_topography_svg()
@@ -103,10 +111,13 @@ import config from '../data/config.json';
 ---
 
 <section class="hero-section" id="home" aria-labelledby="hero-main-title">
-  <!-- Micro-texture Archival Cotton Grain -->
+  <!-- Precision Architectural Dot Grid Texture -->
+  <div class="hero-dot-grid" aria-hidden="true"></div>
+
+  <!-- Micro-texture Archival Cotton Paper Grain -->
   <div class="hero-grain" aria-hidden="true"></div>
 
-  <!-- Organic Aurora: Large Asymmetrical Soft Light Forms (Frosted Glass Illumination) -->
+  <!-- Organic Aurora: Large Asymmetrical Soft Light Forms with Ambient Motion -->
   <div class="hero-aurora-form hero-aurora-left" aria-hidden="true"></div>
   <div class="hero-aurora-form hero-aurora-left-lower" aria-hidden="true"></div>
   <div class="hero-aurora-form hero-aurora-right" aria-hidden="true"></div>
@@ -118,29 +129,30 @@ import config from '../data/config.json';
       <defs>
         <!-- Gradients for Topographic Contours -->
         <linearGradient id="contourSageToGold" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#B8CFC5" />
-          <stop offset="55%" stop-color="#B89558" />
-          <stop offset="100%" stop-color="#C5A86D" />
+          <stop offset="0%" stop-color="#9EBFB1" />
+          <stop offset="50%" stop-color="#B89558" />
+          <stop offset="100%" stop-color="#D4AF37" />
         </linearGradient>
 
         <linearGradient id="contourGoldToSage" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#B89558" />
-          <stop offset="45%" stop-color="#C5A86D" />
-          <stop offset="100%" stop-color="#B8CFC5" />
+          <stop offset="0%" stop-color="#D4AF37" />
+          <stop offset="50%" stop-color="#B89558" />
+          <stop offset="100%" stop-color="#9EBFB1" />
         </linearGradient>
 
-        <!-- Frosted Ambient Gold Node Glow -->
+        <!-- Luminous Ambient Gold Node Glow -->
         <radialGradient id="heroNodeGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#B89558" stop-opacity="0.85" />
-          <stop offset="40%" stop-color="#B89558" stop-opacity="0.30" />
+          <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.95" />
+          <stop offset="35%" stop-color="#B89558" stop-opacity="0.45" />
+          <stop offset="70%" stop-color="#B89558" stop-opacity="0.15" />
           <stop offset="100%" stop-color="#B89558" stop-opacity="0" />
         </radialGradient>
 
-        <!-- Center Clearing Mask: Ensures crystal-clear legibility around central headline -->
-        <radialGradient id="centerMaskGradient" cx="50%" cy="46%" r="58%">
-          <stop offset="0%" stop-color="#000000" stop-opacity="0.04" />
-          <stop offset="38%" stop-color="#ffffff" stop-opacity="0.32" />
-          <stop offset="72%" stop-color="#ffffff" stop-opacity="0.90" />
+        <!-- Center Mask: Subtle falloff keeping text 100% readable while maintaining rich mesh structure -->
+        <radialGradient id="centerMaskGradient" cx="50%" cy="45%" r="58%">
+          <stop offset="0%" stop-color="#ffffff" stop-opacity="0.22" />
+          <stop offset="35%" stop-color="#ffffff" stop-opacity="0.45" />
+          <stop offset="70%" stop-color="#ffffff" stop-opacity="0.92" />
           <stop offset="100%" stop-color="#ffffff" stop-opacity="1.0" />
         </radialGradient>
 
@@ -156,28 +168,42 @@ __TOPOGRAPHY_MARKUP__
 
       <!-- Illuminated Gold Node Points with Frosted Halos at Key Topological Junctions -->
       <!-- Node A: Left Upper Flow (280, 290) -->
-      <circle cx="280" cy="290" r="16" fill="url(#heroNodeGlow)" opacity="0.75" />
-      <circle cx="280" cy="290" r="6" stroke="#B89558" stroke-width="0.8" opacity="0.6" />
-      <circle cx="280" cy="290" r="2.2" fill="#B89558" />
+      <g class="hero-node-group">
+        <circle cx="280" cy="290" r="18" fill="url(#heroNodeGlow)" class="node-glow" />
+        <circle cx="280" cy="290" r="6.5" stroke="#B89558" stroke-width="0.9" opacity="0.75" />
+        <circle cx="280" cy="290" r="2.5" fill="#B89558" />
+      </g>
 
       <!-- Node B: Right Upper Flow (1180, 275) -->
-      <circle cx="1180" cy="275" r="16" fill="url(#heroNodeGlow)" opacity="0.75" />
-      <circle cx="1180" cy="275" r="6" stroke="#B89558" stroke-width="0.8" opacity="0.6" />
-      <circle cx="1180" cy="275" r="2.2" fill="#B89558" />
+      <g class="hero-node-group">
+        <circle cx="1180" cy="275" r="18" fill="url(#heroNodeGlow)" class="node-glow" />
+        <circle cx="1180" cy="275" r="6.5" stroke="#B89558" stroke-width="0.9" opacity="0.75" />
+        <circle cx="1180" cy="275" r="2.5" fill="#B89558" />
+      </g>
 
       <!-- Node C: Left Lower Transition (420, 570) -->
-      <circle cx="420" cy="570" r="14" fill="url(#heroNodeGlow)" opacity="0.6" />
-      <circle cx="420" cy="570" r="5" stroke="#B89558" stroke-width="0.75" opacity="0.5" />
-      <circle cx="420" cy="570" r="2.0" fill="#B89558" />
+      <g class="hero-node-group">
+        <circle cx="420" cy="570" r="15" fill="url(#heroNodeGlow)" class="node-glow" />
+        <circle cx="420" cy="570" r="5.5" stroke="#B89558" stroke-width="0.8" opacity="0.65" />
+        <circle cx="420" cy="570" r="2.2" fill="#B89558" />
+      </g>
 
       <!-- Node D: Right Lower Transition (1040, 560) -->
-      <circle cx="1040" cy="560" r="14" fill="url(#heroNodeGlow)" opacity="0.6" />
-      <circle cx="1040" cy="560" r="5" stroke="#B89558" stroke-width="0.75" opacity="0.5" />
-      <circle cx="1040" cy="560" r="2.0" fill="#B89558" />
+      <g class="hero-node-group">
+        <circle cx="1040" cy="560" r="15" fill="url(#heroNodeGlow)" class="node-glow" />
+        <circle cx="1040" cy="560" r="5.5" stroke="#B89558" stroke-width="0.8" opacity="0.65" />
+        <circle cx="1040" cy="560" r="2.2" fill="#B89558" />
+      </g>
     </svg>
   </div>
 
   <div class="container hero-content-container">
+    <!-- Architectural Corner Frame Accents (Crosshairs) -->
+    <div class="corner-crosshair top-left" aria-hidden="true">+</div>
+    <div class="corner-crosshair top-right" aria-hidden="true">+</div>
+    <div class="corner-crosshair bottom-left" aria-hidden="true">+</div>
+    <div class="corner-crosshair bottom-right" aria-hidden="true">+</div>
+
     <!-- Refined SEBI Registration Eyebrow -->
     <div class="hero-eyebrow" aria-label={`SEBI Registered Research Analyst ${config.sebiRegNo}`}>
       <span class="eyebrow-rule" aria-hidden="true"></span>
@@ -193,13 +219,13 @@ __TOPOGRAPHY_MARKUP__
       <span class="title-line">Until It Becomes Your</span>
       <span class="title-line signature-wrapper">
         <span class="signature-word">Signature.</span>
-        <!-- Custom Handwritten Organic SVG Flourish Echoing Background Geometry -->
+        <!-- Custom Handwritten Organic SVG Flourish with Gold Glow Drop Shadow -->
         <svg class="signature-flourish" aria-hidden="true" viewBox="0 0 344 28" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path 
             class="flourish-path" 
             d="M 6,19 C 52,23 110,24 168,20 C 214,17 252,13 282,12 C 298,11.5 312,14 308,18.5 C 304,22.5 290,21.5 298,15 C 304,10 322,7.5 338,7" 
             stroke="#B89558" 
-            stroke-width="2.2" 
+            stroke-width="2.4" 
             stroke-linecap="round" 
             stroke-linejoin="round" 
           />
@@ -224,12 +250,12 @@ __TOPOGRAPHY_MARKUP__
 
 <style>
   /* =========================================================
-     HERO SECTION: ORGANIC AURORA × LIVING TOPOGRAPHY
-     Color Palette:
+     HERO SECTION: WOW FACTOR ARCHITECTURAL CANVAS & TOPOGRAPHY
+     Palette:
      - 70% Porcelain Ivory Canvas: #F7F6F2
-     - 20% Midnight Navy Type & CTA: #19304B
-     - 10% Muted Champagne Gold Accent: #B89558
-     - Atmospheric Soft Sage Tint: #B8CFC5
+     - 20% Midnight Navy Type & Primary CTA: #19304B
+     - 10% Champagne Gold Accent: #B89558 / #D4AF37
+     - Atmospheric Sage Tint: #9EBFB1 / #B8CFC5
      - Supporting Copy Slate: #596879
      ========================================================= */
 
@@ -240,22 +266,28 @@ __TOPOGRAPHY_MARKUP__
     align-items: center;
     justify-content: center;
     background-color: #F7F6F2;
-    /* Organic Aurora Multi-Zone Atmospheric Illumination */
+    /* Rich Atmospheric Multi-Zone Illumination */
     background-image: 
-      /* Upper-left: pale champagne illumination fading into ivory */
-      radial-gradient(ellipse 55% 45% at 8% 8%, rgba(184, 149, 88, 0.22) 0%, transparent 55%),
-      /* Left-middle: soft sage-green atmospheric glow */
-      radial-gradient(ellipse 60% 50% at 10% 45%, rgba(184, 207, 197, 0.34) 0%, transparent 58%),
-      /* Lower-left: warmer gold haze blending into pale sage wave */
-      radial-gradient(ellipse 50% 42% at 18% 88%, rgba(184, 149, 88, 0.25) 0%, rgba(184, 207, 197, 0.16) 42%, transparent 65%),
-      /* Upper-right: very faint sage tint */
-      radial-gradient(ellipse 45% 35% at 92% 12%, rgba(184, 207, 197, 0.20) 0%, transparent 50%),
-      /* Lower-right: complementary champagne-and-sage illumination */
-      radial-gradient(ellipse 55% 45% at 86% 75%, rgba(184, 149, 88, 0.26) 0%, rgba(184, 207, 197, 0.18) 45%, transparent 65%),
-      /* Center: predominantly clean ivory with a very subtle ambient wash */
-      radial-gradient(circle at 50% 38%, rgba(247, 246, 242, 0.94) 0%, rgba(247, 246, 242, 0.60) 45%, transparent 72%);
+      radial-gradient(ellipse 60% 50% at 8% 12%, rgba(184, 149, 88, 0.28) 0%, transparent 58%),
+      radial-gradient(ellipse 65% 55% at 10% 48%, rgba(158, 191, 177, 0.42) 0%, transparent 62%),
+      radial-gradient(ellipse 55% 45% at 16% 88%, rgba(184, 149, 88, 0.32) 0%, rgba(158, 191, 177, 0.22) 40%, transparent 65%),
+      radial-gradient(ellipse 50% 40% at 92% 14%, rgba(158, 191, 177, 0.28) 0%, transparent 55%),
+      radial-gradient(ellipse 60% 50% at 88% 76%, rgba(184, 149, 88, 0.32) 0%, rgba(158, 191, 177, 0.24) 45%, transparent 65%),
+      radial-gradient(circle at 50% 40%, rgba(247, 246, 242, 0.90) 0%, rgba(247, 246, 242, 0.55) 50%, transparent 75%);
     padding: clamp(140px, 18svh, 190px) 24px clamp(80px, 12svh, 120px);
     overflow: hidden;
+  }
+
+  /* Precision Architectural Dot Grid Texture */
+  .hero-dot-grid {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(25, 48, 75, 0.13) 1.25px, transparent 1.25px);
+    background-size: 28px 28px;
+    mask-image: radial-gradient(ellipse 85% 75% at 50% 48%, #000 45%, rgba(0, 0, 0, 0.4) 75%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 48%, #000 45%, rgba(0, 0, 0, 0.4) 75%, transparent 100%);
+    pointer-events: none;
+    z-index: 1;
   }
 
   /* Micro-texture Archival Cotton Paper Grain */
@@ -264,85 +296,101 @@ __TOPOGRAPHY_MARKUP__
     inset: 0;
     pointer-events: none;
     z-index: 1;
-    opacity: 0.032;
+    opacity: 0.035;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
     mix-blend-mode: multiply;
   }
 
-  /* Organic Aurora: Large Asymmetrical Frosted Light Forms */
+  /* Organic Aurora: Large Luminous Light Forms with Subtle Ambient Float */
   .hero-aurora-form {
     position: absolute;
     pointer-events: none;
     z-index: 1;
+    animation: auroraFloat 14s ease-in-out infinite alternate;
   }
 
-  /* Left-side form: Large, partially cropped along left edge */
+  /* Left-side form: Luminous sage interior, ivory core, champagne perimeter */
   .hero-aurora-left {
-    top: 8%;
-    left: clamp(-220px, -15vw, -160px);
-    width: clamp(540px, 50vw, 740px);
-    height: clamp(540px, 50vw, 740px);
-    border-radius: 44% 56% 58% 42% / 46% 50% 50% 54%;
+    top: 6%;
+    left: clamp(-200px, -12vw, -140px);
+    width: clamp(560px, 52vw, 780px);
+    height: clamp(560px, 52vw, 780px);
+    border-radius: 46% 54% 56% 44% / 48% 52% 48% 52%;
     background: radial-gradient(
       ellipse 65% 55% at 54% 48%,
-      rgba(255, 253, 248, 0.75) 0%,
-      rgba(184, 207, 197, 0.46) 26%,
-      rgba(184, 149, 88, 0.30) 56%,
-      rgba(184, 207, 197, 0.14) 76%,
+      rgba(255, 253, 248, 0.85) 0%,
+      rgba(158, 191, 177, 0.55) 26%,
+      rgba(184, 149, 88, 0.38) 56%,
+      rgba(158, 191, 177, 0.16) 78%,
       transparent 100%
     );
-    filter: blur(55px);
+    filter: blur(52px);
   }
 
-  /* Lower-left: Diffused sage and gold blending into the mesh */
+  /* Lower-left: Rich diffused sage and gold blending into lower wave */
   .hero-aurora-left-lower {
     bottom: -90px;
-    left: clamp(-80px, -5vw, -40px);
-    width: clamp(440px, 42vw, 600px);
-    height: clamp(440px, 42vw, 600px);
-    border-radius: 50% 50% 45% 55% / 55% 45% 55% 45%;
+    left: clamp(-70px, -4vw, -30px);
+    width: clamp(460px, 44vw, 640px);
+    height: clamp(460px, 44vw, 640px);
+    border-radius: 52% 48% 46% 54% / 54% 46% 54% 46%;
     background: radial-gradient(
       circle at 50% 50%,
-      rgba(184, 207, 197, 0.44) 0%,
-      rgba(184, 149, 88, 0.30) 48%,
-      rgba(184, 207, 197, 0.12) 72%,
+      rgba(158, 191, 177, 0.52) 0%,
+      rgba(184, 149, 88, 0.38) 48%,
+      rgba(158, 191, 177, 0.16) 74%,
+      transparent 100%
+    );
+    filter: blur(48px);
+    animation-delay: -5s;
+  }
+
+  /* Right-side form: Warm champagne-gold luminous core, subtle sage tint */
+  .hero-aurora-right {
+    top: 8%;
+    right: clamp(-190px, -12vw, -130px);
+    width: clamp(520px, 48vw, 720px);
+    height: clamp(520px, 48vw, 720px);
+    border-radius: 54% 46% 48% 52% / 50% 54% 46% 50%;
+    background: radial-gradient(
+      ellipse 62% 54% at 48% 50%,
+      rgba(255, 253, 248, 0.80) 0%,
+      rgba(184, 149, 88, 0.52) 28%,
+      rgba(158, 191, 177, 0.38) 58%,
+      rgba(184, 149, 88, 0.15) 78%,
       transparent 100%
     );
     filter: blur(50px);
+    animation-delay: -3s;
   }
 
-  /* Right-side form: Complementary form near right edge */
-  .hero-aurora-right {
-    top: 10%;
-    right: clamp(-210px, -14vw, -150px);
-    width: clamp(500px, 46vw, 680px);
-    height: clamp(500px, 46vw, 680px);
-    border-radius: 56% 44% 48% 52% / 50% 54% 46% 50%;
-    background: radial-gradient(
-      ellipse 62% 54% at 48% 50%,
-      rgba(255, 253, 248, 0.70) 0%,
-      rgba(184, 149, 88, 0.42) 28%,
-      rgba(184, 207, 197, 0.32) 58%,
-      rgba(184, 149, 88, 0.12) 78%,
-      transparent 100%
-    );
-    filter: blur(55px);
-  }
-
-  /* Lower-right: Ambient warm illumination */
+  /* Lower-right: Ambient warm gold illumination */
   .hero-aurora-right-lower {
-    bottom: -70px;
-    right: clamp(15px, 3vw, 60px);
-    width: clamp(380px, 36vw, 520px);
-    height: clamp(380px, 36vw, 520px);
+    bottom: -60px;
+    right: clamp(20px, 4vw, 70px);
+    width: clamp(420px, 38vw, 560px);
+    height: clamp(420px, 38vw, 560px);
     border-radius: 50%;
     background: radial-gradient(
       circle at 50% 50%,
-      rgba(184, 149, 88, 0.34) 0%,
-      rgba(184, 207, 197, 0.22) 50%,
+      rgba(184, 149, 88, 0.42) 0%,
+      rgba(158, 191, 177, 0.28) 50%,
       transparent 75%
     );
-    filter: blur(52px);
+    filter: blur(48px);
+    animation-delay: -8s;
+  }
+
+  @keyframes auroraFloat {
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
+    50% {
+      transform: translate(18px, -12px) scale(1.04);
+    }
+    100% {
+      transform: translate(-10px, 14px) scale(0.98);
+    }
   }
 
   /* Living Topography Wrapper */
@@ -360,7 +408,22 @@ __TOPOGRAPHY_MARKUP__
     display: block;
   }
 
-  /* Central Content Composition */
+  .node-glow {
+    animation: nodePulse 3.5s ease-in-out infinite alternate;
+  }
+
+  @keyframes nodePulse {
+    0% {
+      transform: scale(0.9);
+      opacity: 0.65;
+    }
+    100% {
+      transform: scale(1.15);
+      opacity: 0.95;
+    }
+  }
+
+  /* Central Content Composition Container */
   .hero-content-container {
     position: relative;
     z-index: 3;
@@ -370,7 +433,25 @@ __TOPOGRAPHY_MARKUP__
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: clamp(24px, 4vw, 40px) clamp(20px, 4vw, 48px);
   }
+
+  /* Architectural Crosshairs (+) at Framing Corners */
+  .corner-crosshair {
+    position: absolute;
+    font-family: monospace;
+    font-size: 14px;
+    font-weight: 300;
+    color: #B89558;
+    opacity: 0.45;
+    pointer-events: none;
+    line-height: 1;
+  }
+
+  .corner-crosshair.top-left { top: 0; left: 0; }
+  .corner-crosshair.top-right { top: 0; right: 0; }
+  .corner-crosshair.bottom-left { bottom: 0; left: 0; }
+  .corner-crosshair.bottom-right { bottom: 0; right: 0; }
 
   /* Refined SEBI Registration Eyebrow */
   .hero-eyebrow {
@@ -378,15 +459,15 @@ __TOPOGRAPHY_MARKUP__
     align-items: center;
     justify-content: center;
     gap: 14px;
-    margin-bottom: clamp(24px, 4vh, 36px);
+    margin-bottom: clamp(24px, 4vh, 34px);
   }
 
   .eyebrow-rule {
     display: inline-block;
-    width: 32px;
+    width: 36px;
     height: 1px;
     background-color: #B89558;
-    opacity: 0.85;
+    opacity: 0.9;
   }
 
   .eyebrow-text {
@@ -431,14 +512,18 @@ __TOPOGRAPHY_MARKUP__
     margin-top: 2px;
   }
 
+  /* High-end Metallic Champagne Gold Italic Serif */
   .signature-word {
     font-family: 'Instrument Serif', 'DM Serif Display', Georgia, serif;
     font-style: italic;
-    color: #B89558;
+    background: linear-gradient(135deg, #B89558 0%, #D4AF37 45%, #9E7B3B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     padding-right: 0.05em;
+    display: inline-block;
   }
 
-  /* Custom Handwritten Signature Flourish Underline */
+  /* Custom Handwritten Signature Flourish with Ambient Gold Glow */
   .signature-flourish {
     position: absolute;
     left: -3%;
@@ -447,6 +532,7 @@ __TOPOGRAPHY_MARKUP__
     height: 24px;
     pointer-events: none;
     overflow: visible;
+    filter: drop-shadow(0 2px 8px rgba(184, 149, 88, 0.40));
   }
 
   .flourish-path {
@@ -492,11 +578,11 @@ __TOPOGRAPHY_MARKUP__
     font-weight: 600;
     letter-spacing: -0.01em;
     min-height: 56px;
-    padding: 0 36px;
+    padding: 0 38px;
     border-radius: 12px;
-    border: 1px solid rgba(25, 48, 75, 0.2);
+    border: 1px solid rgba(25, 48, 75, 0.25);
     box-shadow: 
-      0 4px 14px rgba(25, 48, 75, 0.12),
+      0 4px 14px rgba(25, 48, 75, 0.14),
       0 1px 3px rgba(25, 48, 75, 0.08);
     text-decoration: none;
     transition: 
@@ -509,8 +595,8 @@ __TOPOGRAPHY_MARKUP__
     background-color: #122337;
     transform: translateY(-2px);
     box-shadow: 
-      0 8px 24px rgba(25, 48, 75, 0.20),
-      0 2px 6px rgba(25, 48, 75, 0.10);
+      0 10px 28px rgba(25, 48, 75, 0.24),
+      0 2px 6px rgba(25, 48, 75, 0.12);
     color: #FFFFFF;
   }
 
@@ -536,20 +622,28 @@ __TOPOGRAPHY_MARKUP__
       min-height: auto;
     }
 
+    .hero-dot-grid {
+      background-size: 22px 22px;
+    }
+
+    .corner-crosshair {
+      display: none;
+    }
+
     .hero-aurora-left {
-      width: 320px;
-      height: 320px;
+      width: 340px;
+      height: 340px;
       left: -120px;
-      filter: blur(40px);
-      opacity: 0.8;
+      filter: blur(42px);
+      opacity: 0.85;
     }
 
     .hero-aurora-right {
-      width: 300px;
-      height: 300px;
+      width: 320px;
+      height: 320px;
       right: -120px;
-      filter: blur(40px);
-      opacity: 0.8;
+      filter: blur(42px);
+      opacity: 0.85;
     }
 
     .hero-aurora-left-lower,
@@ -597,6 +691,11 @@ __TOPOGRAPHY_MARKUP__
 
   /* Accessibility: Prefers Reduced Motion */
   @media (prefers-reduced-motion: reduce) {
+    .hero-aurora-form,
+    .node-glow {
+      animation: none;
+    }
+
     .flourish-path {
       stroke-dashoffset: 0;
       animation: none;
@@ -624,4 +723,4 @@ target_file = os.path.join(os.path.dirname(__file__), '..', 'src', 'components',
 with open(target_file, 'w', encoding='utf-8') as f:
     f.write(final_astro)
 
-print(f"Living Topography Hero.astro generated successfully! Total contour elements: {topography_markup.count('<path')}")
+print(f"WOW Factor Hero.astro generated successfully! Total vector elements: {topography_markup.count('<path')}")

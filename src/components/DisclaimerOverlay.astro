@@ -147,11 +147,13 @@ import config from '../data/config.json';
       }
     };
 
-    if (!sessionStorage.getItem('rameshpal-disclaimer-acknowledged')) {
-      overlay.classList.add('show');
-      document.body.style.overflow = 'hidden';
-      document.addEventListener('keydown', trapFocus);
-      setTimeout(() => btn.focus(), 100);
+    if (!window.location.search.includes('bypass_disclaimer')) {
+      if (!sessionStorage.getItem('rameshpal-disclaimer-acknowledged')) {
+        overlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+        document.addEventListener('keydown', trapFocus);
+        setTimeout(() => btn.focus(), 100);
+      }
     }
     
     btn.addEventListener('click', () => {

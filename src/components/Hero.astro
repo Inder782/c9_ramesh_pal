@@ -3,122 +3,25 @@ import config from '../data/config.json';
 ---
 
 <section class="hero-section" id="home" aria-labelledby="hero-main-title">
-  <!-- Micro-texture Archival Cotton Grain -->
-  <div class="hero-grain" aria-hidden="true"></div>
+  <!-- Architectural Blueprint Grid Texture Layer across the entire canvas -->
+  <div class="hero-grid-texture" aria-hidden="true"></div>
 
-  <!-- Organic Aurora: Large Asymmetrical Soft Light Forms (Frosted Glass Illumination) -->
-  <div class="hero-aurora-form hero-aurora-left" aria-hidden="true"></div>
-  <div class="hero-aurora-form hero-aurora-left-lower" aria-hidden="true"></div>
-  <div class="hero-aurora-form hero-aurora-right" aria-hidden="true"></div>
-  <div class="hero-aurora-form hero-aurora-right-lower" aria-hidden="true"></div>
+  <!-- Interactive Pointer Spotlight & Blueprint Crosshairs (Option 1) -->
+  <div class="hero-pointer-spotlight" aria-hidden="true"></div>
+  <div class="hero-crosshairs-layer" aria-hidden="true"></div>
 
-  <!-- Living Topography: Mathematical Contour Mesh with Radial Center Clearing Mask -->
-  <div class="hero-topography-wrapper" aria-hidden="true">
-    <svg class="hero-topography-svg" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <defs>
-        <!-- Gradients for Topographic Contours -->
-        <linearGradient id="contourSageToGold" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#B8CFC5" />
-          <stop offset="55%" stop-color="#B89558" />
-          <stop offset="100%" stop-color="#C5A86D" />
-        </linearGradient>
-
-        <linearGradient id="contourGoldToSage" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#B89558" />
-          <stop offset="45%" stop-color="#C5A86D" />
-          <stop offset="100%" stop-color="#B8CFC5" />
-        </linearGradient>
-
-        <!-- Frosted Ambient Gold Node Glow -->
-        <radialGradient id="heroNodeGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#B89558" stop-opacity="0.85" />
-          <stop offset="40%" stop-color="#B89558" stop-opacity="0.30" />
-          <stop offset="100%" stop-color="#B89558" stop-opacity="0" />
-        </radialGradient>
-
-        <!-- Center Clearing Mask: Ensures crystal-clear legibility around central headline -->
-        <radialGradient id="centerMaskGradient" cx="50%" cy="46%" r="58%">
-          <stop offset="0%" stop-color="#000000" stop-opacity="0.04" />
-          <stop offset="38%" stop-color="#ffffff" stop-opacity="0.32" />
-          <stop offset="72%" stop-color="#ffffff" stop-opacity="0.90" />
-          <stop offset="100%" stop-color="#ffffff" stop-opacity="1.0" />
-        </radialGradient>
-
-        <mask id="topographyClearCenterMask">
-          <rect width="100%" height="100%" fill="url(#centerMaskGradient)" />
-        </mask>
-      </defs>
-
-      <!-- Masked Topographic Contour Field -->
-      <g mask="url(#topographyClearCenterMask)">
-      <path d="M -50 70 C 130 130, 330 360, 530 660" stroke="url(#contourSageToGold)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0.1 14" opacity="0.55" />
-      <path d="M -50 114 C 152 182, 350 400, 546 684" stroke="url(#contourGoldToSage)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0.1 14" opacity="0.53" />
-      <path d="M -50 114 C 152 182, 350 400, 546 684" stroke="url(#contourGoldToSage)" stroke-width="0.75" opacity="0.30" />
-      <path d="M -50 158 C 174 234, 370 440, 562 708" stroke="url(#contourSageToGold)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0.1 14" opacity="0.50" />
-      <path d="M -50 202 C 196 286, 390 480, 578 732" stroke="url(#contourGoldToSage)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0.1 14" opacity="0.48" />
-      <path d="M -50 246 C 218 338, 410 520, 594 756" stroke="url(#contourSageToGold)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0.1 14" opacity="0.45" />
-      <path d="M -50 246 C 218 338, 410 520, 594 756" stroke="url(#contourSageToGold)" stroke-width="0.75" opacity="0.30" />
-      <path d="M -50 290 C 240 390, 430 560, 610 780" stroke="url(#contourGoldToSage)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0.1 14" opacity="0.43" />
-      <path d="M -50 334 C 262 442, 450 600, 626 804" stroke="url(#contourSageToGold)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0.1 14" opacity="0.40" />
-      <path d="M -50 378 C 284 494, 470 640, 642 828" stroke="url(#contourGoldToSage)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0.1 14" opacity="0.38" />
-      <path d="M -50 378 C 284 494, 470 640, 642 828" stroke="url(#contourGoldToSage)" stroke-width="0.75" opacity="0.30" />
-      <path d="M -50 422 C 306 546, 490 680, 658 852" stroke="url(#contourSageToGold)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0.1 14" opacity="0.35" />
-      <path d="M -50 466 C 328 598, 510 720, 674 876" stroke="url(#contourGoldToSage)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0.1 14" opacity="0.33" />
-      <path d="M 80 180 C 180 270, 260 380, 310 520" stroke="url(#contourSageToGold)" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="0.1 18" opacity="0.25" />
-      <path d="M 140 230 C 240 330, 330 450, 390 600" stroke="url(#contourSageToGold)" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="0.1 18" opacity="0.25" />
-      <path d="M 210 290 C 310 400, 410 530, 470 690" stroke="url(#contourSageToGold)" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="0.1 18" opacity="0.25" />
-      <path d="M 280 360 C 390 480, 490 610, 560 770" stroke="url(#contourSageToGold)" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="0.1 18" opacity="0.25" />
-      <path d="M 1490 60 C 1310 115, 1110 350, 910 650" stroke="url(#contourGoldToSage)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0.1 14" opacity="0.55" />
-      <path d="M 1490 104 C 1288 167, 1090 390, 894 674" stroke="url(#contourSageToGold)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0.1 14" opacity="0.53" />
-      <path d="M 1490 148 C 1266 219, 1070 430, 878 698" stroke="url(#contourGoldToSage)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0.1 14" opacity="0.50" />
-      <path d="M 1490 148 C 1266 219, 1070 430, 878 698" stroke="url(#contourGoldToSage)" stroke-width="0.75" opacity="0.30" />
-      <path d="M 1490 192 C 1244 271, 1050 470, 862 722" stroke="url(#contourSageToGold)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0.1 14" opacity="0.48" />
-      <path d="M 1490 236 C 1222 323, 1030 510, 846 746" stroke="url(#contourGoldToSage)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0.1 14" opacity="0.45" />
-      <path d="M 1490 280 C 1200 375, 1010 550, 830 770" stroke="url(#contourSageToGold)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0.1 14" opacity="0.43" />
-      <path d="M 1490 280 C 1200 375, 1010 550, 830 770" stroke="url(#contourSageToGold)" stroke-width="0.75" opacity="0.30" />
-      <path d="M 1490 324 C 1178 427, 990 590, 814 794" stroke="url(#contourGoldToSage)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0.1 14" opacity="0.40" />
-      <path d="M 1490 368 C 1156 479, 970 630, 798 818" stroke="url(#contourSageToGold)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0.1 14" opacity="0.38" />
-      <path d="M 1490 412 C 1134 531, 950 670, 782 842" stroke="url(#contourGoldToSage)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0.1 14" opacity="0.35" />
-      <path d="M 1490 412 C 1134 531, 950 670, 782 842" stroke="url(#contourGoldToSage)" stroke-width="0.75" opacity="0.30" />
-      <path d="M 1490 456 C 1112 583, 930 710, 766 866" stroke="url(#contourSageToGold)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0.1 14" opacity="0.33" />
-      <path d="M 1360 170 C 1260 260, 1180 370, 1130 510" stroke="url(#contourGoldToSage)" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="0.1 18" opacity="0.25" />
-      <path d="M 1300 220 C 1200 320, 1110 440, 1050 590" stroke="url(#contourGoldToSage)" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="0.1 18" opacity="0.25" />
-      <path d="M 1230 280 C 1130 390, 1030 520, 970 680" stroke="url(#contourGoldToSage)" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="0.1 18" opacity="0.25" />
-      <path d="M 1160 350 C 1050 470, 950 600, 880 760" stroke="url(#contourGoldToSage)" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="0.1 18" opacity="0.25" />
-      <path d="M 60 740 C 380 710, 720 780, 1060 720 S 1380 750, 1420 740" stroke="url(#contourSageToGold)" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="0.1 16" opacity="0.32" />
-      <path d="M 40 770 C 360 740, 700 810, 1040 750 S 1360 780, 1440 770" stroke="url(#contourGoldToSage)" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="0.1 16" opacity="0.28" />
-      <path d="M 50 800 C 370 770, 710 840, 1050 780 S 1370 810, 1430 800" stroke="url(#contourSageToGold)" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="0.1 16" opacity="0.24" />
-      <path d="M 30 830 C 350 800, 690 870, 1030 810 S 1350 840, 1450 830" stroke="url(#contourGoldToSage)" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="0.1 16" opacity="0.20" />
-      <path d="M 60 860 C 380 830, 720 900, 1060 840 S 1380 870, 1420 860" stroke="url(#contourSageToGold)" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="0.1 16" opacity="0.16" />
-      <path d="M 80 140 C 440 40, 1000 40, 1360 140" stroke="url(#contourSageToGold)" stroke-width="0.75" stroke-dasharray="3 7" opacity="0.26" />
-      </g>
-
-      <!-- Illuminated Gold Node Points with Frosted Halos at Key Topological Junctions -->
-      <!-- Node A: Left Upper Flow (280, 290) -->
-      <circle cx="280" cy="290" r="16" fill="url(#heroNodeGlow)" opacity="0.75" />
-      <circle cx="280" cy="290" r="6" stroke="#B89558" stroke-width="0.8" opacity="0.6" />
-      <circle cx="280" cy="290" r="2.2" fill="#B89558" />
-
-      <!-- Node B: Right Upper Flow (1180, 275) -->
-      <circle cx="1180" cy="275" r="16" fill="url(#heroNodeGlow)" opacity="0.75" />
-      <circle cx="1180" cy="275" r="6" stroke="#B89558" stroke-width="0.8" opacity="0.6" />
-      <circle cx="1180" cy="275" r="2.2" fill="#B89558" />
-
-      <!-- Node C: Left Lower Transition (420, 570) -->
-      <circle cx="420" cy="570" r="14" fill="url(#heroNodeGlow)" opacity="0.6" />
-      <circle cx="420" cy="570" r="5" stroke="#B89558" stroke-width="0.75" opacity="0.5" />
-      <circle cx="420" cy="570" r="2.0" fill="#B89558" />
-
-      <!-- Node D: Right Lower Transition (1040, 560) -->
-      <circle cx="1040" cy="560" r="14" fill="url(#heroNodeGlow)" opacity="0.6" />
-      <circle cx="1040" cy="560" r="5" stroke="#B89558" stroke-width="0.75" opacity="0.5" />
-      <circle cx="1040" cy="560" r="2.0" fill="#B89558" />
-    </svg>
+  <!-- Floating Luminous Aurora Orbs (Blurred ambient light fields) -->
+  <div class="hero-aurora-wrapper" aria-hidden="true">
+    <div class="aurora-orb aurora-green-1"></div>
+    <div class="aurora-orb aurora-orange-1"></div>
+    <div class="aurora-orb aurora-cyan-1"></div>
+    <div class="aurora-orb aurora-amber-2"></div>
+    <div class="aurora-orb aurora-emerald-2"></div>
   </div>
 
   <div class="container hero-content-container">
     <!-- Refined SEBI Registration Eyebrow -->
-    <div class="hero-eyebrow" aria-label={`SEBI Registered Research Analyst ${config.sebiRegNo}`}>
+    <div class="hero-eyebrow animate-eyebrow" aria-label={`SEBI Registered Research Analyst ${config.sebiRegNo}`}>
       <span class="eyebrow-rule" aria-hidden="true"></span>
       <span class="eyebrow-text">
         SEBI REGISTERED RESEARCH ANALYST <span class="eyebrow-sep" aria-hidden="true">&middot;</span> {config.sebiRegNo}
@@ -126,184 +29,274 @@ import config from '../data/config.json';
       <span class="eyebrow-rule" aria-hidden="true"></span>
     </div>
 
-    <!-- Centered Editorial Headline with Custom Signature Flourish -->
+    <!-- Centered Editorial Headline with Smooth Staggered Flow-In Animation & Periodic Liquid Text Shine -->
     <h1 class="hero-title" id="hero-main-title">
-      <span class="title-line">Repeat a Pattern</span>
-      <span class="title-line">Until It Becomes Your</span>
-      <span class="title-line signature-wrapper">
-        <span class="signature-word">Signature.</span>
-        <!-- Custom Handwritten Organic SVG Flourish Echoing Background Geometry -->
-        <svg class="signature-flourish" aria-hidden="true" viewBox="0 0 344 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path 
-            class="flourish-path" 
-            d="M 6,19 C 52,23 110,24 168,20 C 214,17 252,13 282,12 C 298,11.5 312,14 308,18.5 C 304,22.5 290,21.5 298,15 C 304,10 322,7.5 338,7" 
-            stroke="#B89558" 
-            stroke-width="2.2" 
-            stroke-linecap="round" 
-            stroke-linejoin="round" 
-          />
-        </svg>
+      <!-- Line 1 -->
+      <span class="line-mask">
+        <span class="line-flow line-1 text-shine">Repeat a Pattern</span>
+      </span>
+      
+      <!-- Line 2 -->
+      <span class="line-mask">
+        <span class="line-flow line-2 text-shine">Until It Becomes Your</span>
+      </span>
+      
+      <!-- Line 3 (Glowing Gold Signature) -->
+      <span class="line-mask signature-mask">
+        <span class="line-flow line-3 signature-wrapper">
+          <span class="signature-word">Signature.</span>
+          <!-- Dynamic Glowing Gold Signature Line (Swiftly draws in right below Signature) -->
+          <svg class="signature-flourish" aria-hidden="true" viewBox="0 0 320 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path 
+              class="flourish-glow-path" 
+              d="M 6,15 C 50,19 108,20 162,16 C 204,13 242,9 272,8 C 286,7.5 298,10 294,14 C 290,18 276,17 284,11 C 290,6.5 306,4 318,3.5" 
+              stroke="#D4AF37" 
+              stroke-width="2.5" 
+              stroke-linecap="round" 
+              stroke-linejoin="round" 
+            />
+          </svg>
+        </span>
       </span>
     </h1>
 
-    <!-- Single Exact Supporting Statement (Strictly preserved) -->
-    <p class="hero-support">
+    <!-- Single Exact Supporting Statement -->
+    <p class="hero-support animate-support">
       Clarity. A deeper way of thinking about markets.
     </p>
 
-    <!-- Single Midnight Navy Primary CTA -->
-    <div class="hero-action">
+    <!-- Primary CTA Button -->
+    <div class="hero-action animate-cta">
       <a href="#offerings" class="btn-hero-primary" aria-label="Explore Our Research">
         <span>Explore Our Research</span>
-        <span class="cta-arrow" aria-hidden="true">&rarr;</span>
+      <span class="cta-arrow" aria-hidden="true">&rarr;</span>
       </a>
     </div>
+
+    <!-- Mobile-Only Grounding Trust Pill (Active on screens <= 820px) -->
+    <div class="hero-mobile-trust animate-mobile-trust" aria-label="Market Experience Highlight">
+      <span class="trust-badge-dot" aria-hidden="true"></span>
+      <span class="trust-val">7+ Yrs</span>
+      <span class="trust-sep" aria-hidden="true">&bull;</span>
+      <span class="trust-lbl">Market Experience</span>
+    </div>
+  </div>
+
+  <!-- Desktop Architectural Side Telemetry Marks (Visible on >= 1200px screens) -->
+  <div class="hero-flank hero-flank-left" aria-hidden="true">
+    <span class="flank-coord">+ 19°04'N 72°52'E</span>
+    <span class="flank-line"></span>
+    <span class="flank-label">RESEARCH TERMINAL</span>
+  </div>
+
+  <div class="hero-flank hero-flank-right" aria-hidden="true">
+    <span class="flank-label">DISCIPLINE &bull; EDGE</span>
+    <span class="flank-line"></span>
+    <span class="flank-coord">EST. MUMBAI +</span>
   </div>
 </section>
 
 <style>
   /* =========================================================
-     HERO SECTION: ORGANIC AURORA × LIVING TOPOGRAPHY
-     Color Palette:
-     - 70% Porcelain Ivory Canvas: #F7F6F2
-     - 20% Midnight Navy Type & CTA: #19304B
-     - 10% Muted Champagne Gold Accent: #B89558
-     - Atmospheric Soft Sage Tint: #B8CFC5
-     - Supporting Copy Slate: #596879
+     HERO SECTION: DOTTED TEXTURE × GREEN & ORANGE AURORA × FLOW ANIMATION
+     Palette:
+     - Base Canvas: Warm Ivory (#F7F6F2 / #FAF9F5)
+     - Aurora: Forest/Mint Green & Sunset Gold/Orange
+     - Typography: Deep Midnight Navy (#19304B)
+     - Accent: Luminous Glowing Gold (#D4AF37 / #F59E0B)
+     - Dotted Texture: Subtle Grid (#19304B with soft opacity)
      ========================================================= */
 
   .hero-section {
+    --mouse-x: 50%;
+    --mouse-y: 45%;
+    --mouse-active: 0.75;
     position: relative;
     min-height: 100svh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #F7F6F2;
-    /* Organic Aurora Multi-Zone Atmospheric Illumination */
-    background-image: 
-      /* Upper-left: pale champagne illumination fading into ivory */
-      radial-gradient(ellipse 55% 45% at 8% 8%, rgba(184, 149, 88, 0.22) 0%, transparent 55%),
-      /* Left-middle: soft sage-green atmospheric glow */
-      radial-gradient(ellipse 60% 50% at 10% 45%, rgba(184, 207, 197, 0.34) 0%, transparent 58%),
-      /* Lower-left: warmer gold haze blending into pale sage wave */
-      radial-gradient(ellipse 50% 42% at 18% 88%, rgba(184, 149, 88, 0.25) 0%, rgba(184, 207, 197, 0.16) 42%, transparent 65%),
-      /* Upper-right: very faint sage tint */
-      radial-gradient(ellipse 45% 35% at 92% 12%, rgba(184, 207, 197, 0.20) 0%, transparent 50%),
-      /* Lower-right: complementary champagne-and-sage illumination */
-      radial-gradient(ellipse 55% 45% at 86% 75%, rgba(184, 149, 88, 0.26) 0%, rgba(184, 207, 197, 0.18) 45%, transparent 65%),
-      /* Center: predominantly clean ivory with a very subtle ambient wash */
-      radial-gradient(circle at 50% 38%, rgba(247, 246, 242, 0.94) 0%, rgba(247, 246, 242, 0.60) 45%, transparent 72%);
+    background: radial-gradient(ellipse 115% 90% at 50% 28%, #173660 0%, #0F2342 45%, #0A182D 78%, #07101F 100%);
+    background-color: #0D1C34;
     padding: clamp(140px, 18svh, 190px) 24px clamp(80px, 12svh, 120px);
     overflow: hidden;
   }
 
-  /* Micro-texture Archival Cotton Paper Grain */
-  .hero-grain {
+  /* =========================================================
+     1. ARCHITECTURAL BLUEPRINT GRID TEXTURE LAYER
+     Scalable hairline grid from mobile to 4K with smooth radial vignette.
+     ========================================================= */
+  .hero-grid-texture {
     position: absolute;
     inset: 0;
-    pointer-events: none;
-    z-index: 1;
-    opacity: 0.032;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    mix-blend-mode: multiply;
-  }
-
-  /* Organic Aurora: Large Asymmetrical Frosted Light Forms */
-  .hero-aurora-form {
-    position: absolute;
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  /* Left-side form: Large, partially cropped along left edge */
-  .hero-aurora-left {
-    top: 8%;
-    left: clamp(-220px, -15vw, -160px);
-    width: clamp(540px, 50vw, 740px);
-    height: clamp(540px, 50vw, 740px);
-    border-radius: 44% 56% 58% 42% / 46% 50% 50% 54%;
-    background: radial-gradient(
-      ellipse 65% 55% at 54% 48%,
-      rgba(255, 253, 248, 0.75) 0%,
-      rgba(184, 207, 197, 0.46) 26%,
-      rgba(184, 149, 88, 0.30) 56%,
-      rgba(184, 207, 197, 0.14) 76%,
-      transparent 100%
-    );
-    filter: blur(55px);
-  }
-
-  /* Lower-left: Diffused sage and gold blending into the mesh */
-  .hero-aurora-left-lower {
-    bottom: -90px;
-    left: clamp(-80px, -5vw, -40px);
-    width: clamp(440px, 42vw, 600px);
-    height: clamp(440px, 42vw, 600px);
-    border-radius: 50% 50% 45% 55% / 55% 45% 55% 45%;
-    background: radial-gradient(
-      circle at 50% 50%,
-      rgba(184, 207, 197, 0.44) 0%,
-      rgba(184, 149, 88, 0.30) 48%,
-      rgba(184, 207, 197, 0.12) 72%,
-      transparent 100%
-    );
-    filter: blur(50px);
-  }
-
-  /* Right-side form: Complementary form near right edge */
-  .hero-aurora-right {
-    top: 10%;
-    right: clamp(-210px, -14vw, -150px);
-    width: clamp(500px, 46vw, 680px);
-    height: clamp(500px, 46vw, 680px);
-    border-radius: 56% 44% 48% 52% / 50% 54% 46% 50%;
-    background: radial-gradient(
-      ellipse 62% 54% at 48% 50%,
-      rgba(255, 253, 248, 0.70) 0%,
-      rgba(184, 149, 88, 0.42) 28%,
-      rgba(184, 207, 197, 0.32) 58%,
-      rgba(184, 149, 88, 0.12) 78%,
-      transparent 100%
-    );
-    filter: blur(55px);
-  }
-
-  /* Lower-right: Ambient warm illumination */
-  .hero-aurora-right-lower {
-    bottom: -70px;
-    right: clamp(15px, 3vw, 60px);
-    width: clamp(380px, 36vw, 520px);
-    height: clamp(380px, 36vw, 520px);
-    border-radius: 50%;
-    background: radial-gradient(
-      circle at 50% 50%,
-      rgba(184, 149, 88, 0.34) 0%,
-      rgba(184, 207, 197, 0.22) 50%,
-      transparent 75%
-    );
-    filter: blur(52px);
-  }
-
-  /* Living Topography Wrapper */
-  .hero-topography-wrapper {
-    position: absolute;
-    inset: 0;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+    background-size: clamp(36px, 2.4vw, 64px) clamp(36px, 2.4vw, 64px);
+    background-position: center center;
+    mask-image: radial-gradient(ellipse 85% 75% at 50% 50%, #000 35%, rgba(0, 0, 0, 0.35) 75%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 50%, #000 35%, rgba(0, 0, 0, 0.35) 75%, transparent 100%);
     pointer-events: none;
     z-index: 2;
+  }
+
+  /* =========================================================
+     INTERACTIVE POINTER SPOTLIGHT & BLUEPRINT CROSSHAIRS (OPTION 1)
+     Fluid radial light and illuminated crosshairs reacting to cursor
+     ========================================================= */
+  .hero-pointer-spotlight {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      540px circle at var(--mouse-x) var(--mouse-y),
+      rgba(243, 208, 121, 0.18) 0%,
+      rgba(56, 189, 248, 0.14) 30%,
+      rgba(16, 185, 129, 0.08) 55%,
+      transparent 80%
+    );
+    pointer-events: none;
+    z-index: 2;
+    opacity: var(--mouse-active, 0.75);
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .hero-crosshairs-layer {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48' fill='none'%3E%3Cpath d='M24 19v10M19 24h10' stroke='%23F3D079' stroke-width='1.25' stroke-linecap='round' stroke-opacity='0.8'/%3E%3Ccircle cx='24' cy='24' r='1.25' fill='%2393C5FD' fill-opacity='0.6'/%3E%3C/svg%3E");
+    background-size: clamp(36px, 2.4vw, 64px) clamp(36px, 2.4vw, 64px);
+    background-position: center center;
+    mask-image: radial-gradient(340px circle at var(--mouse-x) var(--mouse-y), #000 0%, rgba(0, 0, 0, 0.35) 60%, transparent 100%);
+    -webkit-mask-image: radial-gradient(340px circle at var(--mouse-x) var(--mouse-y), #000 0%, rgba(0, 0, 0, 0.35) 60%, transparent 100%);
+    pointer-events: none;
+    z-index: 3;
+    opacity: var(--mouse-active, 0.75);
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* =========================================================
+     2. FLOATING BLURRED AURORA ORBS
+     Luminous, heavily-blurred spherical light fields gently roaming
+     ========================================================= */
+  .hero-aurora-wrapper {
+    position: absolute;
+    inset: -140px;
+    pointer-events: none;
+    z-index: 1;
     overflow: hidden;
+    contain: paint;
+    transform: translateZ(0);
   }
 
-  .hero-topography-svg {
-    width: 100%;
-    height: 100%;
-    display: block;
+  .aurora-orb {
+    position: absolute;
+    border-radius: 50%;
+    will-change: transform;
+    mix-blend-mode: screen;
+    transform: translateZ(0);
   }
 
-  /* Central Content Composition */
+  /* Emerald Glow Orb (Upper-Left roaming) */
+  .aurora-green-1 {
+    top: 5%;
+    left: 8%;
+    width: clamp(550px, 48vw, 880px);
+    height: clamp(550px, 48vw, 880px);
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.42) 0%, rgba(5, 150, 105, 0.22) 42%, transparent 70%);
+    filter: blur(clamp(75px, 6vw, 110px));
+    animation: floatOrbGreen 14s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  }
+
+  /* Sunset Amber/Gold Glow Orb (Upper-Right roaming) */
+  .aurora-orange-1 {
+    top: 6%;
+    right: 6%;
+    width: clamp(520px, 45vw, 840px);
+    height: clamp(520px, 45vw, 840px);
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.38) 0%, rgba(251, 146, 60, 0.20) 42%, transparent 70%);
+    filter: blur(clamp(80px, 6.5vw, 115px));
+    animation: floatOrbOrange 16s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  }
+
+  /* Electric Cyan / Sky Blue Glow Orb (Mid-Center to Lower-Left) */
+  .aurora-cyan-1 {
+    bottom: 8%;
+    left: 18%;
+    width: clamp(500px, 44vw, 800px);
+    height: clamp(500px, 44vw, 800px);
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.34) 0%, rgba(56, 189, 248, 0.16) 42%, transparent 70%);
+    filter: blur(clamp(85px, 7vw, 120px));
+    animation: floatOrbCyan 18s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  }
+
+  /* Warm Amber Glow Orb (Lower-Right roaming) */
+  .aurora-amber-2 {
+    bottom: 4%;
+    right: 12%;
+    width: clamp(480px, 40vw, 760px);
+    height: clamp(480px, 40vw, 760px);
+    background: radial-gradient(circle, rgba(217, 119, 6, 0.34) 0%, rgba(245, 158, 11, 0.16) 45%, transparent 70%);
+    filter: blur(clamp(80px, 6.5vw, 115px));
+    animation: floatOrbAmber 15s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  }
+
+  /* Alpine Mint Glow Orb (Left-Center roaming) */
+  .aurora-emerald-2 {
+    top: 34%;
+    left: 4%;
+    width: clamp(480px, 42vw, 760px);
+    height: clamp(480px, 42vw, 760px);
+    background: radial-gradient(circle, rgba(52, 211, 153, 0.32) 0%, rgba(16, 185, 129, 0.14) 45%, transparent 70%);
+    filter: blur(clamp(80px, 6.5vw, 115px));
+    animation: floatOrbEmerald 17s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  }
+
+  /* Noticeable, Visibly Floating Multi-Axis Orbital Keyframes */
+  @keyframes floatOrbGreen {
+    0% { transform: translate(0px, 0px) scale(1); }
+    25% { transform: translate(160px, 90px) scale(1.15); }
+    50% { transform: translate(80px, 190px) scale(0.92); }
+    75% { transform: translate(-120px, 80px) scale(1.08); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+
+  @keyframes floatOrbOrange {
+    0% { transform: translate(0px, 0px) scale(1); }
+    28% { transform: translate(-180px, -60px) scale(0.90); }
+    60% { transform: translate(-90px, 140px) scale(1.18); }
+    85% { transform: translate(90px, 40px) scale(0.96); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+
+  @keyframes floatOrbCyan {
+    0% { transform: translate(0px, 0px) scale(0.94); }
+    33% { transform: translate(140px, -110px) scale(1.12); }
+    66% { transform: translate(-150px, -40px) scale(1.06); }
+    100% { transform: translate(0px, 0px) scale(0.94); }
+  }
+
+  @keyframes floatOrbAmber {
+    0% { transform: translate(0px, 0px) scale(1.06); }
+    30% { transform: translate(-130px, 80px) scale(0.92); }
+    65% { transform: translate(110px, -90px) scale(1.14); }
+    100% { transform: translate(0px, 0px) scale(1.06); }
+  }
+
+  @keyframes floatOrbEmerald {
+    0% { transform: translate(0px, 0px) scale(1); }
+    30% { transform: translate(120px, -80px) scale(1.14); }
+    65% { transform: translate(-90px, 110px) scale(0.90); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+
+  /* =========================================================
+     3. CONTENT CONTAINER & TYPOGRAPHY
+     ========================================================= */
   .hero-content-container {
     position: relative;
     z-index: 3;
-    max-width: 960px;
+    width: 100%;
+    max-width: min(92vw, 1140px);
     margin: 0 auto;
     text-align: center;
     display: flex;
@@ -311,146 +304,277 @@ import config from '../data/config.json';
     align-items: center;
   }
 
-  /* Refined SEBI Registration Eyebrow */
+  /* Refined Eyebrow */
   .hero-eyebrow {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 14px;
-    margin-bottom: clamp(24px, 4vh, 36px);
+    margin-bottom: clamp(24px, 4vh, 32px);
   }
 
   .eyebrow-rule {
     display: inline-block;
     width: 32px;
-    height: 1px;
-    background-color: #B89558;
+    height: 1.5px;
+    background-color: #D4AF37;
     opacity: 0.85;
+    border-radius: 2px;
   }
 
   .eyebrow-text {
-    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: clamp(0.75rem, 0.85vw, 0.8125rem);
-    font-weight: 600;
-    letter-spacing: 0.16em;
+    font-weight: 700;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: #596879;
+    color: #E2E8F0;
     white-space: nowrap;
   }
 
   .eyebrow-sep {
     display: inline-block;
     margin: 0 4px;
-    color: #B89558;
-    font-weight: 700;
+    color: #D4AF37;
+    font-weight: 800;
   }
 
-  /* Centered Editorial Headline */
+  /* Editorial Headline - Modern High-Impact Sans with Italic Gold Signature */
   .hero-title {
-    font-family: 'Instrument Serif', 'DM Serif Display', Georgia, serif;
-    font-size: clamp(3.2rem, 5.8vw, 5.75rem);
-    font-weight: 400;
-    line-height: 1.04;
+    position: relative;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: clamp(3.2rem, 4.4vw + 0.6rem, 5.8rem);
+    font-weight: 800;
+    line-height: 1.09;
     letter-spacing: -0.04em;
-    color: #19304B;
-    margin: 0 0 clamp(20px, 3vh, 28px);
+    color: #FAF9F5;
+    margin: 0 0 clamp(24px, 3.5vh, 32px);
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .title-line {
-    display: block;
-    white-space: nowrap;
+  /* Liquid Text Shine Effect (Every 6.5s directly on text glyphs, zero box) */
+  .text-shine {
+    background: linear-gradient(
+      115deg,
+      #FAF9F5 0%,
+      #FAF9F5 30%,
+      #FFFDF2 45%,
+      #FFFFFF 50%,
+      #F3D079 55%,
+      #FAF9F5 70%,
+      #FAF9F5 100%
+    );
+    background-size: 260% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: liquidTextShineSweep 6.5s cubic-bezier(0.4, 0, 0.2, 1) infinite 1.8s;
   }
 
+  @keyframes liquidTextShineSweep {
+    0% {
+      background-position: 140% 0;
+    }
+    32% {
+      background-position: -40% 0;
+    }
+    100% {
+      background-position: -40% 0;
+    }
+  }
+
+  /* =========================================================
+     4. SMOOTH FLOW-IN TEXT ANIMATIONS
+     ========================================================= */
+  .line-mask {
+    display: block;
+    overflow: hidden;
+    padding: 2px 14px 6px;
+  }
+
+  .signature-mask {
+    overflow: visible;
+    padding-bottom: 14px;
+  }
+
+  .line-flow {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(115%) rotateX(-12deg);
+    animation: smoothTextFlowIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transform-origin: bottom center;
+  }
+
+  .line-1 {
+    animation-delay: 0.10s;
+  }
+
+  .line-2 {
+    animation-delay: 0.28s;
+  }
+
+  .line-3 {
+    animation-delay: 0.46s;
+  }
+
+  @keyframes smoothTextFlowIn {
+    0% {
+      opacity: 0;
+      transform: translateY(115%) rotateX(-12deg);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) rotateX(0deg);
+    }
+  }
+
+  /* Glowing Gold Signature Word with Synchronized Shine Sweep */
   .signature-wrapper {
     position: relative;
     display: inline-block;
-    margin-top: 2px;
   }
 
   .signature-word {
-    font-family: 'Instrument Serif', 'DM Serif Display', Georgia, serif;
+    font-family: 'Instrument Serif', Georgia, serif;
     font-style: italic;
-    color: #B89558;
+    font-weight: 400;
+    background: linear-gradient(
+      115deg,
+      #F3D079 0%,
+      #F3D079 28%,
+      #FFFDF0 46%,
+      #FFFFFF 52%,
+      #F59E0B 60%,
+      #F3D079 72%,
+      #F3D079 100%
+    );
+    background-size: 260% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 20px rgba(243, 208, 121, 0.55));
+    display: inline-block;
     padding-right: 0.05em;
+    animation: liquidSignatureShineSweep 6.5s cubic-bezier(0.4, 0, 0.2, 1) infinite 1.8s;
   }
 
-  /* Custom Handwritten Signature Flourish Underline */
+  @keyframes liquidSignatureShineSweep {
+    0%, 8% {
+      background-position: 140% 0;
+      filter: drop-shadow(0 0 20px rgba(243, 208, 121, 0.55));
+    }
+    28% {
+      filter: drop-shadow(0 0 28px rgba(243, 208, 121, 0.85));
+    }
+    38% {
+      background-position: -40% 0;
+      filter: drop-shadow(0 0 20px rgba(243, 208, 121, 0.55));
+    }
+    100% {
+      background-position: -40% 0;
+      filter: drop-shadow(0 0 20px rgba(243, 208, 121, 0.55));
+    }
+  }
+
+  /* Glowing Gold Line Below Signature (Draws quickly as Signature lands) */
   .signature-flourish {
     position: absolute;
-    left: -3%;
-    bottom: -15px;
-    width: 106%;
+    left: -4%;
+    bottom: -14px;
+    width: 108%;
     height: 24px;
     pointer-events: none;
     overflow: visible;
+    filter: 
+      drop-shadow(0 0 8px rgba(243, 208, 121, 0.90))
+      drop-shadow(0 0 20px rgba(245, 158, 11, 0.55));
   }
 
-  .flourish-path {
-    stroke-dasharray: 400;
-    stroke-dashoffset: 400;
-    animation: drawFlourish 1.25s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards;
+  .flourish-glow-path {
+    stroke-dasharray: 380;
+    stroke-dashoffset: 380;
+    animation: drawQuickSignatureLine 0.55s cubic-bezier(0.2, 0.9, 0.3, 1) 0.68s forwards;
   }
 
-  @keyframes drawFlourish {
+  @keyframes drawQuickSignatureLine {
     to {
       stroke-dashoffset: 0;
     }
   }
 
-  /* Supporting Paragraph */
+  /* Eyebrow Entrance */
+  .animate-eyebrow {
+    opacity: 0;
+    transform: translateY(-12px);
+    animation: smoothFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards;
+  }
+
+  /* Supporting Paragraph Entrance */
   .hero-support {
-    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: clamp(1.125rem, 1.6vw, 1.25rem);
     font-weight: 400;
     line-height: 1.65;
-    color: #596879;
+    color: #CBD5E1;
     max-width: 620px;
-    margin: 0 auto clamp(32px, 5vh, 44px);
+    margin: 0 auto clamp(32px, 5vh, 42px);
     text-align: center;
+    opacity: 0;
+    transform: translateY(18px);
+    animation: smoothFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.85s forwards;
   }
 
-  /* Midnight Navy Primary CTA */
+  /* Primary CTA Entrance */
   .hero-action {
     display: flex;
     justify-content: center;
     width: 100%;
+    opacity: 0;
+    transform: translateY(18px);
+    animation: smoothFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1.00s forwards;
   }
 
+  @keyframes smoothFadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Primary Warm Ivory CTA */
   .btn-hero-primary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 12px;
-    background-color: #19304B;
-    color: #F7F6F2;
-    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #FAF9F5;
+    color: #0A192F;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: -0.01em;
     min-height: 56px;
-    padding: 0 36px;
+    padding: 0 38px;
     border-radius: 12px;
-    border: 1px solid rgba(25, 48, 75, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.22);
     box-shadow: 
-      0 4px 14px rgba(25, 48, 75, 0.12),
-      0 1px 3px rgba(25, 48, 75, 0.08);
+      0 4px 14px rgba(0, 0, 0, 0.25),
+      0 0 24px rgba(212, 175, 55, 0.20);
     text-decoration: none;
     transition: 
       background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+      color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
       transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
       box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .btn-hero-primary:hover {
-    background-color: #122337;
+    background-color: #FFFFFF;
+    color: #050E1A;
     transform: translateY(-2px);
     box-shadow: 
-      0 8px 24px rgba(25, 48, 75, 0.20),
-      0 2px 6px rgba(25, 48, 75, 0.10);
-    color: #FFFFFF;
+      0 12px 32px rgba(0, 0, 0, 0.40),
+      0 0 32px rgba(212, 175, 55, 0.35);
   }
 
   .cta-arrow {
@@ -463,82 +587,829 @@ import config from '../data/config.json';
   }
 
   .btn-hero-primary:focus-visible {
-    outline: 3px solid #B89558;
+    outline: 3px solid #D4AF37;
     outline-offset: 3px;
   }
 
-  /* Mobile and Responsive Adaptations */
-  @media (max-width: 768px) {
+  /* Grounding Trust Strip on Mobile only */
+  .hero-mobile-trust {
+    display: none;
+  }
+
+  /* Desktop Architectural Side Telemetry Marks */
+  .hero-flank {
+    display: none;
+  }
+
+  /* Responsive Adjustments: Mobile Phones (<= 600px)
+     Tuned specifically for iPhone SE, Galaxy S, iPhone 16 / 16 Pro Max, Pixel 9/10, down to 250px.
+     Natural, balanced proportions that eliminate awkward voids and let the live market ticker tape ground the page. */
+  @media (max-width: 600px) {
     .hero-section {
-      padding-top: 130px;
-      padding-bottom: 70px;
       min-height: auto;
+      padding-top: clamp(84px, 12svh, 104px);
+      padding-bottom: clamp(48px, 7svh, 64px);
+      padding-left: clamp(14px, 4vw, 20px);
+      padding-right: clamp(14px, 4vw, 20px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      overflow: hidden;
     }
 
-    .hero-aurora-left {
-      width: 320px;
-      height: 320px;
-      left: -120px;
-      filter: blur(40px);
-      opacity: 0.8;
+    .hero-content-container {
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
 
-    .hero-aurora-right {
-      width: 300px;
-      height: 300px;
-      right: -120px;
-      filter: blur(40px);
-      opacity: 0.8;
+    /* Completely disable pointer spotlight & crosshair reveal on mobile for performance */
+    .hero-pointer-spotlight,
+    .hero-crosshairs-layer {
+      display: none !important;
     }
 
-    .hero-aurora-left-lower,
-    .hero-aurora-right-lower {
+    .hero-grid-texture {
+      background-size: clamp(22px, 6vw, 28px) clamp(22px, 6vw, 28px);
+      opacity: 0.85;
+    }
+
+    /* Mobile-Optimized Aurora Orbs (Atmospheric, multi-tiered across full height for tall screens) */
+    .hero-aurora-wrapper {
+      inset: -50px;
+    }
+
+    .aurora-green-1 {
+      top: 4%;
+      left: -15%;
+      width: clamp(240px, 75vw, 320px);
+      height: clamp(240px, 75vw, 320px);
+      filter: blur(48px);
+      opacity: 0.85;
+      animation: floatMobileOrbGreen 12s ease-in-out infinite alternate;
+    }
+
+    .aurora-cyan-1 {
+      display: block !important;
+      top: 26%;
+      right: -15%;
+      left: auto;
+      transform: none;
+      width: clamp(230px, 72vw, 300px);
+      height: clamp(230px, 72vw, 300px);
+      filter: blur(52px);
+      opacity: 0.72;
+      animation: floatMobileOrbCyan 15s ease-in-out infinite alternate;
+    }
+
+    .aurora-orange-1 {
+      top: 52%;
+      left: -15%;
+      bottom: auto;
+      right: auto;
+      width: clamp(240px, 74vw, 320px);
+      height: clamp(240px, 74vw, 320px);
+      filter: blur(50px);
+      opacity: 0.82;
+      animation: floatMobileOrbOrange 14s ease-in-out infinite alternate;
+    }
+
+    .aurora-amber-2 {
+      display: block !important;
+      bottom: 4%;
+      right: -10%;
+      width: clamp(230px, 72vw, 300px);
+      height: clamp(230px, 72vw, 300px);
+      filter: blur(52px);
+      opacity: 0.78;
+      animation: floatMobileOrbAmber 16s ease-in-out infinite alternate;
+    }
+
+    .aurora-emerald-2 {
+      display: none;
+    }
+
+    /* Refined Eyebrow on Mobile */
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-bottom: clamp(14px, 2.4vh, 20px);
+      max-width: 100%;
+    }
+
+    .eyebrow-rule {
+      display: none;
+    }
+
+    .eyebrow-text {
+      font-size: clamp(0.64rem, 2.4vw, 0.74rem);
+      letter-spacing: clamp(0.06em, 0.6vw, 0.10em);
+      white-space: normal;
+      text-align: center;
+      line-height: 1.4;
+      color: #E2E8F0;
+    }
+
+    .eyebrow-sep {
+      margin: 0 2px;
+      color: #D4AF37;
+    }
+
+    /* Commanding Headline on Mobile - Fills Width & Height with Presence */
+    .hero-title {
+      font-size: clamp(2.15rem, 8.2vw, 2.75rem);
+      line-height: 1.10;
+      letter-spacing: -0.035em;
+      margin-bottom: clamp(14px, 2.4vh, 20px);
+      max-width: 100%;
+      width: 100%;
+      word-break: normal;
+      overflow-wrap: break-word;
+      text-align: center;
+    }
+
+    .line-mask {
+      display: block;
+      white-space: normal;
+      padding: 0 4px 4px;
+      overflow: visible;
+    }
+
+    .line-flow {
+      display: inline;
+      white-space: normal;
+    }
+
+    .signature-mask {
+      padding-bottom: 10px;
+    }
+
+    .signature-wrapper {
+      position: relative;
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .signature-word {
+      display: inline-block;
+      font-size: 1.05em;
+    }
+
+    .signature-flourish {
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 100%;
+      height: 16px;
+    }
+
+    /* Rich, Legible Supporting Paragraph */
+    .hero-support {
+      font-size: clamp(0.98rem, 3.8vw, 1.15rem);
+      line-height: 1.55;
+      padding: 0 10px;
+      margin: 0 auto clamp(18px, 3.0vh, 26px);
+      max-width: min(92vw, 420px);
+      text-align: center;
+    }
+
+    /* Substantial Touch-Optimized Primary CTA */
+    .btn-hero-primary {
+      min-height: clamp(52px, 6.5vh, 56px);
+      padding: 0 clamp(28px, 6vw, 36px);
+      font-size: clamp(0.95rem, 3.4vw, 1.02rem);
+      width: auto;
+      max-width: min(100%, 320px);
+      border-radius: 14px;
+    }
+
+    /* Mobile-Only Grounding Trust Pill (Active on <= 600px) */
+    .hero-mobile-trust {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(7px, 2vw, 9px);
+      margin-top: clamp(18px, 3.0vh, 26px);
+      padding: clamp(7px, 1.3vh, 9px) clamp(14px, 3.8vw, 20px);
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.30),
+        0 0 20px rgba(212, 175, 55, 0.06);
+      max-width: 100%;
+      width: auto;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: smoothFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1.15s forwards;
+    }
+
+    .trust-badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: #10B981;
+      box-shadow: 0 0 8px #10B981;
+      display: inline-block;
+      flex-shrink: 0;
+      animation: trustDotPulse 2.4s ease-in-out infinite;
+    }
+
+    .trust-val {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: clamp(0.85rem, 3.2vw, 0.95rem);
+      font-weight: 700;
+      color: #F3D079;
+      letter-spacing: -0.01em;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .trust-sep {
+      color: rgba(255, 255, 255, 0.35);
+      font-size: 0.8rem;
+      line-height: 1;
+    }
+
+    .trust-lbl {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: clamp(0.70rem, 2.6vw, 0.78rem);
+      font-weight: 600;
+      color: #CBD5E1;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+      line-height: 1;
+    }
+  }
+
+  /* Compact phones refinement (<= 350px) */
+  @media (max-width: 350px) {
+    .hero-title {
+      font-size: clamp(1.75rem, 7.8vw, 2.05rem);
+    }
+    .eyebrow-rule {
+      display: none;
+    }
+    .hero-support {
+      font-size: 0.92rem;
+      padding: 0 4px;
+    }
+    .btn-hero-primary {
+      min-height: 48px;
+      padding: 0 20px;
+      font-size: 0.9rem;
+    }
+  }
+
+  /* Ultra narrow devices (<= 280px) */
+  @media (max-width: 280px) {
+    .hero-title {
+      font-size: 1.45rem;
+    }
+    .eyebrow-text {
+      font-size: 0.58rem;
+    }
+    .hero-support {
+      font-size: 0.85rem;
+    }
+    .btn-hero-primary {
+      min-height: 44px;
+      padding: 0 16px;
+      font-size: 0.82rem;
+    }
+    .hero-mobile-trust {
+      padding: 6px 12px;
+    }
+    .trust-val, .trust-lbl {
+      font-size: 0.72rem;
+    }
+  }
+
+  /* Responsive Adjustments: Tablets & Foldables (601px - 1080px)
+     Tuned for Small Tablets (600px+), iPad Mini & Z Fold 6 (768px), iPad Air (820px), Surface Pro 10 (912px), iPad Pro 13 (1024px).
+     Elevates typography so tall screens feel full and majestic without voids. */
+  @media (min-width: 601px) and (max-width: 1080px) {
+    .hero-section {
+      min-height: 100vh;
+      min-height: 100svh;
+      padding-top: clamp(96px, 12vh, 120px);
+      padding-bottom: clamp(40px, 6svh, 60px);
+      padding-left: clamp(24px, 4vw, 40px);
+      padding-right: clamp(24px, 4vw, 40px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .hero-content-container {
+      width: 100%;
+      max-width: min(90vw, 860px);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Disable hover spotlights on touch tablet devices */
+    .hero-pointer-spotlight,
+    .hero-crosshairs-layer {
+      display: none !important;
+    }
+
+    .hero-grid-texture {
+      background-size: 36px 36px;
+      opacity: 0.85;
+    }
+
+    .hero-aurora-wrapper {
+      inset: -80px;
+    }
+
+    .aurora-green-1 {
+      top: 6%;
+      left: -8%;
+      width: clamp(450px, 50vw, 680px);
+      height: clamp(450px, 50vw, 680px);
+      filter: blur(85px);
+      opacity: 0.80;
+    }
+
+    .aurora-cyan-1 {
+      display: block !important;
+      top: 28%;
+      right: -8%;
+      width: clamp(440px, 48vw, 650px);
+      height: clamp(440px, 48vw, 650px);
+      filter: blur(90px);
+      opacity: 0.70;
+    }
+
+    .aurora-orange-1 {
+      top: 54%;
+      left: -8%;
+      width: clamp(450px, 50vw, 680px);
+      height: clamp(450px, 50vw, 680px);
+      filter: blur(85px);
+      opacity: 0.80;
+    }
+
+    .aurora-amber-2 {
+      display: block !important;
+      bottom: 6%;
+      right: -6%;
+      width: clamp(430px, 46vw, 640px);
+      height: clamp(430px, 46vw, 640px);
+      filter: blur(85px);
+      opacity: 0.75;
+    }
+
+    .aurora-emerald-2 {
       display: none;
     }
 
     .hero-eyebrow {
-      gap: 8px;
+      gap: 12px;
+      margin-bottom: clamp(20px, 3vh, 30px);
     }
 
     .eyebrow-rule {
-      width: 20px;
+      width: 26px;
+      height: 1.5px;
     }
 
     .eyebrow-text {
-      font-size: 0.6875rem;
-      letter-spacing: 0.12em;
+      font-size: clamp(0.75rem, 1.3vw, 0.85rem);
+      letter-spacing: 0.14em;
     }
 
+    /* Majestic Headline on Tablets */
     .hero-title {
-      font-size: clamp(2.35rem, 8.5vw, 3.2rem);
+      font-size: clamp(3.6rem, 6.2vw, 5.2rem);
       line-height: 1.08;
+      letter-spacing: -0.04em;
+      margin-bottom: clamp(22px, 3.2vh, 32px);
     }
 
-    .title-line {
-      white-space: normal;
+    .signature-mask {
+      padding-bottom: 14px;
     }
 
     .signature-flourish {
-      bottom: -11px;
+      bottom: -10px;
       height: 20px;
     }
 
     .hero-support {
-      font-size: 1.0625rem;
-      padding: 0 12px;
+      font-size: clamp(1.2rem, 1.8vw, 1.35rem);
+      line-height: 1.6;
+      max-width: 580px;
+      margin: 0 auto clamp(26px, 3.8vh, 36px);
     }
 
     .btn-hero-primary {
-      width: 100%;
-      max-width: 320px;
+      min-height: 60px;
+      padding: 0 44px;
+      font-size: 1.08rem;
+      border-radius: 14px;
+    }
+
+    .hero-mobile-trust {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 24px;
+      margin-top: clamp(26px, 4vh, 40px);
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.30),
+        0 0 20px rgba(212, 175, 55, 0.06);
+      opacity: 0;
+      transform: translateY(16px);
+      animation: smoothFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1.15s forwards;
+    }
+
+    .trust-badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: #10B981;
+      box-shadow: 0 0 8px #10B981;
+    }
+
+    .trust-val {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #F3D079;
+    }
+
+    .trust-sep {
+      color: rgba(255, 255, 255, 0.35);
+      font-size: 0.85rem;
+    }
+
+    .trust-lbl {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #CBD5E1;
+    }
+  }
+
+  @keyframes trustDotPulse {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.3); opacity: 1; box-shadow: 0 0 12px #10B981; }
+  }
+
+  /* Keyframes for Mobile Orbs */
+  @keyframes floatMobileOrbGreen {
+    0% { transform: translate(0px, 0px) scale(1); }
+    100% { transform: translate(35px, 25px) scale(1.10); }
+  }
+
+  @keyframes floatMobileOrbOrange {
+    0% { transform: translate(0px, 0px) scale(1); }
+    100% { transform: translate(-30px, -20px) scale(1.08); }
+  }
+
+  @keyframes floatMobileOrbCyan {
+    0% { transform: translate(0px, 0px) scale(0.95); }
+    100% { transform: translate(-25px, 20px) scale(1.10); }
+  }
+
+  @keyframes floatMobileOrbAmber {
+    0% { transform: translate(0px, 0px) scale(0.96); }
+    100% { transform: translate(-30px, -22px) scale(1.08); }
+  }
+
+  /* Desktop Architectural Side Telemetry Marks (Visible on >= 1200px screens) */
+  @media (min-width: 1200px) {
+    .hero-flank {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      z-index: 2;
+      opacity: 0.42;
+      transition: opacity 0.3s ease;
+    }
+
+    .hero-flank-left {
+      left: clamp(24px, 3.5vw, 64px);
+    }
+
+    .hero-flank-right {
+      right: clamp(24px, 3.5vw, 64px);
+    }
+
+    .flank-coord {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      color: #94A3B8;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(180deg);
+    }
+
+    .flank-line {
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(to bottom, transparent, rgba(212, 175, 55, 0.45), transparent);
+    }
+
+    .flank-label {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #CBD5E1;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(180deg);
+    }
+  }
+
+  /* Responsive Adjustments: Intermediate Large Screens (1600px - 2199px) */
+  @media (min-width: 1600px) {
+    .hero-content-container {
+      max-width: min(90vw, 1340px);
+    }
+
+    .hero-title {
+      font-size: clamp(4.6rem, 4.8vw, 6.6rem);
+    }
+
+    .hero-support {
+      font-size: 1.35rem;
+      max-width: 760px;
+    }
+
+    .btn-hero-primary {
+      min-height: 60px;
+      padding: 0 44px;
+      font-size: 1.08rem;
+    }
+
+    .hero-flank {
+      opacity: 0.55;
+      gap: 20px;
+    }
+
+    .flank-line {
+      height: 64px;
+    }
+  }
+
+  /* Responsive Adjustments: High-Res QHD / 2560x1440 / 2599x1440 Displays */
+  @media (min-width: 2200px) {
+    .hero-section {
+      min-height: 100svh;
+      padding: clamp(170px, 16svh, 230px) 52px clamp(110px, 11svh, 150px);
+    }
+
+    .hero-grid-texture {
+      background-size: 56px 56px;
+    }
+
+    .hero-crosshairs-layer {
+      background-size: 56px 56px;
+      mask-image: radial-gradient(480px circle at var(--mouse-x) var(--mouse-y), #000 0%, rgba(0, 0, 0, 0.35) 65%, transparent 100%);
+      -webkit-mask-image: radial-gradient(480px circle at var(--mouse-x) var(--mouse-y), #000 0%, rgba(0, 0, 0, 0.35) 65%, transparent 100%);
+    }
+
+    .hero-pointer-spotlight {
+      background: radial-gradient(
+        800px circle at var(--mouse-x) var(--mouse-y),
+        rgba(212, 175, 55, 0.20) 0%,
+        rgba(16, 185, 129, 0.14) 35%,
+        rgba(245, 158, 11, 0.06) 60%,
+        transparent 80%
+      );
+    }
+
+    .hero-aurora-wrapper {
+      inset: -180px;
+    }
+
+    .aurora-green-1 {
+      width: clamp(880px, 44vw, 1400px);
+      height: clamp(880px, 44vw, 1400px);
+      filter: blur(125px);
+    }
+
+    .aurora-orange-1 {
+      width: clamp(850px, 42vw, 1350px);
+      height: clamp(850px, 42vw, 1350px);
+      filter: blur(125px);
+    }
+
+    .aurora-cyan-1 {
+      width: clamp(820px, 40vw, 1300px);
+      height: clamp(820px, 40vw, 1300px);
+      filter: blur(130px);
+    }
+
+    .aurora-amber-2 {
+      width: clamp(780px, 38vw, 1250px);
+      height: clamp(780px, 38vw, 1250px);
+      filter: blur(125px);
+    }
+
+    .aurora-emerald-2 {
+      width: clamp(800px, 40vw, 1280px);
+      height: clamp(800px, 40vw, 1280px);
+      filter: blur(125px);
+    }
+
+    .hero-content-container {
+      max-width: min(88vw, 1580px);
+    }
+
+    .hero-title {
+      font-size: clamp(5.8rem, 5.0vw, 7.8rem);
+    }
+
+    .hero-support {
+      font-size: 1.55rem;
+      max-width: 880px;
+    }
+
+    .btn-hero-primary {
+      font-size: 1.2rem;
+      min-height: 66px;
+      padding: 0 50px;
+      border-radius: 14px;
+    }
+
+    .hero-flank {
+      opacity: 0.65;
+      gap: 24px;
+    }
+
+    .flank-line {
+      height: 80px;
+    }
+
+    .flank-coord,
+    .flank-label {
+      font-size: 0.75rem;
+    }
+  }
+
+  /* Responsive Adjustments: 4K UHD Displays (2800px+ / 3840px) */
+  @media (min-width: 2800px) {
+    .hero-section {
+      min-height: 100svh;
+      padding: 220px 60px 160px;
+    }
+
+    .hero-grid-texture {
+      background-size: 80px 80px;
+    }
+
+    .hero-crosshairs-layer {
+      background-size: 80px 80px;
+      mask-image: radial-gradient(560px circle at var(--mouse-x) var(--mouse-y), #000 0%, rgba(0, 0, 0, 0.35) 65%, transparent 100%);
+      -webkit-mask-image: radial-gradient(560px circle at var(--mouse-x) var(--mouse-y), #000 0%, rgba(0, 0, 0, 0.35) 65%, transparent 100%);
+    }
+
+    .hero-pointer-spotlight {
+      background: radial-gradient(
+        950px circle at var(--mouse-x) var(--mouse-y),
+        rgba(212, 175, 55, 0.22) 0%,
+        rgba(16, 185, 129, 0.15) 35%,
+        rgba(245, 158, 11, 0.07) 60%,
+        transparent 80%
+      );
+    }
+
+    .hero-aurora-wrapper {
+      inset: -280px;
+    }
+
+    .aurora-green-1 {
+      width: clamp(1050px, 48vw, 1650px);
+      height: clamp(1050px, 48vw, 1650px);
+      filter: blur(145px);
+    }
+
+    .aurora-orange-1 {
+      width: clamp(1000px, 45vw, 1550px);
+      height: clamp(1000px, 45vw, 1550px);
+      filter: blur(145px);
+    }
+
+    .aurora-cyan-1 {
+      width: clamp(960px, 44vw, 1500px);
+      height: clamp(960px, 44vw, 1500px);
+      filter: blur(150px);
+    }
+
+    .aurora-amber-2 {
+      width: clamp(900px, 40vw, 1400px);
+      height: clamp(900px, 40vw, 1400px);
+      filter: blur(145px);
+    }
+
+    .aurora-emerald-2 {
+      width: clamp(920px, 42vw, 1420px);
+      height: clamp(920px, 42vw, 1420px);
+      filter: blur(145px);
+    }
+
+    .hero-content-container {
+      max-width: min(85vw, 1850px);
+    }
+
+    .hero-title {
+      font-size: clamp(7.2rem, 5.5vw, 9.4rem);
+    }
+
+    .hero-support {
+      font-size: 1.8rem;
+      max-width: 1040px;
+    }
+
+    .btn-hero-primary {
+      font-size: 1.35rem;
+      min-height: 74px;
+      padding: 0 56px;
+      border-radius: 16px;
+    }
+
+    .hero-flank {
+      opacity: 0.75;
+      gap: 28px;
+    }
+
+    .flank-line {
+      height: 96px;
+    }
+
+    .flank-coord,
+    .flank-label {
+      font-size: 0.85rem;
     }
   }
 
   /* Accessibility: Prefers Reduced Motion */
   @media (prefers-reduced-motion: reduce) {
-    .flourish-path {
-      stroke-dashoffset: 0;
-      animation: none;
+    .aurora-orb {
+      animation: none !important;
+    }
+
+    .animate-eyebrow,
+    .line-flow,
+    .hero-support,
+    .hero-action {
+      opacity: 1 !important;
+      transform: none !important;
+      animation: none !important;
+    }
+
+    .text-shine,
+    .signature-word {
+      animation: none !important;
+      -webkit-text-fill-color: initial !important;
+      background: none !important;
+      color: #FAF9F5 !important;
+    }
+
+    .signature-word {
+      color: #F3D079 !important;
+    }
+
+    .flourish-glow-path {
+      stroke-dashoffset: 0 !important;
+      animation: none !important;
     }
 
     .btn-hero-primary,
@@ -555,3 +1426,49 @@ import config from '../data/config.json';
     }
   }
 </style>
+
+<script>
+  function initHeroInteractivePointer() {
+    // Only enable interactive pointer spotlight on devices that support hover (desktop / fine pointer)
+    // Completely disable on mobile / touch devices to guarantee maximum battery & fluid performance
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      return;
+    }
+
+    const hero = document.getElementById('home');
+    if (!hero) return;
+
+    let rafId = null;
+    let targetX = 0;
+    let targetY = 0;
+
+    const handlePointerMove = (e) => {
+      const rect = hero.getBoundingClientRect();
+      targetX = e.clientX - rect.left;
+      targetY = e.clientY - rect.top;
+      hero.style.setProperty('--mouse-active', '1');
+
+      if (!rafId) {
+        rafId = requestAnimationFrame(() => {
+          hero.style.setProperty('--mouse-x', `${targetX}px`);
+          hero.style.setProperty('--mouse-y', `${targetY}px`);
+          rafId = null;
+        });
+      }
+    };
+
+    const handlePointerLeave = () => {
+      hero.style.setProperty('--mouse-active', '0.65');
+    };
+
+    hero.addEventListener('pointermove', handlePointerMove, { passive: true });
+    hero.addEventListener('pointerleave', handlePointerLeave, { passive: true });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHeroInteractivePointer);
+  } else {
+    initHeroInteractivePointer();
+  }
+  document.addEventListener('astro:page-load', initHeroInteractivePointer);
+</script>
