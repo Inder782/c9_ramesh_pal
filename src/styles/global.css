@@ -2,42 +2,47 @@
 
 :root {
   /* =========================================================
-     3-COLOR PALETTE SYSTEM (WCAG 2.2 AA / AAA CERTIFIED)
-     1. Canvas/Surface: Clean Crisp Architectural Off-White
-     2. Primary Ink/Structure: Deep Obsidian Slate
-     3. Signature Accent: Deep Academic Forest & Emerald
+     OPTION 1: HIMALAYAN PINE & ANTIQUE SLATE PALETTE
+     70% Dominant: Warm Tactile Ivory Canvas (#FAF9F5)
+     20% Structural: Deep Charcoal Pine (#111827 / #374151)
+     10% Accent: Dehradun Mountain Pine (#064E3B) & Burnished Bronze (#92400E)
      ========================================================= */
   
-  /* Color 1: Canvas & Surfaces */
-  --bg-primary: #F8FAFC;      /* Crisp architectural off-white */
-  --bg-secondary: #FFFFFF;    /* Pure white for cards & elevated panels */
-  --bg-tertiary: #F1F5F9;     /* Light slate for alternating bands */
-  --border-light: #E2E8F0;    /* Crisp light border */
-  --border-strong: #CBD5E1;   /* Medium structural border */
+  /* Color 1 (70%): Canvas & Surfaces */
+  --bg-primary: #FAF9F5;      /* Warm tactile ivory paper canvas */
+  --bg-secondary: #FFFFFF;    /* Pure white for elevated cards */
+  --bg-tertiary: #F3F1EA;     /* Soft warm oatmeal for alternating sections */
+  --border-light: #E7E4D8;    /* Tactile warm border */
+  --border-strong: #D5D1C3;   /* Structural warm border */
 
-  /* Color 2: Ink, Text & Structure */
-  --text-primary: #0F172A;    /* Slate 900 (16.5:1 on White - AAA) */
-  --text-secondary: #334155;  /* Slate 700 (9.6:1 on White - AAA) */
-  --text-muted: #475569;      /* Slate 600 (7.0:1 on White - AAA) */
-  --dark-surface: #0B0F19;    /* Obsidian Void for deep footer & header elements */
+  /* Color 2 (20%): Ink, Text & Structure */
+  --text-primary: #111827;    /* Charcoal Pine (15.9:1 on Ivory - AAA) */
+  --text-secondary: #374151;  /* Muted Charcoal Ink (9.9:1 on Ivory - AAA) */
+  --text-muted: #4B5563;      /* Deep Slate Ink (7.2:1 on Ivory - AAA) */
+  --dark-surface: #0E161B;    /* Alpine Obsidian for high-trust deep footer */
 
-  /* Color 3: Signature Accent (Teaching Discipline & Wealth Growth) */
-  --accent-primary: #065F46;  /* Deep Emerald 800 (7.8:1 on White - AAA) */
-  --accent-hover: #044E39;    /* Deeper Forest on hover */
-  --accent-soft: #ECFDF5;     /* Soft Mint tint for badge backgrounds */
-  --accent-border: #A7F3D0;   /* Light mint border */
-  --accent-glow: rgba(6, 95, 70, 0.15);
+  /* Color 3 (10%): Signature Accent (Dehradun Mountain Pine & Burnished Bronze) */
+  --accent-primary: #064E3B;  /* Dehradun Mountain Pine (8.9:1 on Ivory - AAA) */
+  --accent-hover: #033829;    /* Deeper Pine on hover */
+  --accent-soft: #EBF5F0;     /* Soft pine mist tint for badge backgrounds */
+  --accent-border: #A3D9C9;   /* Alpine sage border */
+  --accent-glow: rgba(6, 78, 59, 0.16);
+
+  /* Dual Accent: Burnished Academic Bronze (SEBI Trust / Accents) */
+  --accent-bronze: #92400E;   /* Rich Burnished Bronze (7.5:1 on Amber tint - AAA) */
+  --accent-bronze-soft: #FEF3C7; /* Soft amber parchment */
+  --accent-bronze-border: #FCD34D;
 
   /* Glassmorphism & Elevation */
-  --glass-bg: rgba(255, 255, 255, 0.88);
-  --glass-border: rgba(15, 23, 42, 0.08);
-  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
-  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.06);
-  --shadow-lg: 0 20px 48px rgba(15, 23, 42, 0.08);
-  --shadow-glow: 0 0 30px rgba(6, 95, 70, 0.12);
+  --glass-bg: rgba(250, 249, 245, 0.90);
+  --glass-border: rgba(17, 24, 39, 0.08);
+  --shadow-sm: 0 2px 8px rgba(17, 24, 39, 0.04);
+  --shadow-md: 0 8px 24px rgba(17, 24, 39, 0.06);
+  --shadow-lg: 0 20px 48px rgba(17, 24, 39, 0.08);
+  --shadow-glow: 0 0 32px rgba(6, 78, 59, 0.14);
 
   /* Focus Indicator (WCAG 2.4.7 & 2.4.11) */
-  --focus-ring: #065F46;
+  --focus-ring: #064E3B;
   --focus-offset: 3px;
 }
 

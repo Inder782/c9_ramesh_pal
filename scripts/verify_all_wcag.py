@@ -141,14 +141,15 @@ print("SECTION 4: COLOR CONTRAST VERIFICATION")
 print("="*50)
 
 palette_checks = [
-    ("Slate 900 on Canvas White (#0F172A on #FFFFFF)", "#0F172A", "#FFFFFF", 4.5),
-    ("Slate 700 on Canvas White (#334155 on #FFFFFF)", "#334155", "#FFFFFF", 4.5),
-    ("Slate 900 on Off-White (#0F172A on #F8FAFC)", "#0F172A", "#F8FAFC", 4.5),
-    ("Deep Teal/Emerald on White (#0D9488 on #FFFFFF)", "#065F46", "#FFFFFF", 4.5),
-    ("Deep Emerald on White (#035940 on #FFFFFF)", "#035940", "#FFFFFF", 4.5),
-    ("White text on Deep Slate (#FFFFFF on #0F172A)", "#FFFFFF", "#0F172A", 4.5),
-    ("White text on Deep Emerald (#FFFFFF on #035940)", "#FFFFFF", "#035940", 4.5),
-    ("Slate 300 on Dark Slate Footer (#CBD5E1 on #0B0F19)", "#CBD5E1", "#0B0F19", 4.5),
+    ("Charcoal Pine on Ivory Canvas (#111827 on #FAF9F5)", "#111827", "#FAF9F5", 4.5),
+    ("Muted Charcoal on Ivory Canvas (#374151 on #FAF9F5)", "#374151", "#FAF9F5", 4.5),
+    ("Dehradun Mountain Pine on Ivory Canvas (#064E3B on #FAF9F5)", "#064E3B", "#FAF9F5", 4.5),
+    ("Charcoal Pine on White Card (#111827 on #FFFFFF)", "#111827", "#FFFFFF", 4.5),
+    ("Muted Charcoal on White Card (#374151 on #FFFFFF)", "#374151", "#FFFFFF", 4.5),
+    ("Burnished Bronze on Amber Parchment (#92400E on #FEF3C7)", "#92400E", "#FEF3C7", 4.5),
+    ("White text on Mountain Pine (#FFFFFF on #064E3B)", "#FFFFFF", "#064E3B", 4.5),
+    ("White text on Charcoal Pine (#FFFFFF on #111827)", "#FFFFFF", "#111827", 4.5),
+    ("Slate 300 on Alpine Obsidian Footer (#CBD5E1 on #0E161B)", "#CBD5E1", "#0E161B", 4.5),
 ]
 
 for name, c1, c2, req in palette_checks:
