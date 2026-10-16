@@ -100,13 +100,28 @@ const whatsappCta = config.whatsappUrl || `https://wa.me/${phoneDigits}`;
     pointer-events: auto;
     width: 100%;
     max-width: 1140px;
-    background: var(--glass-bg);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.86) 100%);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.85);
     border-radius: 9999px;
-    box-shadow: var(--shadow-md);
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 
+      0 4px 6px -1px rgba(15, 23, 42, 0.04),
+      0 12px 28px -4px rgba(15, 23, 42, 0.08),
+      0 0 0 1px rgba(15, 23, 42, 0.06);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, background 0.35s ease;
+  }
+
+  /* Header Hover Effect: Subtle Lift + Ambient Emerald Depth Glow */
+  .floating-header:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+      0 8px 16px -2px rgba(15, 23, 42, 0.08),
+      0 20px 42px -6px rgba(15, 23, 42, 0.12),
+      0 0 36px -4px rgba(6, 95, 70, 0.22),
+      0 0 0 1px rgba(6, 95, 70, 0.25);
+    border-color: rgba(6, 95, 70, 0.25);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.90) 100%);
   }
 
   .nav-container {
@@ -122,6 +137,11 @@ const whatsappCta = config.whatsappUrl || `https://wa.me/${phoneDigits}`;
     align-items: center;
     text-decoration: none;
     flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .brand-link:hover {
+    transform: scale(1.02);
   }
 
   .brand-logo-img {
@@ -143,7 +163,9 @@ const whatsappCta = config.whatsappUrl || `https://wa.me/${phoneDigits}`;
     list-style: none;
     margin: 0;
     padding: 4px;
-    background: rgba(15, 23, 42, 0.03);
+    background: rgba(15, 23, 42, 0.04);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(15, 23, 42, 0.05);
     border-radius: 9999px;
   }
 
@@ -154,29 +176,52 @@ const whatsappCta = config.whatsappUrl || `https://wa.me/${phoneDigits}`;
     padding: 7px 16px;
     font-size: 0.875rem;
     font-weight: 500;
-    color: var(--text-secondary);
-    transition: color 0.2s ease;
+    color: #0F172A; /* Slate 900 for pristine 16.5:1 contrast */
+    transition: color 0.18s ease, font-weight 0.18s ease;
     border-radius: 9999px;
+    text-decoration: none;
   }
 
   .nav-link:hover {
-    color: var(--text-primary);
+    color: #0F172A;
   }
 
+  /* The link currently highlighted by the sliding pill */
   .nav-link.pill-active {
-    color: #FFFFFF;
+    color: #FFFFFF !important;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
   }
 
+  /* Persistent tiny indicator dot on current page section when pill is elsewhere */
+  .nav-link.section-active:not(.pill-active)::after {
+    content: '';
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent-primary);
+  }
+
+  /* Tactile Sliding Capsule */
   .sliding-pill {
     position: absolute;
     top: 4px;
     left: 4px;
     height: calc(100% - 8px);
-    background: var(--text-primary);
+    background: linear-gradient(135deg, #0F172A 0%, #064E3B 100%);
     border-radius: 9999px;
-    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 
+      inset 0 1px 1px rgba(255, 255, 255, 0.3),
+      0 4px 14px rgba(6, 95, 70, 0.32);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), width 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
     z-index: 1;
     pointer-events: none;
+    opacity: 0;
   }
 
   /* Actions */
@@ -190,20 +235,22 @@ const whatsappCta = config.whatsappUrl || `https://wa.me/${phoneDigits}`;
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    background: var(--accent-primary);
+    background: linear-gradient(135deg, var(--accent-primary) 0%, #044E39 100%);
     color: #FFFFFF;
     font-size: 0.8125rem;
     font-weight: 600;
-    padding: 8px 16px;
+    padding: 8px 18px;
     border-radius: 9999px;
-    transition: all 0.2s ease;
-    box-shadow: 0 2px 6px rgba(6, 95, 70, 0.2);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 2px 8px rgba(6, 95, 70, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.15);
   }
 
   .btn-lean-cta:hover {
-    background: var(--accent-hover);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(6, 95, 70, 0.3);
+    background: linear-gradient(135deg, #044E39 0%, #033829 100%);
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 0 6px 18px rgba(6, 95, 70, 0.4), 0 0 14px rgba(167, 243, 208, 0.4);
+    color: #FFFFFF;
   }
 
   .hamburger-btn {
@@ -388,37 +435,85 @@ const whatsappCta = config.whatsappUrl || `https://wa.me/${phoneDigits}`;
 </style>
 
 <script>
-  // Dynamic sliding pill indicator
+  // High-Precision Sliding Pill & Contrast Synchronizer
   const navList = document.getElementById('main-nav-list');
   const slidingPill = document.getElementById('sliding-pill');
   const links = document.querySelectorAll<HTMLAnchorElement>('.desktop-nav .nav-link');
 
-  function updatePillPosition(element: HTMLElement) {
+  let currentActiveSectionLink: HTMLElement | null = document.querySelector('.desktop-nav .nav-link.pill-active') || links[0] || null;
+  let isHovering = false;
+
+  function movePillTo(element: HTMLElement) {
     if (!slidingPill || !navList) return;
     const navRect = navList.getBoundingClientRect();
     const linkRect = element.getBoundingClientRect();
 
     slidingPill.style.width = `${linkRect.width}px`;
     slidingPill.style.transform = `translateX(${linkRect.left - navRect.left - 4}px)`;
+    slidingPill.style.opacity = '1';
   }
 
-  // Position pill initially on the active link
-  const activeLink = document.querySelector<HTMLElement>('.desktop-nav .nav-link.pill-active');
-  if (activeLink) {
-    updatePillPosition(activeLink);
+  // Highlights a target link: moves the pill, turns target text white, all other links revert to crisp Slate 900
+  function highlightLink(target: HTMLElement | null) {
+    if (!target) return;
+    links.forEach(l => l.classList.remove('pill-active'));
+    target.classList.add('pill-active');
+    movePillTo(target);
+  }
+
+  // Updates the persistent active section (from scroll or click)
+  function setActiveSection(target: HTMLElement | null) {
+    if (!target) return;
+    currentActiveSectionLink = target;
+    links.forEach(l => l.classList.remove('section-active'));
+    target.classList.add('section-active');
+    if (!isHovering) {
+      highlightLink(target);
+    }
+  }
+
+  // Initialize
+  if (currentActiveSectionLink) {
+    setActiveSection(currentActiveSectionLink);
+    // Microtask to ensure layout is computed
+    setTimeout(() => {
+      if (currentActiveSectionLink) highlightLink(currentActiveSectionLink);
+    }, 50);
   }
 
   links.forEach(link => {
-    link.addEventListener('mouseenter', () => updatePillPosition(link));
-    link.addEventListener('focus', () => updatePillPosition(link));
+    link.addEventListener('mouseenter', () => {
+      isHovering = true;
+      highlightLink(link);
+    });
+
+    link.addEventListener('focus', () => {
+      isHovering = true;
+      highlightLink(link);
+    });
+
+    link.addEventListener('click', () => {
+      setActiveSection(link);
+      highlightLink(link);
+    });
   });
 
   if (navList) {
     navList.addEventListener('mouseleave', () => {
-      const currentActive = document.querySelector<HTMLElement>('.desktop-nav .nav-link.pill-active');
-      if (currentActive) updatePillPosition(currentActive);
+      isHovering = false;
+      if (currentActiveSectionLink) {
+        highlightLink(currentActiveSectionLink);
+      }
     });
   }
+
+  // Resize handler to recalculate pill geometry
+  window.addEventListener('resize', () => {
+    const target = isHovering 
+      ? document.querySelector<HTMLElement>('.desktop-nav .nav-link.pill-active') 
+      : currentActiveSectionLink;
+    if (target) movePillTo(target);
+  }, { passive: true });
 
   // Active section scroll spy
   const sections = document.querySelectorAll<HTMLElement>('section[id], div[id]');
@@ -438,9 +533,7 @@ const whatsappCta = config.whatsappUrl || `https://wa.me/${phoneDigits}`;
       links.forEach(link => {
         const href = link.getAttribute('href');
         if (href === `#${currentId}`) {
-          links.forEach(l => l.classList.remove('pill-active'));
-          link.classList.add('pill-active');
-          updatePillPosition(link);
+          setActiveSection(link);
         }
       });
     }
