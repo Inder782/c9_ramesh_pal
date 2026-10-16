@@ -1,16 +1,18 @@
 {
-  "brandName": "Ramesh Pal Research",
-  "tradeName": "Ramesh Pal Research",
+  "brandName": "Ramesh Pal",
+  "tradeName": "Ramesh Pal",
   "analystName": "Ramesh Pal",
   "designation": "Individual SEBI Registered Research Analyst",
-  "sebiRegNo": "INH0000XXXXX",
-  "bseEnlistmentNo": "XXXX",
+  "sebiRegNo": "INH000021395",
+  "bseEnlistmentNo": "7515",
   "registrationType": "Individual",
-  "validity": "Perpetual / Active",
-  "registeredAddress": "Mumbai, Maharashtra, India - 400001",
-  "email": "contact@rameshpal.in",
-  "phone": "+91 98765 43210",
-  "whatsappPhone": "919876543210",
+  "validity": "Perpetual",
+  "registeredAddress": "House no.2 Ishwer vihar sunderwala Raipur dehradun, Uttarakhand 248008",
+  "sebiOfficeAddress": "House no.2 Ishwer vihar sunderwala Raipur dehradun, Uttarakhand 248008",
+  "email": "Rameshpal1396@gmail.com",
+  "phone": "+91-9625139313",
+  "whatsappPhone": "919625139313",
+  "whatsappUrl": "https://wa.me/qr/37EV266IYJAZD1",
   "tagline": "Repeat a pattern until it becomes your signature.",
   "subtagline": "Systematic, rule-based equity research engineered by an accredited educator. No speculative noise, no emotional gambits—just disciplined pattern repetition and institutional risk management.",
   "founders": [
@@ -18,20 +20,21 @@
       "name": "Ramesh Pal",
       "role": "Founder & Principal Research Analyst",
       "experience": "15+ Years in Education & Systematic Market Research",
-      "bio": "An accredited educator whose pedagogical rigor translates directly into rule-based market research. Ramesh Pal believes that successful market participation is a teachable, repeatable discipline rooted in pattern recognition, statistical edge, and uncompromising risk control."
+      "bio": "An accredited educator whose pedagogical rigor translates directly into rule-based market research. Known to thousands of market students as Trading Mentor Remo (Dehradun Bulls), Ramesh Pal believes that successful market participation is a teachable, repeatable discipline rooted in structural pattern recognition, statistical edge, and uncompromising capital protection."
     }
   ],
   "socials": {
-    "telegram": "https://t.me/rameshpalresearch",
-    "whatsapp": "https://wa.me/919876543210",
-    "twitter": "https://x.com/rameshpal",
-    "youtube": "https://youtube.com/@rameshpal",
-    "linkedin": "https://linkedin.com/in/rameshpal"
+    "twitter": "https://x.com/Dehradunbulls",
+    "telegram": "https://t.me/tradewithremo",
+    "youtube": "https://youtube.com/@tradewithremo",
+    "instagram": "https://www.instagram.com/trading_mentor_remo?rpxt=d2lpN2lhMjExNW14",
+    "linkedin": "https://www.linkedin.com/in/ramesh-pal-b83044110?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    "whatsapp": "https://wa.me/qr/37EV266IYJAZD1"
   },
   "compliance": {
     "officerName": "Ramesh Pal",
-    "officerPhone": "+91 98765 43210",
-    "officerEmail": "compliance@rameshpal.in",
+    "officerPhone": "+91-9625139313",
+    "officerEmail": "Rameshpal1396@gmail.com",
     "grievanceTurnaround": "21 working days",
     "scoresUrl": "https://scores.sebi.gov.in",
     "smartOdrUrl": "https://smartodr.in"

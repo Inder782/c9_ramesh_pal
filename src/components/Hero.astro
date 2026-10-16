@@ -1,7 +1,7 @@
 ---
 import config from '../data/config.json';
 const phoneDigits = config.phone.replace(/[^0-9]/g, '');
-const whatsappCta = `https://wa.me/${phoneDigits}?text=Hello%20${encodeURIComponent(config.analystName)},%20I%20would%20like%20to%20discuss%20your%20equity%20research%20offerings.`;
+const whatsappCta = config.whatsappUrl || `https://wa.me/${phoneDigits}`;
 ---
 
 <section class="hero-section" id="home" aria-labelledby="hero-main-title">

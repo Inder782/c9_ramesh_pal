@@ -1,7 +1,6 @@
 ---
 import config from '../data/config.json';
-const phoneDigits = config.phone.replace(/[^0-9]/g, '');
-const whatsappBase = `https://wa.me/${phoneDigits}?text=`;
+const whatsappBase = `https://wa.me/${config.whatsappPhone}?text=`;
 ---
 
 <section class="pricing-section" id="offerings" aria-labelledby="pricing-heading">

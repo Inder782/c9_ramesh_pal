@@ -3,7 +3,7 @@ import config from '../data/config.json';
 import LegalModals from './LegalModals.astro';
 
 const phoneDigits = config.phone.replace(/[^0-9]/g, '');
-const whatsappCta = `https://wa.me/${phoneDigits}?text=Hi%20${encodeURIComponent(config.analystName)},%20I%20am%20contacting%20you%20from%20your%20official%20website.`;
+const whatsappCta = config.whatsappUrl || `https://wa.me/${config.whatsappPhone}`;
 ---
 
 <footer class="site-footer" role="contentinfo">
@@ -59,6 +59,17 @@ const whatsappCta = `https://wa.me/${phoneDigits}?text=Hi%20${encodeURIComponent
           <p><strong>SEBI Reg. No:</strong> {config.sebiRegNo}</p>
           <p><strong>BSE Enlistment:</strong> {config.bseEnlistmentNo}</p>
           <p><strong>Registration Type:</strong> Individual Research Analyst</p>
+        </div>
+
+        <div class="footer-socials">
+          <span class="socials-label">Official Channels:</span>
+          <div class="social-chips">
+            <a href={config.socials.telegram} target="_blank" rel="noopener noreferrer" class="social-chip">Telegram</a>
+            <a href={config.socials.youtube} target="_blank" rel="noopener noreferrer" class="social-chip">YouTube</a>
+            <a href={config.socials.twitter} target="_blank" rel="noopener noreferrer" class="social-chip">X (Twitter)</a>
+            <a href={config.socials.instagram} target="_blank" rel="noopener noreferrer" class="social-chip">Instagram</a>
+            <a href={config.socials.linkedin} target="_blank" rel="noopener noreferrer" class="social-chip">LinkedIn</a>
+          </div>
         </div>
       </div>
 
@@ -276,6 +287,48 @@ const whatsappCta = `https://wa.me/${phoneDigits}?text=Hi%20${encodeURIComponent
 
   .analyst-sebi-meta p {
     margin: 0;
+  }
+
+  .footer-socials {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .socials-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #94A3B8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .social-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .social-chip {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #F8FAFC;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 4px 10px;
+    border-radius: 6px;
+    text-decoration: underline;
+    text-decoration-color: rgba(167, 243, 208, 0.5);
+    text-underline-offset: 2px;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+  }
+
+  .social-chip:hover {
+    background: rgba(6, 95, 70, 0.3);
+    border-color: #34D399;
+    color: #A7F3D0;
   }
 
   .footer-col-title {
