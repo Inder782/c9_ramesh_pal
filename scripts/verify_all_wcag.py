@@ -150,6 +150,9 @@ palette_checks = [
     ("White text on Mountain Pine (#FFFFFF on #064E3B)", "#FFFFFF", "#064E3B", 4.5),
     ("White text on Charcoal Pine (#FFFFFF on #111827)", "#FFFFFF", "#111827", 4.5),
     ("Slate 300 on Alpine Obsidian Footer (#CBD5E1 on #0E161B)", "#CBD5E1", "#0E161B", 4.5),
+    ("Hero Midnight Navy on Porcelain Ivory (#19304B on #F7F6F2)", "#19304B", "#F7F6F2", 4.5),
+    ("Hero Muted Slate on Porcelain Ivory (#596879 on #F7F6F2)", "#596879", "#F7F6F2", 4.5),
+    ("Hero Porcelain Ivory on Midnight Navy CTA (#F7F6F2 on #19304B)", "#F7F6F2", "#19304B", 4.5),
 ]
 
 for name, c1, c2, req in palette_checks:

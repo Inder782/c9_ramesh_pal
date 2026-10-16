@@ -1,145 +1,438 @@
 ---
 import config from '../data/config.json';
-const phoneDigits = config.phone.replace(/[^0-9]/g, '');
-const whatsappCta = config.whatsappUrl || `https://wa.me/${phoneDigits}`;
 ---
 
 <section class="hero-section" id="home" aria-labelledby="hero-main-title">
-  <!-- Subtle Architectural Grid Background -->
-  <div class="hero-pattern-bg" aria-hidden="true"></div>
-  <div class="hero-ambient-glow" aria-hidden="true"></div>
+  <!-- Micro-texture Paper Grain -->
+  <div class="hero-grain" aria-hidden="true"></div>
 
-  <div class="container hero-container">
-    <div class="hero-inner">
-      <!-- Trust Verification Pill (WCAG AA Contrast Compliant) -->
-      <div class="hero-badge reveal-on-scroll">
-        <div class="badge-status">
-          <span class="status-indicator-dot" aria-hidden="true"></span>
-          <span class="badge-status-text">SEBI Registered Research Analyst</span>
-        </div>
-        <span class="badge-sep" aria-hidden="true">/</span>
-        <span class="analyst-name">{config.analystName}</span>
-        <span class="badge-sep" aria-hidden="true">/</span>
-        <span class="reg-code" aria-label={`Registration Number ${config.sebiRegNo}`}>{config.sebiRegNo}</span>
-      </div>
+  <!-- Translucent Ambient Glowing Orbs -->
+  <div class="hero-orb hero-orb-a" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb-b" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb-c" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb-d" aria-hidden="true"></div>
 
-      <!-- Main Heading: The Educator's Signature Philosophy -->
-      <h1 class="hero-title reveal-on-scroll" id="hero-main-title">
-        Repeat a Pattern Until It Becomes Your <span class="signature-highlight">Signature.</span>
-      </h1>
+  <!-- Generative Dotted Mesh Waves & Orbital Curves -->
+  <div class="hero-mesh-wrapper" aria-hidden="true">
+    <svg class="hero-mesh-svg" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <radialGradient id="heroNodeGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#B89558" stop-opacity="0.75" />
+          <stop offset="50%" stop-color="#B89558" stop-opacity="0.20" />
+          <stop offset="100%" stop-color="#B89558" stop-opacity="0" />
+        </radialGradient>
+      </defs>
 
-      <!-- Subtitle -->
-      <p class="hero-subtitle reveal-on-scroll">
-        Mastery in equity markets is not about guessing tops or bottoms. Engineered by an accredited educator, our institutional-grade research distills complex price action into systematic, repeatable frameworks with uncompromised risk control.
-      </p>
+      <!-- Delicate Orbital Paths -->
+      <path d="M -60 340 C 200 220, 420 360, 540 520" stroke="#B89558" stroke-width="0.85" stroke-dasharray="3 5" opacity="0.32" />
+      <path d="M 900 520 C 1020 360, 1240 240, 1500 320" stroke="#B89558" stroke-width="0.85" stroke-dasharray="3 5" opacity="0.32" />
+      <path d="M 120 180 C 380 110, 1060 110, 1320 180" stroke="#B8CFC5" stroke-width="0.75" stroke-dasharray="2 6" opacity="0.38" />
 
-      <!-- 3 Pedagogical Value Pillars -->
-      <ul class="hero-pillars-list reveal-on-scroll" aria-label="Core Research Pillars">
-        <li>
-          <div class="pillar-bullet" aria-hidden="true">
-            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-          </div>
-          <span><strong>Disciplined Repetition:</strong> High-probability structural setups executed with zero deviation.</span>
-        </li>
-        <li>
-          <div class="pillar-bullet" aria-hidden="true">
-            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-          </div>
-          <span><strong>Risk-First Pedagogy:</strong> Pre-defined stop-losses and strict capital protection on every idea.</span>
-        </li>
-        <li>
-          <div class="pillar-bullet" aria-hidden="true">
-            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-          </div>
-          <span><strong>Zero Noise:</strong> Clean, actionable research notes without speculative hyperbole.</span>
-        </li>
-      </ul>
+      <!-- Illuminated Gold Node Points -->
+      <circle cx="330" cy="285" r="14" fill="url(#heroNodeGlow)" />
+      <circle cx="330" cy="285" r="6" stroke="#B89558" stroke-width="0.75" opacity="0.5" />
+      <circle cx="330" cy="285" r="2.5" fill="#B89558" />
 
-      <!-- Primary & Secondary Actions -->
-      <div class="hero-actions reveal-on-scroll">
-        <a href="#offerings" class="btn-primary">
-          <span>Explore Research Offerings</span>
-          <span class="btn-arrow" aria-hidden="true">&rarr;</span>
-        </a>
-        <a href="#about" class="btn-secondary">
-          <span>The Educator's Journey</span>
-        </a>
-      </div>
+      <circle cx="1110" cy="305" r="14" fill="url(#heroNodeGlow)" />
+      <circle cx="1110" cy="305" r="6" stroke="#B89558" stroke-width="0.75" opacity="0.5" />
+      <circle cx="1110" cy="305" r="2.5" fill="#B89558" />
 
-      <!-- Quick Trust Indicators Strip -->
-      <div class="hero-metrics-strip reveal-on-scroll">
-        <div class="metric-card">
-          <span class="metric-value">15+</span>
-          <span class="metric-label">Years Teaching Rigor</span>
-        </div>
-        <div class="metric-divider" aria-hidden="true"></div>
-        <div class="metric-card">
-          <span class="metric-value">100%</span>
-          <span class="metric-label">Rule-Based Analysis</span>
-        </div>
-        <div class="metric-divider" aria-hidden="true"></div>
-        <div class="metric-card">
-          <span class="metric-value">SEBI</span>
-          <span class="metric-label">Registered Individual RA</span>
-        </div>
-        <div class="metric-divider" aria-hidden="true"></div>
-        <div class="metric-card">
-          <span class="metric-value">Zero</span>
-          <span class="metric-label">Hidden Agendas or Tips</span>
-        </div>
-      </div>
+      <circle cx="210" cy="620" r="12" fill="url(#heroNodeGlow)" />
+      <circle cx="210" cy="620" r="5" stroke="#B89558" stroke-width="0.75" opacity="0.45" />
+      <circle cx="210" cy="620" r="2" fill="#B89558" />
+
+      <circle cx="1230" cy="590" r="12" fill="url(#heroNodeGlow)" />
+      <circle cx="1230" cy="590" r="5" stroke="#B89558" stroke-width="0.75" opacity="0.45" />
+      <circle cx="1230" cy="590" r="2" fill="#B89558" />
+
+      <!-- Flowing Dotted Mesh Field -->
+      <circle cx="-20.0" cy="160.0" r="1.5" fill="#B8CFC5" opacity="0.19" />
+      <circle cx="4.9" cy="166.7" r="1.6" fill="#B89558" opacity="0.25" />
+      <circle cx="30.2" cy="176.2" r="1.6" fill="#B89558" opacity="0.28" />
+      <circle cx="55.8" cy="188.1" r="1.7" fill="#B8CFC5" opacity="0.29" />
+      <circle cx="81.6" cy="202.5" r="1.7" fill="#B89558" opacity="0.36" />
+      <circle cx="107.7" cy="219.0" r="1.7" fill="#B89558" opacity="0.40" />
+      <circle cx="134.0" cy="237.5" r="1.8" fill="#B8CFC5" opacity="0.39" />
+      <circle cx="160.3" cy="257.8" r="1.8" fill="#B89558" opacity="0.47" />
+      <circle cx="186.8" cy="279.7" r="1.8" fill="#B89558" opacity="0.51" />
+      <circle cx="213.2" cy="303.1" r="1.8" fill="#B8CFC5" opacity="0.46" />
+      <circle cx="239.7" cy="327.7" r="1.8" fill="#B89558" opacity="0.47" />
+      <circle cx="266.0" cy="353.4" r="1.8" fill="#B89558" opacity="0.44" />
+      <circle cx="292.3" cy="380.0" r="1.7" fill="#B8CFC5" opacity="0.36" />
+      <circle cx="318.4" cy="407.4" r="1.7" fill="#B89558" opacity="0.36" />
+      <circle cx="344.2" cy="435.2" r="1.7" fill="#B89558" opacity="0.32" />
+      <circle cx="369.8" cy="463.4" r="1.6" fill="#B8CFC5" opacity="0.26" />
+      <circle cx="395.1" cy="491.7" r="1.6" fill="#B89558" opacity="0.25" />
+      <circle cx="420.0" cy="520.0" r="1.5" fill="#B89558" opacity="0.21" />
+      <circle cx="-30.0" cy="220.0" r="1.4" fill="#B89558" opacity="0.21" />
+      <circle cx="-6.9" cy="228.3" r="1.5" fill="#B8CFC5" opacity="0.22" />
+      <circle cx="16.6" cy="238.9" r="1.5" fill="#B8CFC5" opacity="0.26" />
+      <circle cx="40.5" cy="251.8" r="1.6" fill="#B89558" opacity="0.32" />
+      <circle cx="64.6" cy="266.7" r="1.6" fill="#B8CFC5" opacity="0.32" />
+      <circle cx="88.9" cy="283.6" r="1.6" fill="#B8CFC5" opacity="0.36" />
+      <circle cx="113.4" cy="302.4" r="1.7" fill="#B89558" opacity="0.44" />
+      <circle cx="138.0" cy="322.8" r="1.7" fill="#B8CFC5" opacity="0.42" />
+      <circle cx="162.6" cy="344.7" r="1.7" fill="#B8CFC5" opacity="0.46" />
+      <circle cx="187.4" cy="368.1" r="1.7" fill="#B89558" opacity="0.51" />
+      <circle cx="212.0" cy="392.8" r="1.7" fill="#B8CFC5" opacity="0.42" />
+      <circle cx="236.6" cy="418.6" r="1.7" fill="#B8CFC5" opacity="0.39" />
+      <circle cx="261.1" cy="445.4" r="1.6" fill="#B89558" opacity="0.40" />
+      <circle cx="285.4" cy="473.1" r="1.6" fill="#B8CFC5" opacity="0.32" />
+      <circle cx="309.5" cy="501.5" r="1.6" fill="#B8CFC5" opacity="0.29" />
+      <circle cx="333.4" cy="530.6" r="1.5" fill="#B89558" opacity="0.29" />
+      <circle cx="356.9" cy="560.1" r="1.5" fill="#B8CFC5" opacity="0.22" />
+      <circle cx="380.0" cy="590.0" r="1.4" fill="#B8CFC5" opacity="0.19" />
+      <circle cx="-20.0" cy="290.0" r="1.3" fill="#B8CFC5" opacity="0.19" />
+      <circle cx="2.9" cy="299.8" r="1.4" fill="#B89558" opacity="0.25" />
+      <circle cx="25.9" cy="311.7" r="1.4" fill="#B89558" opacity="0.28" />
+      <circle cx="48.8" cy="325.4" r="1.5" fill="#B8CFC5" opacity="0.29" />
+      <circle cx="71.6" cy="340.9" r="1.5" fill="#B89558" opacity="0.36" />
+      <circle cx="94.5" cy="358.0" r="1.5" fill="#B89558" opacity="0.40" />
+      <circle cx="117.2" cy="376.8" r="1.6" fill="#B8CFC5" opacity="0.39" />
+      <circle cx="139.9" cy="397.0" r="1.6" fill="#B89558" opacity="0.47" />
+      <circle cx="162.5" cy="418.7" r="1.6" fill="#B89558" opacity="0.51" />
+      <circle cx="185.0" cy="441.6" r="1.6" fill="#B8CFC5" opacity="0.46" />
+      <circle cx="207.4" cy="465.8" r="1.6" fill="#B89558" opacity="0.47" />
+      <circle cx="229.6" cy="491.0" r="1.6" fill="#B89558" opacity="0.44" />
+      <circle cx="251.8" cy="517.2" r="1.5" fill="#B8CFC5" opacity="0.36" />
+      <circle cx="273.8" cy="544.4" r="1.5" fill="#B89558" opacity="0.36" />
+      <circle cx="295.6" cy="572.3" r="1.5" fill="#B89558" opacity="0.32" />
+      <circle cx="317.2" cy="601.0" r="1.4" fill="#B8CFC5" opacity="0.26" />
+      <circle cx="338.7" cy="630.2" r="1.4" fill="#B89558" opacity="0.25" />
+      <circle cx="360.0" cy="660.0" r="1.3" fill="#B89558" opacity="0.21" />
+      <circle cx="-40.0" cy="370.0" r="1.2" fill="#B89558" opacity="0.21" />
+      <circle cx="-17.1" cy="379.8" r="1.3" fill="#B8CFC5" opacity="0.22" />
+      <circle cx="5.9" cy="391.7" r="1.3" fill="#B8CFC5" opacity="0.26" />
+      <circle cx="28.8" cy="405.3" r="1.4" fill="#B89558" opacity="0.32" />
+      <circle cx="51.6" cy="420.7" r="1.4" fill="#B8CFC5" opacity="0.32" />
+      <circle cx="74.5" cy="437.8" r="1.4" fill="#B8CFC5" opacity="0.36" />
+      <circle cx="97.2" cy="456.4" r="1.5" fill="#B89558" opacity="0.44" />
+      <circle cx="119.9" cy="476.3" r="1.5" fill="#B8CFC5" opacity="0.42" />
+      <circle cx="142.5" cy="497.6" r="1.5" fill="#B8CFC5" opacity="0.46" />
+      <circle cx="165.0" cy="520.1" r="1.5" fill="#B89558" opacity="0.51" />
+      <circle cx="187.4" cy="543.7" r="1.5" fill="#B8CFC5" opacity="0.42" />
+      <circle cx="209.6" cy="568.3" r="1.5" fill="#B8CFC5" opacity="0.39" />
+      <circle cx="231.8" cy="593.7" r="1.4" fill="#B89558" opacity="0.40" />
+      <circle cx="253.8" cy="619.9" r="1.4" fill="#B8CFC5" opacity="0.32" />
+      <circle cx="275.6" cy="646.7" r="1.4" fill="#B8CFC5" opacity="0.29" />
+      <circle cx="297.2" cy="674.1" r="1.3" fill="#B89558" opacity="0.29" />
+      <circle cx="318.7" cy="701.9" r="1.3" fill="#B8CFC5" opacity="0.22" />
+      <circle cx="340.0" cy="730.0" r="1.2" fill="#B8CFC5" opacity="0.19" />
+      <circle cx="-20.0" cy="460.0" r="1.3" fill="#B8CFC5" opacity="0.19" />
+      <circle cx="0.3" cy="471.2" r="1.4" fill="#B89558" opacity="0.25" />
+      <circle cx="21.0" cy="484.6" r="1.4" fill="#B89558" opacity="0.30" />
+      <circle cx="42.2" cy="500.2" r="1.5" fill="#B8CFC5" opacity="0.30" />
+      <circle cx="63.9" cy="517.7" r="1.5" fill="#B89558" opacity="0.38" />
+      <circle cx="85.9" cy="537.0" r="1.6" fill="#B89558" opacity="0.42" />
+      <circle cx="108.3" cy="558.1" r="1.6" fill="#B8CFC5" opacity="0.42" />
+      <circle cx="131.0" cy="580.7" r="1.6" fill="#B89558" opacity="0.51" />
+      <circle cx="154.0" cy="604.7" r="1.6" fill="#B89558" opacity="0.51" />
+      <circle cx="177.3" cy="629.9" r="1.6" fill="#B8CFC5" opacity="0.42" />
+      <circle cx="200.7" cy="656.3" r="1.6" fill="#B89558" opacity="0.42" />
+      <circle cx="224.4" cy="683.7" r="1.5" fill="#B89558" opacity="0.38" />
+      <circle cx="248.2" cy="711.8" r="1.5" fill="#B8CFC5" opacity="0.30" />
+      <circle cx="272.0" cy="740.7" r="1.4" fill="#B89558" opacity="0.30" />
+      <circle cx="296.0" cy="770.2" r="1.4" fill="#B89558" opacity="0.25" />
+      <circle cx="320.0" cy="800.0" r="1.3" fill="#B8CFC5" opacity="0.19" />
+      <circle cx="-30.0" cy="560.0" r="1.2" fill="#B89558" opacity="0.21" />
+      <circle cx="-6.8" cy="572.8" r="1.3" fill="#B8CFC5" opacity="0.23" />
+      <circle cx="16.8" cy="587.8" r="1.3" fill="#B8CFC5" opacity="0.28" />
+      <circle cx="40.7" cy="605.1" r="1.4" fill="#B89558" opacity="0.36" />
+      <circle cx="64.9" cy="624.3" r="1.4" fill="#B8CFC5" opacity="0.36" />
+      <circle cx="89.3" cy="645.3" r="1.5" fill="#B8CFC5" opacity="0.41" />
+      <circle cx="113.9" cy="668.1" r="1.5" fill="#B89558" opacity="0.51" />
+      <circle cx="138.7" cy="692.3" r="1.5" fill="#B8CFC5" opacity="0.45" />
+      <circle cx="163.6" cy="717.9" r="1.5" fill="#B8CFC5" opacity="0.41" />
+      <circle cx="188.8" cy="744.6" r="1.4" fill="#B89558" opacity="0.41" />
+      <circle cx="214.0" cy="772.3" r="1.4" fill="#B8CFC5" opacity="0.32" />
+      <circle cx="239.3" cy="800.9" r="1.3" fill="#B8CFC5" opacity="0.28" />
+      <circle cx="264.6" cy="830.2" r="1.3" fill="#B89558" opacity="0.26" />
+      <circle cx="290.0" cy="860.0" r="1.2" fill="#B8CFC5" opacity="0.19" />
+      <circle cx="1460.0" cy="150.0" r="1.5" fill="#B8CFC5" opacity="0.19" />
+      <circle cx="1435.1" cy="158.5" r="1.6" fill="#B89558" opacity="0.25" />
+      <circle cx="1409.8" cy="169.7" r="1.6" fill="#B89558" opacity="0.28" />
+      <circle cx="1384.2" cy="183.4" r="1.7" fill="#B8CFC5" opacity="0.29" />
+      <circle cx="1358.4" cy="199.4" r="1.7" fill="#B89558" opacity="0.36" />
+      <circle cx="1332.3" cy="217.6" r="1.7" fill="#B89558" opacity="0.40" />
+      <circle cx="1306.0" cy="237.6" r="1.8" fill="#B8CFC5" opacity="0.39" />
+      <circle cx="1279.7" cy="259.5" r="1.8" fill="#B89558" opacity="0.47" />
+      <circle cx="1253.2" cy="282.8" r="1.8" fill="#B89558" opacity="0.51" />
+      <circle cx="1226.8" cy="307.5" r="1.8" fill="#B8CFC5" opacity="0.46" />
+      <circle cx="1200.3" cy="333.4" r="1.8" fill="#B89558" opacity="0.47" />
+      <circle cx="1174.0" cy="360.1" r="1.8" fill="#B89558" opacity="0.44" />
+      <circle cx="1147.7" cy="387.7" r="1.7" fill="#B8CFC5" opacity="0.36" />
+      <circle cx="1121.6" cy="415.8" r="1.7" fill="#B89558" opacity="0.36" />
+      <circle cx="1095.8" cy="444.3" r="1.7" fill="#B89558" opacity="0.32" />
+      <circle cx="1070.2" cy="473.0" r="1.6" fill="#B8CFC5" opacity="0.26" />
+      <circle cx="1044.9" cy="501.6" r="1.6" fill="#B89558" opacity="0.25" />
+      <circle cx="1020.0" cy="530.0" r="1.5" fill="#B89558" opacity="0.21" />
+      <circle cx="1470.0" cy="210.0" r="1.4" fill="#B89558" opacity="0.21" />
+      <circle cx="1446.9" cy="220.0" r="1.5" fill="#B8CFC5" opacity="0.22" />
+      <circle cx="1423.4" cy="232.4" r="1.5" fill="#B8CFC5" opacity="0.26" />
+      <circle cx="1399.5" cy="247.0" r="1.6" fill="#B89558" opacity="0.32" />
+      <circle cx="1375.4" cy="263.7" r="1.6" fill="#B8CFC5" opacity="0.32" />
+      <circle cx="1351.1" cy="282.2" r="1.6" fill="#B8CFC5" opacity="0.36" />
+      <circle cx="1326.6" cy="302.5" r="1.7" fill="#B89558" opacity="0.44" />
+      <circle cx="1302.0" cy="324.4" r="1.7" fill="#B8CFC5" opacity="0.42" />
+      <circle cx="1277.4" cy="347.8" r="1.7" fill="#B8CFC5" opacity="0.46" />
+      <circle cx="1252.6" cy="372.5" r="1.7" fill="#B89558" opacity="0.51" />
+      <circle cx="1228.0" cy="398.4" r="1.7" fill="#B8CFC5" opacity="0.42" />
+      <circle cx="1203.4" cy="425.3" r="1.7" fill="#B8CFC5" opacity="0.39" />
+      <circle cx="1178.9" cy="453.1" r="1.6" fill="#B89558" opacity="0.40" />
+      <circle cx="1154.6" cy="481.6" r="1.6" fill="#B8CFC5" opacity="0.32" />
+      <circle cx="1130.5" cy="510.7" r="1.6" fill="#B8CFC5" opacity="0.29" />
+      <circle cx="1106.6" cy="540.2" r="1.5" fill="#B89558" opacity="0.29" />
+      <circle cx="1083.1" cy="570.0" r="1.5" fill="#B8CFC5" opacity="0.22" />
+      <circle cx="1060.0" cy="600.0" r="1.4" fill="#B8CFC5" opacity="0.19" />
+      <circle cx="1460.0" cy="280.0" r="1.3" fill="#B8CFC5" opacity="0.19" />
+      <circle cx="1437.1" cy="291.6" r="1.4" fill="#B89558" opacity="0.25" />
+      <circle cx="1414.1" cy="305.2" r="1.4" fill="#B89558" opacity="0.28" />
+      <circle cx="1391.2" cy="320.6" r="1.5" fill="#B8CFC5" opacity="0.29" />
+      <circle cx="1368.4" cy="337.8" r="1.5" fill="#B89558" opacity="0.36" />
+      <circle cx="1345.5" cy="356.6" r="1.5" fill="#B89558" opacity="0.40" />
+      <circle cx="1322.8" cy="376.9" r="1.6" fill="#B8CFC5" opacity="0.39" />
+      <circle cx="1300.1" cy="398.7" r="1.6" fill="#B89558" opacity="0.47" />
+      <circle cx="1277.5" cy="421.8" r="1.6" fill="#B89558" opacity="0.51" />
+      <circle cx="1255.0" cy="446.0" r="1.6" fill="#B8CFC5" opacity="0.46" />
+      <circle cx="1232.6" cy="471.4" r="1.6" fill="#B89558" opacity="0.47" />
+      <circle cx="1210.4" cy="497.7" r="1.6" fill="#B89558" opacity="0.44" />
+      <circle cx="1188.2" cy="524.9" r="1.5" fill="#B8CFC5" opacity="0.36" />
+      <circle cx="1166.2" cy="552.8" r="1.5" fill="#B89558" opacity="0.36" />
+      <circle cx="1144.4" cy="581.4" r="1.5" fill="#B89558" opacity="0.32" />
+      <circle cx="1122.8" cy="610.6" r="1.4" fill="#B8CFC5" opacity="0.26" />
+      <circle cx="1101.3" cy="640.1" r="1.4" fill="#B89558" opacity="0.25" />
+      <circle cx="1080.0" cy="670.0" r="1.3" fill="#B89558" opacity="0.21" />
+      <circle cx="1480.0" cy="360.0" r="1.2" fill="#B89558" opacity="0.21" />
+      <circle cx="1457.1" cy="371.6" r="1.3" fill="#B8CFC5" opacity="0.22" />
+      <circle cx="1434.1" cy="385.2" r="1.3" fill="#B8CFC5" opacity="0.26" />
+      <circle cx="1411.2" cy="400.6" r="1.4" fill="#B89558" opacity="0.32" />
+      <circle cx="1388.4" cy="417.7" r="1.4" fill="#B8CFC5" opacity="0.32" />
+      <circle cx="1365.5" cy="436.3" r="1.4" fill="#B8CFC5" opacity="0.36" />
+      <circle cx="1342.8" cy="456.5" r="1.5" fill="#B89558" opacity="0.44" />
+      <circle cx="1320.1" cy="478.0" r="1.5" fill="#B8CFC5" opacity="0.42" />
+      <circle cx="1297.5" cy="500.7" r="1.5" fill="#B8CFC5" opacity="0.46" />
+      <circle cx="1275.0" cy="524.5" r="1.5" fill="#B89558" opacity="0.51" />
+      <circle cx="1252.6" cy="549.3" r="1.5" fill="#B8CFC5" opacity="0.42" />
+      <circle cx="1230.4" cy="575.0" r="1.5" fill="#B8CFC5" opacity="0.39" />
+      <circle cx="1208.2" cy="601.4" r="1.4" fill="#B89558" opacity="0.40" />
+      <circle cx="1186.2" cy="628.4" r="1.4" fill="#B8CFC5" opacity="0.32" />
+      <circle cx="1164.4" cy="655.8" r="1.4" fill="#B8CFC5" opacity="0.29" />
+      <circle cx="1142.8" cy="683.7" r="1.3" fill="#B89558" opacity="0.29" />
+      <circle cx="1121.3" cy="711.8" r="1.3" fill="#B8CFC5" opacity="0.22" />
+      <circle cx="1100.0" cy="740.0" r="1.2" fill="#B8CFC5" opacity="0.19" />
+      <circle cx="1460.0" cy="450.0" r="1.3" fill="#B8CFC5" opacity="0.19" />
+      <circle cx="1439.7" cy="463.2" r="1.4" fill="#B89558" opacity="0.25" />
+      <circle cx="1419.0" cy="478.6" r="1.4" fill="#B89558" opacity="0.30" />
+      <circle cx="1397.8" cy="496.1" r="1.5" fill="#B8CFC5" opacity="0.30" />
+      <circle cx="1376.1" cy="515.5" r="1.5" fill="#B89558" opacity="0.38" />
+      <circle cx="1354.1" cy="536.7" r="1.6" fill="#B89558" opacity="0.42" />
+      <circle cx="1331.7" cy="559.4" r="1.6" fill="#B8CFC5" opacity="0.42" />
+      <circle cx="1309.0" cy="583.7" r="1.6" fill="#B89558" opacity="0.51" />
+      <circle cx="1286.0" cy="609.1" r="1.6" fill="#B89558" opacity="0.51" />
+      <circle cx="1262.7" cy="635.8" r="1.6" fill="#B8CFC5" opacity="0.42" />
+      <circle cx="1239.3" cy="663.3" r="1.6" fill="#B89558" opacity="0.42" />
+      <circle cx="1215.6" cy="691.7" r="1.5" fill="#B89558" opacity="0.38" />
+      <circle cx="1191.8" cy="720.7" r="1.5" fill="#B8CFC5" opacity="0.30" />
+      <circle cx="1168.0" cy="750.2" r="1.4" fill="#B89558" opacity="0.30" />
+      <circle cx="1144.0" cy="780.0" r="1.4" fill="#B89558" opacity="0.25" />
+      <circle cx="1120.0" cy="810.0" r="1.3" fill="#B8CFC5" opacity="0.19" />
+      <circle cx="1470.0" cy="550.0" r="1.2" fill="#B89558" opacity="0.21" />
+      <circle cx="1446.8" cy="565.1" r="1.3" fill="#B8CFC5" opacity="0.23" />
+      <circle cx="1423.2" cy="582.4" r="1.3" fill="#B8CFC5" opacity="0.28" />
+      <circle cx="1399.3" cy="601.9" r="1.4" fill="#B89558" opacity="0.36" />
+      <circle cx="1375.1" cy="623.2" r="1.4" fill="#B8CFC5" opacity="0.36" />
+      <circle cx="1350.7" cy="646.3" r="1.5" fill="#B8CFC5" opacity="0.41" />
+      <circle cx="1326.1" cy="670.9" r="1.5" fill="#B89558" opacity="0.51" />
+      <circle cx="1301.3" cy="696.9" r="1.5" fill="#B8CFC5" opacity="0.45" />
+      <circle cx="1276.4" cy="724.0" r="1.5" fill="#B8CFC5" opacity="0.41" />
+      <circle cx="1251.2" cy="752.0" r="1.4" fill="#B89558" opacity="0.41" />
+      <circle cx="1226.0" cy="780.9" r="1.4" fill="#B8CFC5" opacity="0.32" />
+      <circle cx="1200.7" cy="810.3" r="1.3" fill="#B8CFC5" opacity="0.28" />
+      <circle cx="1175.4" cy="840.0" r="1.3" fill="#B89558" opacity="0.26" />
+      <circle cx="1150.0" cy="870.0" r="1.2" fill="#B8CFC5" opacity="0.19" />
+      <circle cx="200.0" cy="820.0" r="1.2" fill="#B89558" opacity="0.21" />
+      <circle cx="234.2" cy="811.9" r="1.2" fill="#B8CFC5" opacity="0.21" />
+      <circle cx="271.4" cy="805.8" r="1.3" fill="#B8CFC5" opacity="0.24" />
+      <circle cx="311.3" cy="801.4" r="1.3" fill="#B89558" opacity="0.29" />
+      <circle cx="353.7" cy="798.7" r="1.4" fill="#B8CFC5" opacity="0.29" />
+      <circle cx="398.2" cy="797.3" r="1.4" fill="#B8CFC5" opacity="0.31" />
+      <circle cx="444.6" cy="797.1" r="1.4" fill="#B89558" opacity="0.38" />
+      <circle cx="492.5" cy="797.9" r="1.4" fill="#B8CFC5" opacity="0.36" />
+      <circle cx="541.7" cy="799.5" r="1.5" fill="#B8CFC5" opacity="0.39" />
+      <circle cx="591.9" cy="801.7" r="1.5" fill="#B89558" opacity="0.46" />
+      <circle cx="642.9" cy="804.4" r="1.5" fill="#B8CFC5" opacity="0.44" />
+      <circle cx="694.2" cy="807.3" r="1.5" fill="#B8CFC5" opacity="0.46" />
+      <circle cx="745.8" cy="810.2" r="1.5" fill="#B89558" opacity="0.52" />
+      <circle cx="797.1" cy="813.0" r="1.5" fill="#B8CFC5" opacity="0.44" />
+      <circle cx="848.1" cy="815.4" r="1.5" fill="#B8CFC5" opacity="0.41" />
+      <circle cx="898.3" cy="817.3" r="1.5" fill="#B89558" opacity="0.43" />
+      <circle cx="947.5" cy="818.5" r="1.4" fill="#B8CFC5" opacity="0.36" />
+      <circle cx="995.4" cy="818.7" r="1.4" fill="#B8CFC5" opacity="0.34" />
+      <circle cx="1041.8" cy="817.8" r="1.4" fill="#B89558" opacity="0.35" />
+      <circle cx="1086.3" cy="815.6" r="1.4" fill="#B8CFC5" opacity="0.29" />
+      <circle cx="1128.7" cy="812.0" r="1.3" fill="#B8CFC5" opacity="0.26" />
+      <circle cx="1168.6" cy="806.6" r="1.3" fill="#B89558" opacity="0.27" />
+      <circle cx="1205.8" cy="799.3" r="1.2" fill="#B8CFC5" opacity="0.21" />
+      <circle cx="1240.0" cy="790.0" r="1.2" fill="#B8CFC5" opacity="0.19" />
+      <circle cx="260.0" cy="860.0" r="1.1" fill="#B8CFC5" opacity="0.19" />
+      <circle cx="298.1" cy="851.3" r="1.1" fill="#B89558" opacity="0.24" />
+      <circle cx="337.9" cy="844.8" r="1.2" fill="#B89558" opacity="0.27" />
+      <circle cx="379.2" cy="840.5" r="1.2" fill="#B8CFC5" opacity="0.27" />
+      <circle cx="421.9" cy="838.0" r="1.3" fill="#B89558" opacity="0.33" />
+      <circle cx="465.7" cy="837.0" r="1.3" fill="#B89558" opacity="0.36" />
+      <circle cx="510.6" cy="837.4" r="1.3" fill="#B8CFC5" opacity="0.35" />
+      <circle cx="556.3" cy="838.9" r="1.4" fill="#B89558" opacity="0.42" />
+      <circle cx="602.6" cy="841.2" r="1.4" fill="#B89558" opacity="0.46" />
+      <circle cx="649.4" cy="844.0" r="1.4" fill="#B8CFC5" opacity="0.43" />
+      <circle cx="696.4" cy="847.1" r="1.4" fill="#B89558" opacity="0.52" />
+      <circle cx="743.6" cy="850.3" r="1.4" fill="#B89558" opacity="0.52" />
+      <circle cx="790.6" cy="853.4" r="1.4" fill="#B8CFC5" opacity="0.43" />
+      <circle cx="837.4" cy="855.9" r="1.4" fill="#B89558" opacity="0.46" />
+      <circle cx="883.7" cy="857.8" r="1.4" fill="#B89558" opacity="0.42" />
+      <circle cx="929.4" cy="858.7" r="1.3" fill="#B8CFC5" opacity="0.35" />
+      <circle cx="974.3" cy="858.4" r="1.3" fill="#B89558" opacity="0.36" />
+      <circle cx="1018.1" cy="856.6" r="1.3" fill="#B89558" opacity="0.33" />
+      <circle cx="1060.8" cy="853.2" r="1.2" fill="#B8CFC5" opacity="0.27" />
+      <circle cx="1102.1" cy="847.8" r="1.2" fill="#B89558" opacity="0.27" />
+      <circle cx="1141.9" cy="840.1" r="1.1" fill="#B89558" opacity="0.24" />
+      <circle cx="1180.0" cy="830.0" r="1.1" fill="#B8CFC5" opacity="0.19" />
+    </svg>
+  </div>
+
+  <div class="container hero-content-container">
+    <!-- Refined SEBI Registration Eyebrow -->
+    <div class="hero-eyebrow" aria-label={`SEBI Registered Research Analyst ${config.sebiRegNo}`}>
+      <span class="eyebrow-rule" aria-hidden="true"></span>
+      <span class="eyebrow-text">
+        SEBI REGISTERED RESEARCH ANALYST <span class="eyebrow-sep" aria-hidden="true">&middot;</span> {config.sebiRegNo}
+      </span>
+      <span class="eyebrow-rule" aria-hidden="true"></span>
+    </div>
+
+    <!-- Centered Editorial Headline with Signature Flourish -->
+    <h1 class="hero-title" id="hero-main-title">
+      <span class="title-line">Repeat a Pattern</span>
+      <span class="title-line">Until It Becomes Your</span>
+      <span class="title-line signature-wrapper">
+        <span class="signature-word">Signature.</span>
+        <svg class="signature-flourish" aria-hidden="true" viewBox="0 0 280 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="flourish-path" d="M 4,15 C 42,19 98,20 162,16 C 206,13 246,9 276,6" stroke="#B89558" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+    </h1>
+
+    <!-- Single Refined Supporting Statement -->
+    <p class="hero-support">
+      Clarity. A deeper way of thinking about markets.
+    </p>
+
+    <!-- Single Midnight Navy Primary CTA -->
+    <div class="hero-action">
+      <a href="#offerings" class="btn-hero-primary" aria-label="Explore Our Research">
+        <span>Explore Our Research</span>
+        <span class="cta-arrow" aria-hidden="true">&rarr;</span>
+      </a>
     </div>
   </div>
 </section>
 
 <style>
+  /* =========================================================
+     HERO SECTION: EDITORIAL LUXURY & GENERATIVE DESIGN
+     Palette:
+     - 70% Porcelain Ivory: #F7F6F2
+     - 20% Midnight Navy: #19304B
+     - 10% Champagne Gold: #B89558
+     - Atmospheric Sage: #B8CFC5
+     - Supporting Slate: #596879
+     ========================================================= */
+
   .hero-section {
     position: relative;
-    padding: 160px 0 100px;
-    background-color: var(--bg-primary);
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F7F6F2;
+    padding: clamp(140px, 18svh, 190px) 24px clamp(80px, 12svh, 120px);
     overflow: hidden;
   }
 
-  /* Architectural Grid Pattern (Clean geometric lines) */
-  .hero-pattern-bg {
+  /* Micro-texture Grain Overlay */
+  .hero-grain {
     position: absolute;
     inset: 0;
-    background-image: 
-      linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
-    background-size: 48px 48px;
-    mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 60%, transparent 100%);
-    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 60%, transparent 100%);
     pointer-events: none;
     z-index: 1;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    mix-blend-mode: multiply;
   }
 
-  .hero-ambient-glow {
+  /* 4 Ambient Glowing Orbs */
+  .hero-orb {
     position: absolute;
-    top: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 650px;
-    height: 400px;
-    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-    filter: blur(80px);
+    border-radius: 50%;
     pointer-events: none;
     z-index: 1;
   }
 
-  .hero-container {
-    position: relative;
-    z-index: 2;
+  .hero-orb-a {
+    top: 4%;
+    left: -8%;
+    width: clamp(380px, 42vw, 560px);
+    height: clamp(380px, 42vw, 560px);
+    background: radial-gradient(circle at 45% 45%, rgba(184, 149, 88, 0.22) 0%, rgba(184, 207, 197, 0.14) 50%, transparent 72%);
+    filter: blur(85px);
   }
 
-  .hero-inner {
-    max-width: 860px;
+  .hero-orb-b {
+    bottom: 2%;
+    left: 4%;
+    width: clamp(340px, 38vw, 480px);
+    height: clamp(340px, 38vw, 480px);
+    background: radial-gradient(circle at 50% 50%, rgba(184, 207, 197, 0.24) 0%, rgba(184, 149, 88, 0.12) 55%, transparent 70%);
+    filter: blur(90px);
+  }
+
+  .hero-orb-c {
+    top: 6%;
+    right: -6%;
+    width: clamp(360px, 40vw, 520px);
+    height: clamp(360px, 40vw, 520px);
+    background: radial-gradient(circle at 55% 45%, rgba(184, 207, 197, 0.22) 0%, rgba(184, 149, 88, 0.14) 50%, transparent 72%);
+    filter: blur(85px);
+  }
+
+  .hero-orb-d {
+    bottom: 4%;
+    right: 5%;
+    width: clamp(320px, 36vw, 460px);
+    height: clamp(320px, 36vw, 460px);
+    background: radial-gradient(circle at 50% 50%, rgba(184, 149, 88, 0.20) 0%, rgba(184, 207, 197, 0.15) 50%, transparent 70%);
+    filter: blur(80px);
+  }
+
+  /* Generative Mesh Wrapper */
+  .hero-mesh-wrapper {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+    overflow: hidden;
+  }
+
+  .hero-mesh-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /* Central Content Composition */
+  .hero-content-container {
+    position: relative;
+    z-index: 3;
+    max-width: 960px;
     margin: 0 auto;
     text-align: center;
     display: flex;
@@ -147,197 +440,226 @@ const whatsappCta = config.whatsappUrl || `https://wa.me/${phoneDigits}`;
     align-items: center;
   }
 
-  /* Verified Trust Pill */
-  .hero-badge {
+  /* Refined SEBI Registration Eyebrow */
+  .hero-eyebrow {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-light);
-    border-radius: 9999px;
-    padding: 6px 16px;
-    font-size: 0.8125rem;
-    box-shadow: var(--shadow-sm);
-    margin-bottom: 24px;
-    flex-wrap: wrap;
     justify-content: center;
+    gap: 14px;
+    margin-bottom: clamp(24px, 4vh, 36px);
   }
 
-  .badge-status {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
+  .eyebrow-rule {
+    display: inline-block;
+    width: 32px;
+    height: 1px;
+    background-color: #B89558;
+    opacity: 0.85;
   }
 
-  .status-indicator-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: var(--accent-primary);
-    box-shadow: 0 0 0 3px var(--accent-border);
-  }
-
-  .badge-status-text {
+  .eyebrow-text {
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: clamp(0.75rem, 0.85vw, 0.8125rem);
     font-weight: 600;
-    color: var(--accent-primary);
-  }
-
-  .badge-sep {
-    color: var(--border-strong);
-  }
-
-  .analyst-name {
-    font-weight: 600;
-    color: var(--text-primary);
-  }
-
-  .reg-code {
-    font-family: monospace;
-    font-weight: 700;
-    color: var(--accent-bronze);
-    background: var(--accent-bronze-soft);
-    border: 1px solid var(--accent-bronze-border);
-    padding: 2px 8px;
-    border-radius: 6px;
-  }
-
-  /* Hero Typography */
-  .hero-title {
-    font-size: clamp(2.25rem, 5vw, 3.75rem);
-    line-height: 1.18;
-    font-weight: 500;
-    letter-spacing: -0.025em;
-    color: var(--text-primary);
-    margin-bottom: 24px;
-  }
-
-  .signature-highlight {
-    font-style: italic;
-    color: var(--accent-primary);
-    position: relative;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #596879;
     white-space: nowrap;
   }
 
-  .hero-subtitle {
-    font-size: clamp(1.0625rem, 2vw, 1.25rem);
-    line-height: 1.65;
-    color: var(--text-secondary);
-    max-width: 720px;
-    margin-bottom: 36px;
-  }
-
-  /* 3 Pillars */
-  .hero-pillars-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 36px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    text-align: left;
-    max-width: 680px;
-    width: 100%;
-  }
-
-  .hero-pillars-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    font-size: 0.9375rem;
-    color: var(--text-secondary);
-    line-height: 1.5;
-  }
-
-  .pillar-bullet {
-    flex-shrink: 0;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: var(--accent-soft);
-    color: var(--accent-primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1px;
-  }
-
-  .hero-pillars-list strong {
-    color: var(--text-primary);
-  }
-
-  /* Actions */
-  .hero-actions {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 60px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .btn-arrow {
+  .eyebrow-sep {
     display: inline-block;
-    transition: transform 0.2s ease;
+    margin: 0 4px;
+    color: #B89558;
+    font-weight: 700;
   }
 
-  .btn-primary:hover .btn-arrow {
-    transform: translateX(3px);
-  }
-
-  /* Metrics Strip */
-  .hero-metrics-strip {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 800px;
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-light);
-    border-radius: 16px;
-    padding: 20px 24px;
-    box-shadow: var(--shadow-sm);
-  }
-
-  .metric-card {
+  /* Centered Editorial Headline */
+  .hero-title {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: clamp(3.2rem, 5.8vw, 5.75rem);
+    font-weight: 400;
+    line-height: 1.04;
+    letter-spacing: -0.04em;
+    color: #19304B;
+    margin: 0 0 clamp(20px, 3vh, 28px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
   }
 
-  .metric-value {
-    font-family: 'Lora', Georgia, serif;
-    font-size: 1.5rem;
+  .title-line {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .signature-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-top: 2px;
+  }
+
+  .signature-word {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    color: #B89558;
+    padding-right: 0.05em;
+  }
+
+  /* Hand-Drawn SVG Signature Flourish Underline */
+  .signature-flourish {
+    position: absolute;
+    left: -4%;
+    bottom: -14px;
+    width: 108%;
+    height: 24px;
+    pointer-events: none;
+    overflow: visible;
+  }
+
+  .flourish-path {
+    stroke-dasharray: 290;
+    stroke-dashoffset: 290;
+    animation: drawFlourish 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards;
+  }
+
+  @keyframes drawFlourish {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  /* Supporting Paragraph */
+  .hero-support {
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: clamp(1.125rem, 1.6vw, 1.25rem);
+    font-weight: 400;
+    line-height: 1.65;
+    color: #596879;
+    max-width: 620px;
+    margin: 0 auto clamp(32px, 5vh, 44px);
+    text-align: center;
+  }
+
+  /* Midnight Navy Primary CTA */
+  .hero-action {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .btn-hero-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background-color: #19304B;
+    color: #F7F6F2;
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 1rem;
     font-weight: 600;
-    color: var(--accent-primary);
-    line-height: 1.2;
+    letter-spacing: -0.01em;
+    min-height: 56px;
+    padding: 0 36px;
+    border-radius: 12px;
+    border: 1px solid rgba(25, 48, 75, 0.2);
+    box-shadow: 
+      0 4px 14px rgba(25, 48, 75, 0.12),
+      0 1px 3px rgba(25, 48, 75, 0.08);
+    text-decoration: none;
+    transition: 
+      background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .metric-label {
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  .btn-hero-primary:hover {
+    background-color: #122337;
+    transform: translateY(-2px);
+    box-shadow: 
+      0 8px 24px rgba(25, 48, 75, 0.20),
+      0 2px 6px rgba(25, 48, 75, 0.10);
+    color: #FFFFFF;
   }
 
-  .metric-divider {
-    width: 1px;
-    height: 36px;
-    background: var(--border-light);
+  .cta-arrow {
+    display: inline-block;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  @media (max-width: 640px) {
-    .hero-metrics-strip {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      text-align: center;
-      padding: 24px 16px;
+  .btn-hero-primary:hover .cta-arrow {
+    transform: translateX(4px);
+  }
+
+  .btn-hero-primary:focus-visible {
+    outline: 3px solid #B89558;
+    outline-offset: 3px;
+  }
+
+  /* Mobile and Responsive Adaptations */
+  @media (max-width: 768px) {
+    .hero-section {
+      padding-top: 130px;
+      padding-bottom: 70px;
+      min-height: auto;
     }
 
-    .metric-divider {
-      display: none;
+    .hero-eyebrow {
+      gap: 8px;
+    }
+
+    .eyebrow-rule {
+      width: 20px;
+    }
+
+    .eyebrow-text {
+      font-size: 0.6875rem;
+      letter-spacing: 0.12em;
+    }
+
+    .hero-title {
+      font-size: clamp(2.35rem, 8.5vw, 3.2rem);
+      line-height: 1.08;
+    }
+
+    .title-line {
+      white-space: normal;
+    }
+
+    .signature-flourish {
+      bottom: -10px;
+      height: 18px;
+    }
+
+    .hero-support {
+      font-size: 1.0625rem;
+      padding: 0 12px;
+    }
+
+    .btn-hero-primary {
+      width: 100%;
+      max-width: 320px;
+    }
+  }
+
+  /* Accessibility: Prefers Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .flourish-path {
+      stroke-dashoffset: 0;
+      animation: none;
+    }
+
+    .btn-hero-primary,
+    .cta-arrow {
+      transition: none;
+    }
+
+    .btn-hero-primary:hover {
+      transform: none;
+    }
+
+    .btn-hero-primary:hover .cta-arrow {
+      transform: none;
     }
   }
 </style>
