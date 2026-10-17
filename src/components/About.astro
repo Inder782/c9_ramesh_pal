@@ -36,14 +36,24 @@ import config from '../data/config.json';
         </div>
       </div>
 
-      <!-- Right Column: Clean Image with Ambient Background Glow -->
+      <!-- Right Column: Borderless Image with Radiant Mixing Ambient Orbs Behind -->
       <div class="about-media reveal-on-scroll">
-        <div class="image-glow-wrapper">
-          <!-- Ambient Glow Halos Behind Image -->
-          <div class="glow-orb glow-orb-emerald" aria-hidden="true"></div>
-          <div class="glow-orb glow-orb-amber" aria-hidden="true"></div>
+        <div class="image-stage">
+          <!-- Fluid Mixing Glow Orbs Directly Behind Image -->
+          <div class="orbs-container" aria-hidden="true">
+            <div class="glow-orb orb-emerald"></div>
+            <div class="glow-orb orb-amber"></div>
+            <div class="glow-orb orb-tangerine"></div>
+            <div class="glow-orb orb-teal"></div>
+            <div class="glow-orb orb-gold-mist"></div>
+          </div>
 
+          <!-- Clean Borderless Photo Card -->
           <div class="photo-card">
+            <!-- Subtle Studio Depth Lighting -->
+            <div class="studio-light" aria-hidden="true"></div>
+
+            <!-- Crisp Portrait (100% Borderless) -->
             <img 
               src="/images/ramesh-pal.jpg" 
               alt="Ramesh Pal - SEBI Registered Research Analyst and Founder of Dehradun Bulls" 
@@ -53,6 +63,9 @@ import config from '../data/config.json';
               loading="lazy"
               decoding="async"
             />
+
+            <!-- Subtle Base Vignette -->
+            <div class="photo-vignette" aria-hidden="true"></div>
           </div>
         </div>
       </div>
@@ -62,10 +75,11 @@ import config from '../data/config.json';
 
 <style>
   .about-section {
-    padding: 56px 0 68px 0;
+    padding: 60px 0 72px 0;
     background-color: var(--bg-primary);
     position: relative;
     overflow: hidden;
+    contain: content;
   }
 
   .about-grid {
@@ -148,14 +162,16 @@ import config from '../data/config.json';
     background: #10B981;
   }
 
-  /* Right Column: Clean Image with Ambient Glow */
+  /* ========================================================
+     BORDERLESS IMAGE STAGE WITH FLUID MIXING ORBS BEHIND
+     ======================================================== */
   .about-media {
     display: flex;
     justify-content: center;
     position: relative;
   }
 
-  .image-glow-wrapper {
+  .image-stage {
     position: relative;
     max-width: 420px;
     width: 100%;
@@ -164,59 +180,158 @@ import config from '../data/config.json';
     align-items: center;
   }
 
-  /* Multi-Tone Ambient Backlight Glow */
+  /* Orbs Container Layer Directly Behind Photo (Natural Unclipped Atmosphere) */
+  .orbs-container {
+    position: absolute;
+    inset: -80px;
+    pointer-events: none;
+    z-index: 1;
+    overflow: visible;
+  }
+
   .glow-orb {
     position: absolute;
     border-radius: 50%;
-    filter: blur(48px);
+    filter: blur(52px);
+    opacity: 0.55;
+    will-change: transform;
     pointer-events: none;
-    z-index: 1;
-    opacity: 0.45;
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    transition: opacity 0.6s ease, transform 0.6s ease;
   }
 
-  .glow-orb-emerald {
+  /* Orb 1: Vibrant Emerald / Mint (Top-Left) */
+  .orb-emerald {
     width: 320px;
     height: 320px;
-    background: radial-gradient(circle, rgba(16, 185, 129, 0.5) 0%, rgba(6, 78, 59, 0.2) 70%, transparent 100%);
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.65) 0%, rgba(5, 150, 105, 0.3) 45%, rgba(6, 78, 59, 0.1) 70%, transparent 100%);
+    top: -40px;
+    left: -50px;
+    animation: driftOrb1 10s ease-in-out infinite alternate;
+  }
+
+  /* Orb 2: Warm Golden Amber (Top-Right) */
+  .orb-amber {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.65) 0%, rgba(217, 119, 6, 0.3) 45%, rgba(180, 83, 9, 0.08) 70%, transparent 100%);
     top: -30px;
-    left: -20px;
+    right: -40px;
+    animation: driftOrb2 11s ease-in-out infinite alternate-reverse;
   }
 
-  .glow-orb-amber {
+  /* Orb 3: Luminous Tangerine Glow (Mid-Right Edge) */
+  .orb-tangerine {
+    width: 260px;
+    height: 260px;
+    background: radial-gradient(circle, rgba(251, 146, 60, 0.6) 0%, rgba(234, 88, 12, 0.25) 45%, transparent 75%);
+    top: 38%;
+    right: -50px;
+    animation: driftOrb3 12s ease-in-out infinite alternate;
+  }
+
+  /* Orb 4: Deep Mountain Teal & Pine (Bottom-Left) */
+  .orb-teal {
+    width: 290px;
+    height: 290px;
+    background: radial-gradient(circle, rgba(13, 148, 136, 0.6) 0%, rgba(6, 78, 59, 0.28) 45%, transparent 75%);
+    bottom: -40px;
+    left: -40px;
+    animation: driftOrb2 10.5s ease-in-out infinite alternate;
+  }
+
+  /* Orb 5: Warm Center-Bottom Golden Radiance */
+  .orb-gold-mist {
     width: 280px;
-    height: 280px;
-    background: radial-gradient(circle, rgba(245, 158, 11, 0.45) 0%, rgba(146, 64, 14, 0.15) 70%, transparent 100%);
-    bottom: -30px;
-    right: -20px;
+    height: 240px;
+    background: radial-gradient(ellipse, rgba(252, 211, 77, 0.5) 0%, rgba(245, 158, 11, 0.2) 50%, transparent 75%);
+    bottom: -25px;
+    left: 20%;
+    opacity: 0.45;
+    animation: driftOrb1 9.5s ease-in-out infinite alternate-reverse;
   }
 
-  .image-glow-wrapper:hover .glow-orb-emerald {
-    opacity: 0.65;
-    transform: scale(1.08) translate(-8px, -8px);
+  /* Fluid Hardware-Accelerated 3D Drifting Animations (0% CPU Paint Cost) */
+  @keyframes driftOrb1 {
+    0% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    100% {
+      transform: translate3d(22px, 16px, 0) scale(1.12);
+    }
   }
 
-  .image-glow-wrapper:hover .glow-orb-amber {
-    opacity: 0.65;
-    transform: scale(1.08) translate(8px, 8px);
+  @keyframes driftOrb2 {
+    0% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    100% {
+      transform: translate3d(-18px, -14px, 0) scale(1.1);
+    }
   }
 
+  @keyframes driftOrb3 {
+    0% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    100% {
+      transform: translate3d(-12px, 20px, 0) scale(1.14);
+    }
+  }
+
+  /* Hover Intensification */
+  .image-stage:hover .glow-orb {
+    opacity: 0.75;
+  }
+
+  .image-stage:hover .orb-emerald {
+    transform: scale(1.15) translate3d(-12px, -8px, 0);
+  }
+
+  .image-stage:hover .orb-amber {
+    transform: scale(1.15) translate3d(12px, -8px, 0);
+  }
+
+  .image-stage:hover .orb-tangerine {
+    transform: scale(1.18) translate3d(14px, 10px, 0);
+  }
+
+  /* Clean Borderless Photo Card */
   .photo-card {
     position: relative;
     width: 100%;
     border-radius: 22px;
     overflow: hidden;
-    box-shadow: 0 16px 44px rgba(17, 24, 39, 0.08);
     background: #0E161B;
+    border: none;
+    outline: none;
+    box-shadow: 0 20px 48px rgba(14, 22, 27, 0.18);
     z-index: 2;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
   }
 
-  .photo-card:hover {
-    transform: translateY(-4px) scale(1.015);
-    box-shadow: 0 24px 56px rgba(17, 24, 39, 0.14);
+  .image-stage:hover .photo-card {
+    transform: translateY(-5px) scale(1.015);
+    box-shadow: 0 28px 64px rgba(14, 22, 27, 0.24);
   }
 
+  /* Subtle Studio Lighting Behind Subject */
+  .studio-light {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: radial-gradient(ellipse at 50% 30%, rgba(16, 185, 129, 0.25) 0%, rgba(245, 158, 11, 0.12) 45%, transparent 75%);
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+
+  .image-stage:hover .studio-light {
+    opacity: 1;
+  }
+
+  /* Crisp Borderless Portrait */
   .mentor-img {
     width: 100%;
     height: auto;
@@ -224,11 +339,27 @@ import config from '../data/config.json';
     object-fit: cover;
     object-position: center top;
     display: block;
-    transition: transform 0.4s ease;
+    position: relative;
+    z-index: 2;
+    border: none;
+    outline: none;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .photo-card:hover .mentor-img {
-    transform: scale(1.03);
+  .image-stage:hover .mentor-img {
+    transform: scale(1.025);
+  }
+
+  /* Subtle Base Vignette */
+  .photo-vignette {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 36%;
+    background: linear-gradient(to top, rgba(14, 22, 27, 0.92) 0%, rgba(14, 22, 27, 0.4) 50%, transparent 100%);
+    z-index: 3;
+    pointer-events: none;
   }
 
   /* Responsive */
@@ -246,7 +377,7 @@ import config from '../data/config.json';
       order: 1;
     }
 
-    .image-glow-wrapper {
+    .image-stage {
       max-width: 360px;
       margin: 0 auto;
     }
