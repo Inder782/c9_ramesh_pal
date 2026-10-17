@@ -9,6 +9,7 @@ const advisoryPlans = [
     title: "Equity Cash Segment Desk",
     badge: "Most Versatile",
     popular: false,
+    cardClass: "card-cash-market",
     description: "Structured delivery and short-swing recommendations for disciplined equity investors and capital compounders.",
     specs: [
       { label: "Frequency", value: "5–6 Ideas / Week" },
@@ -35,6 +36,7 @@ const advisoryPlans = [
     title: "Index Options & Futures Desk",
     badge: "Highest Demand",
     popular: true,
+    cardClass: "card-highest-demand",
     description: "High-probability derivative setups focused purely on liquid indices with disciplined Greeks profiling.",
     specs: [
       { label: "Indices", value: "Nifty 50, Bank Nifty, Fin Nifty" },
@@ -61,6 +63,7 @@ const advisoryPlans = [
     title: "Short-Term Swing Trading",
     badge: "Tactical Desk",
     popular: false,
+    cardClass: "card-tech-momentum",
     description: "Fast-paced momentum setups capturing explosive volatility contractions and chart pattern expansions.",
     specs: [
       { label: "Holding Period", value: "< 7 Trading Days" },
@@ -85,6 +88,7 @@ const advisoryPlans = [
     title: "Long-Term Wealth Portfolio",
     badge: "Structural Compounding",
     popular: false,
+    cardClass: "",
     description: "Multi-year wealth compounders identified through fundamental DCF modeling, competitive moats, and economic moats.",
     specs: [
       { label: "Holding Period", value: "> 6 Months" },
@@ -109,6 +113,7 @@ const advisoryPlans = [
     title: "Equity Valuation & IPO Reports",
     badge: "Bespoke Research",
     popular: false,
+    cardClass: "",
     description: "Deep-dive institutional equity valuation dossiers, IPO pre-listing evaluations, and sector whitepapers.",
     specs: [
       { label: "Coverage", value: "BSE / NSE Equities & IPOs" },
@@ -127,6 +132,26 @@ const advisoryPlans = [
     ctaText: "Request Institutional Dossier",
     whatsappMsg: "Hi Ramesh Pal, I would like to enquire about Institutional Equity Research & IPO Reports."
   }
+];
+
+const syllabusCol1 = [
+  { num: "01", title: "Equity Market & Stock Exchanges (NSE/BSE)" },
+  { num: "02", title: "Demat & Order Types (SL, SL-M, GTT)" },
+  { num: "03", title: "Fundamental Analysis & E-I-C Framework" },
+  { num: "04", title: "Price Action, Patterns, EMA & VWAP" }
+];
+
+const syllabusCol2 = [
+  { num: "05", title: "Futures, Options & Greeks (Delta, Theta)" },
+  { num: "06", title: "MCX Commodities (Crude, Gold, Silver)" },
+  { num: "07", title: "Intraday Breakouts (ORB) & Scalping" },
+  { num: "08", title: "Mutual Funds & Long-Term Compounding" }
+];
+
+const syllabusCol3 = [
+  { num: "09", title: "Trading Psychology & Emotional Equanimity" },
+  { num: "10", title: "Weekly Live Setup Teardowns & Q&A" },
+  { num: "11", title: "Lifetime Mentorship Community Access" }
 ];
 ---
 
@@ -189,7 +214,7 @@ const advisoryPlans = [
       <!-- Advisory Plans Grid -->
       <div class="advisory-grid">
         {advisoryPlans.map((plan) => (
-          <div class={`advisory-card ${plan.popular ? 'card-popular' : ''} reveal-on-scroll`}>
+          <div class={`advisory-card ${plan.popular ? 'card-popular' : ''} ${plan.cardClass} reveal-on-scroll`}>
             {plan.popular && (
               <div class="popular-ribbon">
                 <span>{plan.badge}</span>
@@ -262,139 +287,77 @@ const advisoryPlans = [
       </div>
     </div>
 
-    <!-- PANEL 2: COURSES & TRADING ACADEMY (ONE FLAGSHIP PROGRAM COVERING WHOLE LAYOUT) -->
+    <!-- PANEL 2: COURSES & TRADING ACADEMY (CLEAN, AIRY LAYOUT WITHOUT HEAVY BOXES) -->
     <div 
       id="panel-courses" 
       class="tab-panel hidden-panel" 
       role="tabpanel" 
       aria-labelledby="tab-btn-courses"
     >
-      <div class="flagship-container reveal-on-scroll">
-        <div class="flagship-card">
-          <!-- Top Flagship Header -->
-          <div class="flagship-head">
-            <div class="flagship-badge-row">
-              <span class="flagship-badge">⭐ Flagship Mentorship Program</span>
-              <span class="cohort-model-badge">1 Month Live Training + 2 Months Live Market Practice</span>
-            </div>
-            <h3 class="flagship-title">Master Trader 3-Month Mentorship Program</h3>
-            <p class="flagship-subtitle">
-              The definitive, structured trading program designed by Trading Mentor Remo (Dehradun Bulls). We bridge classroom discipline with live market execution to transition learners from impulsive speculation into independent, risk-controlled market practitioners.
-            </p>
-          </div>
+      <div class="courses-open-layout reveal-on-scroll">
+        <!-- Clean Header -->
+        <div class="courses-open-header">
+          <div class="flagship-top-badge">Flagship Mentorship Program</div>
+          <h3 class="courses-open-title">Master Trader 3-Month Mentorship Program</h3>
+          <p class="courses-open-model">
+            1 Month Live Interactive Masterclasses &bull; 2 Months Live Market Practice &amp; Personal Doubt Clearing
+          </p>
+          <p class="courses-open-lead">
+            A comprehensive curriculum taking you from foundational chart mechanics to independent, risk-controlled trading across Equities, Derivatives, and Commodities with direct mentorship from Ramesh Pal.
+          </p>
+        </div>
 
-          <!-- Two-Column Interior Grid -->
-          <div class="flagship-grid">
-            <!-- Left: Methodology, Structure & Capital Rules -->
-            <div class="flagship-col-left">
-              <h4 class="col-heading">How the Mentorship Works</h4>
-              
-              <div class="timeline-steps">
-                <div class="step-card">
-                  <div class="step-num">Month 01</div>
-                  <div class="step-info">
-                    <h5>Intensive Interactive Masterclasses</h5>
-                    <p>Live evening interactive sessions covering market structure, price action, candlestick psychology, indicators (EMA, RSI, VWAP), and order book mechanics.</p>
-                  </div>
+        <!-- 11 Modules Structured Across 3 Clean Columns -->
+        <div class="syllabus-columns-wrapper">
+          <h4 class="syllabus-block-title">Comprehensive 11-Module Syllabus Coverage</h4>
+          
+          <div class="syllabus-three-columns">
+            <!-- Column 1: Modules 01 - 04 -->
+            <div class="syllabus-col">
+              {syllabusCol1.map((item) => (
+                <div class="syllabus-item">
+                  <span class="syllabus-item-num">{item.num}</span>
+                  <span class="syllabus-item-title">{item.title}</span>
                 </div>
-
-                <div class="step-card">
-                  <div class="step-num step-highlight">Months 02 &amp; 03</div>
-                  <div class="step-info">
-                    <h5>Live Market Practice &amp; Doubt Clearing</h5>
-                    <p>Hands-on execution in active market hours. Deconstructing real-time setups, testing risk-to-reward parameters, and receiving direct personal feedback from Ramesh Pal.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="discipline-box">
-                <h5>Our Non-Negotiable Risk Pillars</h5>
-                <ul class="risk-bullets">
-                  <li><strong>1–2% Capital Rule:</strong> Hard risk ceiling per trade to safeguard compounding.</li>
-                  <li><strong>1:2 &amp; 1:3 Asymmetric R:R:</strong> Only participating in statistically advantageous setups.</li>
-                  <li><strong>Trade Journaling Architecture:</strong> Systematic logging to eliminate emotional errors.</li>
-                </ul>
-              </div>
+              ))}
             </div>
 
-            <!-- Right: Curriculum Pillars & Enrollment Box -->
-            <div class="flagship-col-right">
-              <h4 class="col-heading">Comprehensive Syllabus Coverage</h4>
+            <!-- Column 2: Modules 05 - 08 -->
+            <div class="syllabus-col">
+              {syllabusCol2.map((item) => (
+                <div class="syllabus-item">
+                  <span class="syllabus-item-num">{item.num}</span>
+                  <span class="syllabus-item-title">{item.title}</span>
+                </div>
+              ))}
+            </div>
 
-              <div class="modules-compact-grid">
-                <div class="module-chip">
-                  <span class="chip-num">01</span>
-                  <span>Equity Market &amp; Exchanges (NSE/BSE)</span>
+            <!-- Column 3: Modules 09 - 11 -->
+            <div class="syllabus-col">
+              {syllabusCol3.map((item) => (
+                <div class="syllabus-item">
+                  <span class="syllabus-item-num">{item.num}</span>
+                  <span class="syllabus-item-title">{item.title}</span>
                 </div>
-                <div class="module-chip">
-                  <span class="chip-num">02</span>
-                  <span>Demat &amp; Order Types (SL, SL-M, GTT)</span>
-                </div>
-                <div class="module-chip">
-                  <span class="chip-num">03</span>
-                  <span>Fundamental Analysis &amp; E-I-C Framework</span>
-                </div>
-                <div class="module-chip">
-                  <span class="chip-num">04</span>
-                  <span>Price Action, Patterns, EMA &amp; VWAP</span>
-                </div>
-                <div class="module-chip">
-                  <span class="chip-num">05</span>
-                  <span>Futures, Options &amp; Greeks (Delta, Theta)</span>
-                </div>
-                <div class="module-chip">
-                  <span class="chip-num">06</span>
-                  <span>MCX Commodities (Crude, Gold, Silver)</span>
-                </div>
-                <div class="module-chip">
-                  <span class="chip-num">07</span>
-                  <span>Intraday Breakouts (ORB) &amp; Scalping</span>
-                </div>
-                <div class="module-chip">
-                  <span class="chip-num">08</span>
-                  <span>Mutual Funds &amp; Long-Term Compounding</span>
-                </div>
-                <div class="module-chip">
-                  <span class="chip-num">09</span>
-                  <span>Trading Psychology &amp; Emotional Equanimity</span>
-                </div>
-                <div class="module-chip">
-                  <span class="chip-num">10</span>
-                  <span>Weekly Live Setup Teardowns &amp; Q&amp;A</span>
-                </div>
-                <div class="module-chip">
-                  <span class="chip-num">11</span>
-                  <span>Lifetime Mentorship Community Access</span>
-                </div>
-              </div>
-
-              <!-- Enrollment Card CTA -->
-              <div class="enrollment-cta-card">
-                <div class="cta-card-header">
-                  <div>
-                    <span class="cohort-status">Next Cohort Admissions Open</span>
-                    <h5 class="cta-card-title">Enrol in Flagship Mentorship</h5>
-                  </div>
-                  <span class="limited-seats">Limited Seats</span>
-                </div>
-                <p class="cta-card-desc">
-                  Small cohort sizes to ensure every student receives personal doubt clearing and direct guidance from Ramesh Pal.
-                </p>
-                <a 
-                  href={`${whatsappBase}${encodeURIComponent("Hi Ramesh Pal, I would like to enrol in the Master Trader 3-Month Flagship Mentorship Program.")}`} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="action-btn btn-primary btn-enroll"
-                >
-                  <span>Apply for Next Cohort via WhatsApp</span>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </a>
-              </div>
+              ))}
             </div>
           </div>
+        </div>
+
+        <!-- Standalone Clean Button (No Heavy Enclosing Box) -->
+        <div class="courses-cta-container">
+          <a 
+            href={`${whatsappBase}${encodeURIComponent("Hi Ramesh Pal, I would like to apply for the Master Trader 3-Month Mentorship Program.")}`} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="btn-apply-flagship"
+          >
+            <span>Apply for Flagship Mentorship via WhatsApp</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
         </div>
       </div>
     </div>
@@ -592,7 +555,7 @@ const advisoryPlans = [
     }
   }
 
-  /* Advisory Cards Grid with Interactive Glowing Effects */
+  /* Advisory Cards Grid */
   .advisory-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
@@ -606,37 +569,62 @@ const advisoryPlans = [
     display: flex;
     flex-direction: column;
     position: relative;
+    border: 1.5px solid transparent;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .advisory-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 16px 36px rgba(6, 78, 59, 0.12);
   }
 
-  .card-popular {
-    box-shadow: 0 8px 28px rgba(6, 78, 59, 0.14);
-    background: #FFFFFF;
+  /* Glowing Borders on Specific Cards */
+  /* 1. Highest Demand (Index F&O): Vibrant Emerald Glowing Border */
+  .card-highest-demand {
+    border: 2px solid #10B981;
+    box-shadow: 0 0 24px rgba(16, 185, 129, 0.25), 0 8px 32px rgba(6, 78, 59, 0.12);
   }
 
-  .card-popular:hover {
-    box-shadow: 0 20px 44px rgba(6, 78, 59, 0.18);
+  .card-highest-demand:hover {
+    border-color: #34D399;
+    box-shadow: 0 0 32px rgba(16, 185, 129, 0.4), 0 16px 40px rgba(6, 78, 59, 0.18);
+  }
+
+  /* 2. Cash Market: Glowing Pine / Emerald Accent Border */
+  .card-cash-market {
+    border: 1.5px solid rgba(6, 78, 59, 0.35);
+    box-shadow: 0 0 18px rgba(6, 78, 59, 0.12), 0 4px 20px rgba(0, 0, 0, 0.04);
+  }
+
+  .card-cash-market:hover {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 26px rgba(6, 78, 59, 0.24), 0 12px 32px rgba(0, 0, 0, 0.08);
+  }
+
+  /* 3. Technical Momentum: Glowing Amber / Bronze Accent Border */
+  .card-tech-momentum {
+    border: 1.5px solid rgba(217, 119, 6, 0.4);
+    box-shadow: 0 0 18px rgba(217, 119, 6, 0.15), 0 4px 20px rgba(0, 0, 0, 0.04);
+  }
+
+  .card-tech-momentum:hover {
+    border-color: #D97706;
+    box-shadow: 0 0 26px rgba(217, 119, 6, 0.3), 0 12px 32px rgba(0, 0, 0, 0.08);
   }
 
   .popular-ribbon {
     position: absolute;
     top: -12px;
     left: 24px;
-    background: var(--accent-primary);
-    color: #FFFFFF;
+    background: #10B981;
+    color: #0E161B;
     font-size: 0.6875rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     padding: 4px 12px;
     border-radius: 9999px;
-    box-shadow: 0 4px 12px rgba(6, 78, 59, 0.25);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
   }
 
   .card-tier-head {
@@ -827,262 +815,151 @@ const advisoryPlans = [
   }
 
   /* ========================================================
-     FLAGSHIP PROGRAM (ONE COMPREHENSIVE CARD COVERING WHOLE LAYOUT)
+     COURSES & TRADING ACADEMY (CLEAN, AIRY OPEN LAYOUT)
      ======================================================== */
-  .flagship-container {
+  .courses-open-layout {
     width: 100%;
+    max-width: 1060px;
+    margin: 0 auto;
+    text-align: center;
   }
 
-  .flagship-card {
-    background: var(--bg-secondary);
-    border-radius: 24px;
-    padding: 44px;
-    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.06);
-    position: relative;
-    overflow: hidden;
+  .courses-open-header {
+    margin-bottom: 40px;
   }
 
-  .flagship-head {
-    margin-bottom: 36px;
-    border-bottom: 1px solid var(--border-light);
-    padding-bottom: 28px;
-  }
-
-  .flagship-badge-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 14px;
-  }
-
-  .flagship-badge {
+  .flagship-top-badge {
     display: inline-block;
     font-size: 0.775rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: #FFFFFF;
-    background: var(--accent-primary);
-    padding: 5px 14px;
-    border-radius: 9999px;
-  }
-
-  .cohort-model-badge {
-    display: inline-block;
-    font-size: 0.775rem;
-    font-weight: 600;
     color: var(--accent-bronze);
     background: var(--accent-bronze-soft);
     padding: 5px 14px;
     border-radius: 9999px;
+    margin-bottom: 14px;
   }
 
-  .flagship-title {
+  .courses-open-title {
     font-size: clamp(1.75rem, 2.8vw, 2.35rem);
-    margin: 0 0 12px 0;
+    margin: 0 0 10px 0;
     color: var(--text-primary);
     letter-spacing: -0.015em;
   }
 
-  .flagship-subtitle {
-    font-size: 1.03125rem;
-    line-height: 1.65;
+  .courses-open-model {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--accent-primary);
+    margin: 0 0 12px 0;
+  }
+
+  .courses-open-lead {
+    font-size: 0.985rem;
+    line-height: 1.6;
     color: var(--text-secondary);
-    margin: 0;
-    max-width: 900px;
+    max-width: 820px;
+    margin: 0 auto;
   }
 
-  /* Two-column Interior */
-  .flagship-grid {
-    display: grid;
-    grid-template-columns: 1.05fr 1.15fr;
-    gap: 44px;
-    align-items: start;
+  /* 3-Column Syllabus Layout */
+  .syllabus-columns-wrapper {
+    margin-bottom: 48px;
+    text-align: left;
   }
 
-  .col-heading {
-    font-size: 1.125rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin: 0 0 20px 0;
-    letter-spacing: -0.01em;
-  }
-
-  /* Timeline Steps */
-  .timeline-steps {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin-bottom: 24px;
-  }
-
-  .step-card {
-    background: var(--bg-primary);
-    border-radius: 14px;
-    padding: 18px 20px;
-  }
-
-  .step-num {
-    display: inline-block;
-    font-size: 0.75rem;
+  .syllabus-block-title {
+    font-size: 1rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    color: var(--accent-primary);
-    margin-bottom: 6px;
+    color: var(--text-muted);
+    text-align: center;
+    margin: 0 0 24px 0;
   }
 
-  .step-highlight {
-    color: var(--accent-bronze);
+  .syllabus-three-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
   }
 
-  .step-info h5 {
-    font-size: 1rem;
-    font-weight: 700;
-    margin: 0 0 6px 0;
-    color: var(--text-primary);
-  }
-
-  .step-info p {
-    font-size: 0.845rem;
-    line-height: 1.55;
-    color: var(--text-secondary);
-    margin: 0;
-  }
-
-  /* Discipline Box */
-  .discipline-box {
-    background: #FFFDF7;
-    border-left: 4px solid var(--accent-bronze);
-    border-radius: 0 14px 14px 0;
-    padding: 16px 20px;
-  }
-
-  .discipline-box h5 {
-    font-size: 0.875rem;
-    font-weight: 700;
-    color: var(--accent-bronze);
-    margin: 0 0 8px 0;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .risk-bullets {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  .syllabus-col {
     display: flex;
     flex-direction: column;
-    gap: 6px;
-    font-size: 0.8125rem;
-    color: var(--text-secondary);
-    line-height: 1.45;
+    gap: 10px;
   }
 
-  /* Right Column: Compact Modules */
-  .modules-compact-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 8px;
-    margin-bottom: 24px;
-  }
-
-  .module-chip {
+  .syllabus-item {
     display: flex;
     align-items: center;
-    gap: 10px;
-    background: var(--bg-primary);
-    padding: 9px 14px;
-    border-radius: 10px;
-    font-size: 0.825rem;
-    font-weight: 500;
-    color: var(--text-primary);
-    transition: transform 0.15s ease;
+    gap: 12px;
+    background: var(--bg-secondary);
+    padding: 14px 16px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
-  .module-chip:hover {
-    transform: translateX(4px);
+  .syllabus-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
   }
 
-  .chip-num {
+  .syllabus-item-num {
     font-family: 'Lora', Georgia, serif;
-    font-size: 0.8125rem;
+    font-size: 0.85rem;
     font-weight: 700;
     color: var(--accent-primary);
+    background: var(--accent-soft);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
   }
 
-  /* Enrollment CTA Card */
-  .enrollment-cta-card {
-    background: #0E161B;
-    color: #FFFFFF;
-    border-radius: 18px;
-    padding: 24px;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
-  }
-
-  .cta-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 8px;
-  }
-
-  .cohort-status {
-    font-size: 0.725rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #34D399;
-    display: block;
-    margin-bottom: 4px;
-  }
-
-  .cta-card-title {
-    font-size: 1.15rem;
-    margin: 0;
-    color: #FFFFFF;
-  }
-
-  .limited-seats {
-    font-size: 0.7rem;
+  .syllabus-item-title {
+    font-size: 0.845rem;
     font-weight: 600;
-    color: #FCD34D;
-    background: rgba(252, 211, 77, 0.15);
-    padding: 3px 8px;
+    color: var(--text-primary);
+    line-height: 1.4;
+  }
+
+  /* Standalone Button (No Heavy Box) */
+  .courses-cta-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn-apply-flagship {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent-primary);
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 16px 36px;
     border-radius: 9999px;
+    box-shadow: 0 8px 24px rgba(6, 78, 59, 0.25);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .cta-card-desc {
-    font-size: 0.8125rem;
-    line-height: 1.5;
-    color: #94A3B8;
-    margin: 0 0 18px 0;
-  }
-
-  .btn-enroll {
-    padding: 13px 20px;
-    font-size: 0.9375rem;
-    background: #10B981;
-    color: #0E161B;
-    font-weight: 700;
-  }
-
-  .btn-enroll:hover {
-    background: #34D399;
+  .btn-apply-flagship:hover {
+    background: var(--accent-hover);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+    box-shadow: 0 12px 32px rgba(6, 78, 59, 0.35);
   }
 
   /* Responsive */
-  @media (max-width: 960px) {
-    .flagship-grid {
+  @media (max-width: 900px) {
+    .syllabus-three-columns {
       grid-template-columns: 1fr;
-      gap: 32px;
-    }
-
-    .flagship-card {
-      padding: 32px 24px;
+      gap: 10px;
     }
   }
 
@@ -1113,8 +990,11 @@ const advisoryPlans = [
       grid-template-columns: 1fr;
     }
 
-    .flagship-card {
-      padding: 24px 16px;
+    .btn-apply-flagship {
+      width: 100%;
+      justify-content: center;
+      padding: 14px 20px;
+      font-size: 0.9125rem;
     }
   }
 </style>

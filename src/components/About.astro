@@ -1,6 +1,5 @@
 ---
 import config from '../data/config.json';
-const whatsappUrl = `https://wa.me/${config.whatsappPhone}?text=${encodeURIComponent("Hi Ramesh Pal, I would like to know more about your research services and mentorship.")}`;
 ---
 
 <section class="about-section" id="about" aria-labelledby="about-heading">
@@ -8,10 +7,10 @@ const whatsappUrl = `https://wa.me/${config.whatsappPhone}?text=${encodeURICompo
     <div class="about-grid">
       <!-- Left Column: Concise Narrative & Credentials -->
       <div class="about-content reveal-on-scroll">
-        <span class="sub-label">About the Analyst &amp; Educator</span>
+        <span class="sub-label">About the Analyst</span>
         <h2 id="about-heading" class="analyst-name">{config.analystName}</h2>
         <p class="analyst-tagline">
-          SEBI Registered Research Analyst &bull; Founder, Dehradun Bulls (Trading Mentor Remo)
+          SEBI Registered Research Analyst &bull; Founder, Dehradun Bulls
         </p>
 
         <div class="bio-paragraphs">
@@ -19,11 +18,11 @@ const whatsappUrl = `https://wa.me/${config.whatsappPhone}?text=${encodeURICompo
             Based in Dehradun, Uttarakhand, Ramesh Pal brings an academic discipline to the Indian stock market. Holding an <strong>M.A. in Economics (University Topper)</strong> and an <strong>MBA in Finance</strong>, he approaches market movements not through speculative tips or emotional impulse, but through structural economics, volume profile, and systematic risk management.
           </p>
           <p>
-            Over 7+ years of active market trading and pedagogy, his philosophy has remained steadfast: true market competence is built on repeating proven high-probability patterns, respecting a strict <strong>1–2% capital risk rule</strong>, and maintaining uncompromising emotional composure.
+            Over 7+ years of active market trading, his philosophy has remained steadfast: true market competence is built on repeating proven high-probability patterns, respecting a strict <strong>1–2% capital risk rule</strong>, and maintaining uncompromising emotional composure.
           </p>
         </div>
 
-        <!-- Clean Micro Credential Badges (No Heavy Borders) -->
+        <!-- Clean Micro Credential Badges -->
         <div class="credentials-pills">
           <span class="cred-pill cred-pill-accent">
             <span class="pill-dot"></span>
@@ -35,119 +34,38 @@ const whatsappUrl = `https://wa.me/${config.whatsappPhone}?text=${encodeURICompo
           <span class="cred-pill">7+ Years Active Trading</span>
           <span class="cred-pill">Dehradun, Uttarakhand</span>
         </div>
-
-        <!-- Action Links -->
-        <div class="about-actions">
-          <a href="#offerings" class="btn-primary-about">
-            <span>View Advisory Offerings</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
-          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="btn-secondary-about">
-            <span>Direct WhatsApp</span>
-          </a>
-        </div>
       </div>
 
-      <!-- Right Column: Clean Interactive Image with Zoom Effect -->
+      <!-- Right Column: Clean Image with Ambient Background Glow -->
       <div class="about-media reveal-on-scroll">
-        <div class="photo-card" id="mentor-photo-trigger" role="button" tabindex="0" aria-label="Click to zoom Ramesh Pal's portrait">
-          <img 
-            src="/images/ramesh-pal.jpg" 
-            alt="Ramesh Pal - SEBI Registered Research Analyst and Trading Mentor Remo" 
-            class="mentor-img"
-            width="972"
-            height="1200"
-            loading="lazy"
-            decoding="async"
-          />
-          <div class="zoom-indicator" aria-hidden="true">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              <line x1="11" y1="8" x2="11" y2="14"></line>
-              <line x1="8" y1="11" x2="14" y2="11"></line>
-            </svg>
-            <span>Click to zoom</span>
+        <div class="image-glow-wrapper">
+          <!-- Ambient Glow Halos Behind Image -->
+          <div class="glow-orb glow-orb-emerald" aria-hidden="true"></div>
+          <div class="glow-orb glow-orb-amber" aria-hidden="true"></div>
+
+          <div class="photo-card">
+            <img 
+              src="/images/ramesh-pal.jpg" 
+              alt="Ramesh Pal - SEBI Registered Research Analyst and Founder of Dehradun Bulls" 
+              class="mentor-img"
+              width="972"
+              height="1200"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  <!-- Interactive Lightbox Modal for Zoom In Effect -->
-  <div id="image-lightbox" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Zoomed Photo of Ramesh Pal">
-    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
-    <div class="lightbox-content">
-      <button type="button" id="lightbox-close" class="lightbox-close-btn" aria-label="Close zoomed photo">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-      <img 
-        src="/images/ramesh-pal.jpg" 
-        alt="Ramesh Pal - Zoomed view" 
-        class="lightbox-img" 
-      />
-      <div class="lightbox-caption">
-        <h4>{config.analystName}</h4>
-        <p>SEBI Registered Research Analyst ({config.sebiRegNo}) &bull; Dehradun Bulls</p>
-      </div>
-    </div>
-  </div>
 </section>
-
-<!-- Lightbox / Zoom Script -->
-<script is:inline>
-  function setupAboutZoom() {
-    const trigger = document.getElementById('mentor-photo-trigger');
-    const lightbox = document.getElementById('image-lightbox');
-    const closeBtn = document.getElementById('lightbox-close');
-    const backdrop = document.getElementById('lightbox-backdrop');
-
-    if (!trigger || !lightbox) return;
-
-    function openZoom() {
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
-      if (closeBtn) closeBtn.focus();
-    }
-
-    function closeZoom() {
-      lightbox.classList.remove('active');
-      document.body.style.overflow = '';
-      trigger.focus();
-    }
-
-    trigger.addEventListener('click', openZoom);
-    trigger.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        openZoom();
-      }
-    });
-
-    if (closeBtn) closeBtn.addEventListener('click', closeZoom);
-    if (backdrop) backdrop.addEventListener('click', closeZoom);
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-        closeZoom();
-      }
-    });
-  }
-
-  document.addEventListener('DOMContentLoaded', setupAboutZoom);
-  setupAboutZoom();
-</script>
 
 <style>
   .about-section {
     padding: 56px 0 68px 0;
     background-color: var(--bg-primary);
+    position: relative;
+    overflow: hidden;
   }
 
   .about-grid {
@@ -203,7 +121,6 @@ const whatsappUrl = `https://wa.me/${config.whatsappPhone}?text=${encodeURICompo
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-bottom: 32px;
   }
 
   .cred-pill {
@@ -231,78 +148,73 @@ const whatsappUrl = `https://wa.me/${config.whatsappPhone}?text=${encodeURICompo
     background: #10B981;
   }
 
-  /* Actions */
-  .about-actions {
-    display: flex;
-    gap: 14px;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-
-  .btn-primary-about {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--accent-primary);
-    color: #FFFFFF;
-    padding: 12px 22px;
-    border-radius: 9999px;
-    font-size: 0.9375rem;
-    font-weight: 600;
-    transition: all 0.2s ease;
-  }
-
-  .btn-primary-about:hover {
-    background: var(--accent-hover);
-    transform: translateY(-1px);
-    box-shadow: 0 6px 18px rgba(6, 78, 59, 0.25);
-  }
-
-  .btn-secondary-about {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--bg-secondary);
-    color: var(--text-primary);
-    border: 1px solid var(--border-strong);
-    padding: 12px 22px;
-    border-radius: 9999px;
-    font-size: 0.9375rem;
-    font-weight: 600;
-    transition: all 0.2s ease;
-  }
-
-  .btn-secondary-about:hover {
-    background: var(--bg-tertiary);
-    border-color: var(--accent-primary);
-  }
-
-  /* Right Column: Clean Interactive Image */
+  /* Right Column: Clean Image with Ambient Glow */
   .about-media {
     display: flex;
     justify-content: center;
+    position: relative;
+  }
+
+  .image-glow-wrapper {
+    position: relative;
+    max-width: 420px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Multi-Tone Ambient Backlight Glow */
+  .glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(48px);
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.45;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .glow-orb-emerald {
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.5) 0%, rgba(6, 78, 59, 0.2) 70%, transparent 100%);
+    top: -30px;
+    left: -20px;
+  }
+
+  .glow-orb-amber {
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.45) 0%, rgba(146, 64, 14, 0.15) 70%, transparent 100%);
+    bottom: -30px;
+    right: -20px;
+  }
+
+  .image-glow-wrapper:hover .glow-orb-emerald {
+    opacity: 0.65;
+    transform: scale(1.08) translate(-8px, -8px);
+  }
+
+  .image-glow-wrapper:hover .glow-orb-amber {
+    opacity: 0.65;
+    transform: scale(1.08) translate(8px, 8px);
   }
 
   .photo-card {
     position: relative;
-    max-width: 420px;
     width: 100%;
     border-radius: 22px;
     overflow: hidden;
-    cursor: pointer;
-    box-shadow: 0 16px 40px rgba(17, 24, 39, 0.08);
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    box-shadow: 0 16px 44px rgba(17, 24, 39, 0.08);
     background: #0E161B;
+    z-index: 2;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
   }
 
   .photo-card:hover {
     transform: translateY(-4px) scale(1.015);
-    box-shadow: 0 24px 52px rgba(17, 24, 39, 0.14);
-  }
-
-  .photo-card:focus-visible {
-    outline: 3px solid var(--accent-primary);
-    outline-offset: 4px;
+    box-shadow: 0 24px 56px rgba(17, 24, 39, 0.14);
   }
 
   .mentor-img {
@@ -317,137 +229,6 @@ const whatsappUrl = `https://wa.me/${config.whatsappPhone}?text=${encodeURICompo
 
   .photo-card:hover .mentor-img {
     transform: scale(1.03);
-  }
-
-  .zoom-indicator {
-    position: absolute;
-    bottom: 16px;
-    right: 16px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(14, 22, 27, 0.85);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    color: #FFFFFF;
-    padding: 6px 12px;
-    border-radius: 9999px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
-    transition: opacity 0.2s ease, transform 0.2s ease;
-  }
-
-  .photo-card:hover .zoom-indicator {
-    background: var(--accent-primary);
-    transform: translateY(-2px);
-  }
-
-  /* Lightbox Modal */
-  .lightbox-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 9999;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-  }
-
-  .lightbox-modal.active {
-    display: flex;
-    animation: lightboxFadeIn 0.25s ease forwards;
-  }
-
-  @keyframes lightboxFadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  .lightbox-backdrop {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(10, 16, 20, 0.88);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-  }
-
-  .lightbox-content {
-    position: relative;
-    max-width: 520px;
-    max-height: 90vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 2;
-    animation: lightboxZoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-
-  @keyframes lightboxZoomIn {
-    from {
-      opacity: 0;
-      transform: scale(0.92);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  .lightbox-close-btn {
-    position: absolute;
-    top: -46px;
-    right: 0;
-    background: rgba(255, 255, 255, 0.15);
-    border: none;
-    color: #FFFFFF;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background 0.2s ease, transform 0.2s ease;
-  }
-
-  .lightbox-close-btn:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: rotate(90deg);
-  }
-
-  .lightbox-img {
-    max-width: 100%;
-    max-height: 75vh;
-    object-fit: contain;
-    border-radius: 18px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-  }
-
-  .lightbox-caption {
-    margin-top: 14px;
-    text-align: center;
-    color: #FFFFFF;
-  }
-
-  .lightbox-caption h4 {
-    margin: 0 0 4px 0;
-    font-size: 1.15rem;
-    color: #FFFFFF;
-  }
-
-  .lightbox-caption p {
-    margin: 0;
-    font-size: 0.8125rem;
-    color: #94A3B8;
   }
 
   /* Responsive */
@@ -465,7 +246,7 @@ const whatsappUrl = `https://wa.me/${config.whatsappPhone}?text=${encodeURICompo
       order: 1;
     }
 
-    .photo-card {
+    .image-glow-wrapper {
       max-width: 360px;
       margin: 0 auto;
     }
@@ -491,16 +272,6 @@ const whatsappUrl = `https://wa.me/${config.whatsappPhone}?text=${encodeURICompo
     .cred-pill {
       font-size: 0.75rem;
       padding: 5px 12px;
-    }
-
-    .about-actions {
-      flex-direction: column;
-      width: 100%;
-    }
-
-    .btn-primary-about, .btn-secondary-about {
-      width: 100%;
-      justify-content: center;
     }
   }
 </style>
