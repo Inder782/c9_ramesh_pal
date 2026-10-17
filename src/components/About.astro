@@ -1,378 +1,506 @@
 ---
 import config from '../data/config.json';
+const whatsappUrl = `https://wa.me/${config.whatsappPhone}?text=${encodeURIComponent("Hi Ramesh Pal, I would like to know more about your research services and mentorship.")}`;
 ---
 
 <section class="about-section" id="about" aria-labelledby="about-heading">
   <div class="container">
-    <!-- Section Header -->
-    <div class="section-head reveal-on-scroll">
-      <div class="badge-pill">Educator &amp; Research Analyst</div>
-      <h2 id="about-heading" class="section-title">
-        Bridging the Rigor of Pedagogy with Market Precision
-      </h2>
-      <p class="section-lead">
-        Before analyzing balance sheets or chart patterns, Ramesh Pal spent over a decade in education. In the classroom, one universal truth stands out: true competence is never an accident—it is the direct outcome of disciplined, structured repetition.
-      </p>
-    </div>
-
-    <!-- Main Grid: Narrative & Credentials Card -->
     <div class="about-grid">
-      <!-- Left: Narrative -->
-      <div class="narrative-col reveal-on-scroll">
-        <h3 class="narrative-title">Why an Educator Thinks Differently in the Market</h3>
-        
-        <p>
-          Most market participants approach trading and investing with an emotional lottery mindset: seeking shortcuts, chasing hot tips, and jumping erratically between unverified strategies.
-        </p>
-        <p>
-          In academic education, that approach leads to failure. A student cannot master calculus or physics by guessing questions on the day of the exam. They master it by understanding core principles, breaking problems down into repeatable components, and practicing until the framework becomes intuitive.
-        </p>
-        <p class="quote-box">
-          <span class="quote-mark" aria-hidden="true">&ldquo;</span>
-          <em>"When you repeat a pattern until it becomes your signature, you eliminate emotional decision-making. You stop reacting to daily volatility and begin executing a proven statistical edge."</em>
-        </p>
-        <p>
-          As an accredited educator and SEBI Registered Research Analyst based in Dehradun, Uttarakhand, Ramesh Pal (widely known to market learners as <strong>Trading Mentor Remo</strong> / <strong>Dehradun Bulls</strong>) brings this exact classroom discipline to equity research. Every research note is transparently structured with predefined risk limits, logical rationale, and systematic follow-ups.
+      <!-- Left Column: Concise Narrative & Credentials -->
+      <div class="about-content reveal-on-scroll">
+        <span class="sub-label">About the Analyst &amp; Educator</span>
+        <h2 id="about-heading" class="analyst-name">{config.analystName}</h2>
+        <p class="analyst-tagline">
+          SEBI Registered Research Analyst &bull; Founder, Dehradun Bulls (Trading Mentor Remo)
         </p>
 
-        <!-- 4 Teaching Axioms -->
-        <div class="axioms-grid">
-          <div class="axiom-item">
-            <span class="axiom-num" aria-hidden="true">01</span>
-            <div>
-              <h4 class="axiom-heading">First-Principles Logic</h4>
-              <p class="axiom-desc">No black-box indicators. Every recommendation has clear structural and fundamental reasoning.</p>
-            </div>
-          </div>
-          <div class="axiom-item">
-            <span class="axiom-num" aria-hidden="true">02</span>
-            <div>
-              <h4 class="axiom-heading">Disciplined Homework</h4>
-              <p class="axiom-desc">Rigorous post-market analysis, journaled setups, and objective invalidation criteria.</p>
-            </div>
-          </div>
-          <div class="axiom-item">
-            <span class="axiom-num" aria-hidden="true">03</span>
-            <div>
-              <h4 class="axiom-heading">Capital Protection First</h4>
-              <p class="axiom-desc">In pedagogy, unlearning bad habits is essential; in markets, cutting bad trades quickly protects your future.</p>
-            </div>
-          </div>
-          <div class="axiom-item">
-            <span class="axiom-num" aria-hidden="true">04</span>
-            <div>
-              <h4 class="axiom-heading">Zero Speculative Hype</h4>
-              <p class="axiom-desc">We do not promise unrealistic overnight fortunes. We build sustainable market compounding.</p>
-            </div>
-          </div>
+        <div class="bio-paragraphs">
+          <p>
+            Based in Dehradun, Uttarakhand, Ramesh Pal brings an academic discipline to the Indian stock market. Holding an <strong>M.A. in Economics (University Topper)</strong> and an <strong>MBA in Finance</strong>, he approaches market movements not through speculative tips or emotional impulse, but through structural economics, volume profile, and systematic risk management.
+          </p>
+          <p>
+            Over 7+ years of active market trading and pedagogy, his philosophy has remained steadfast: true market competence is built on repeating proven high-probability patterns, respecting a strict <strong>1–2% capital risk rule</strong>, and maintaining uncompromising emotional composure.
+          </p>
+        </div>
+
+        <!-- Clean Micro Credential Badges (No Heavy Borders) -->
+        <div class="credentials-pills">
+          <span class="cred-pill cred-pill-accent">
+            <span class="pill-dot"></span>
+            SEBI Reg: <strong>{config.sebiRegNo}</strong>
+          </span>
+          <span class="cred-pill">BSE Enlistment: <strong>{config.bseEnlistmentNo}</strong></span>
+          <span class="cred-pill">M.A. Economics (Univ. Topper)</span>
+          <span class="cred-pill">MBA in Finance</span>
+          <span class="cred-pill">7+ Years Active Trading</span>
+          <span class="cred-pill">Dehradun, Uttarakhand</span>
+        </div>
+
+        <!-- Action Links -->
+        <div class="about-actions">
+          <a href="#offerings" class="btn-primary-about">
+            <span>View Advisory Offerings</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="btn-secondary-about">
+            <span>Direct WhatsApp</span>
+          </a>
         </div>
       </div>
 
-      <!-- Right: Credentials & Trust Profile Card -->
-      <div class="profile-col reveal-on-scroll">
-        <div class="profile-card">
-          <div class="card-top">
-            <div class="analyst-avatar" aria-hidden="true">
-              <span class="avatar-initials">RP</span>
-            </div>
-            <div class="profile-info">
-              <h3 class="profile-name">{config.analystName}</h3>
-              <p class="profile-role">SEBI Registered Research Analyst</p>
-              <span class="badge-active">
-                <span class="dot-active" aria-hidden="true"></span>
-                Active SEBI Registration
-              </span>
-            </div>
-          </div>
-
-          <div class="card-divider" aria-hidden="true"></div>
-
-          <div class="credentials-list">
-            <div class="cred-row">
-              <span class="cred-label">SEBI Reg. No.</span>
-              <span class="cred-value mono-val">{config.sebiRegNo}</span>
-            </div>
-            <div class="cred-row">
-              <span class="cred-label">Registration Type</span>
-              <span class="cred-value">{config.registrationType}</span>
-            </div>
-            <div class="cred-row">
-              <span class="cred-label">BSE Enlistment</span>
-              <span class="cred-value mono-val">{config.bseEnlistmentNo}</span>
-            </div>
-            <div class="cred-row">
-              <span class="cred-label">Primary Philosophy</span>
-              <span class="cred-value font-serif">Pattern Mastery</span>
-            </div>
-            <div class="cred-row">
-              <span class="cred-label">Official Email</span>
-              <a href={`mailto:${config.email}`} class="content-link">{config.email}</a>
-            </div>
-          </div>
-
-          <div class="statutory-notice">
-            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="12" y1="16" x2="12" y2="12"></line>
-              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+      <!-- Right Column: Clean Interactive Image with Zoom Effect -->
+      <div class="about-media reveal-on-scroll">
+        <div class="photo-card" id="mentor-photo-trigger" role="button" tabindex="0" aria-label="Click to zoom Ramesh Pal's portrait">
+          <img 
+            src="/images/ramesh-pal.jpg" 
+            alt="Ramesh Pal - SEBI Registered Research Analyst and Trading Mentor Remo" 
+            class="mentor-img"
+            width="972"
+            height="1200"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="zoom-indicator" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
             </svg>
-            <p>
-              Registration granted by SEBI and certification from NISM in no way guarantee the performance of the intermediary or provide any assurance of returns.
-            </p>
+            <span>Click to zoom</span>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Interactive Lightbox Modal for Zoom In Effect -->
+  <div id="image-lightbox" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Zoomed Photo of Ramesh Pal">
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    <div class="lightbox-content">
+      <button type="button" id="lightbox-close" class="lightbox-close-btn" aria-label="Close zoomed photo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <img 
+        src="/images/ramesh-pal.jpg" 
+        alt="Ramesh Pal - Zoomed view" 
+        class="lightbox-img" 
+      />
+      <div class="lightbox-caption">
+        <h4>{config.analystName}</h4>
+        <p>SEBI Registered Research Analyst ({config.sebiRegNo}) &bull; Dehradun Bulls</p>
+      </div>
+    </div>
+  </div>
 </section>
+
+<!-- Lightbox / Zoom Script -->
+<script is:inline>
+  function setupAboutZoom() {
+    const trigger = document.getElementById('mentor-photo-trigger');
+    const lightbox = document.getElementById('image-lightbox');
+    const closeBtn = document.getElementById('lightbox-close');
+    const backdrop = document.getElementById('lightbox-backdrop');
+
+    if (!trigger || !lightbox) return;
+
+    function openZoom() {
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      if (closeBtn) closeBtn.focus();
+    }
+
+    function closeZoom() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+      trigger.focus();
+    }
+
+    trigger.addEventListener('click', openZoom);
+    trigger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openZoom();
+      }
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', closeZoom);
+    if (backdrop) backdrop.addEventListener('click', closeZoom);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        closeZoom();
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', setupAboutZoom);
+  setupAboutZoom();
+</script>
 
 <style>
   .about-section {
-    padding: 100px 0;
-    background-color: var(--bg-secondary);
-    border-top: 1px solid var(--border-light);
-    border-bottom: 1px solid var(--border-light);
-  }
-
-  .section-head {
-    max-width: 760px;
-    margin: 0 auto 64px auto;
-    text-align: center;
-  }
-
-  .section-title {
-    font-size: clamp(2rem, 3.5vw, 2.75rem);
-    margin: 16px 0 20px 0;
-    letter-spacing: -0.02em;
-  }
-
-  .section-lead {
-    font-size: 1.125rem;
-    line-height: 1.68;
-    color: var(--text-secondary);
+    padding: 56px 0 68px 0;
+    background-color: var(--bg-primary);
   }
 
   .about-grid {
     display: grid;
-    grid-template-columns: 1.25fr 0.85fr;
+    grid-template-columns: 1.15fr 0.85fr;
     gap: 56px;
-    align-items: start;
+    align-items: center;
   }
 
-  .narrative-title {
-    font-size: 1.625rem;
-    margin-bottom: 20px;
-    letter-spacing: -0.01em;
-  }
-
-  .quote-box {
-    position: relative;
-    padding: 24px 28px 24px 44px;
-    background: var(--bg-primary);
-    border-left: 4px solid var(--accent-primary);
-    border-radius: 0 12px 12px 0;
-    margin: 28px 0;
-  }
-
-  .quote-mark {
-    position: absolute;
-    top: 8px;
-    left: 12px;
-    font-size: 3rem;
-    line-height: 1;
-    font-family: Georgia, serif;
-    color: var(--accent-primary);
-    opacity: 0.35;
-  }
-
-  .quote-box em {
-    font-family: 'Lora', Georgia, serif;
-    font-size: 1.125rem;
-    color: var(--text-primary);
-    line-height: 1.6;
-    display: block;
-  }
-
-  .axioms-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-top: 36px;
-  }
-
-  .axiom-item {
-    display: flex;
-    gap: 14px;
-    background: var(--bg-primary);
-    padding: 16px;
-    border-radius: 12px;
-    border: 1px solid var(--border-light);
-  }
-
-  .axiom-num {
-    font-family: 'Lora', Georgia, serif;
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: var(--accent-primary);
-    line-height: 1.2;
-    flex-shrink: 0;
-  }
-
-  .axiom-heading {
-    font-size: 0.9375rem;
-    margin: 0 0 6px 0;
-    font-weight: 600;
-  }
-
-  .axiom-desc {
+  /* Left Column */
+  .sub-label {
+    display: inline-block;
     font-size: 0.8125rem;
-    margin: 0;
-    line-height: 1.5;
-    color: var(--text-secondary);
-  }
-
-  /* Profile Card */
-  .profile-card {
-    background: var(--bg-primary);
-    border: 1px solid var(--border-light);
-    border-radius: 20px;
-    padding: 32px;
-    box-shadow: var(--shadow-md);
-    position: sticky;
-    top: 100px;
-  }
-
-  .card-top {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .analyst-avatar {
-    width: 64px;
-    height: 64px;
-    border-radius: 16px;
-    background: var(--dark-surface);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #FFFFFF;
-    flex-shrink: 0;
-    box-shadow: var(--shadow-sm);
-  }
-
-  .avatar-initials {
-    font-family: 'Lora', Georgia, serif;
-    font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    color: #A7F3D0;
-  }
-
-  .profile-name {
-    font-size: 1.25rem;
-    margin: 0 0 4px 0;
-  }
-
-  .profile-role {
-    font-size: 0.875rem;
-    color: var(--text-secondary);
-    margin: 0 0 8px 0;
-  }
-
-  .badge-active {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.75rem;
-    font-weight: 600;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
     color: var(--accent-primary);
-    background: var(--accent-soft);
-    padding: 2px 8px;
-    border-radius: 9999px;
+    margin-bottom: 8px;
   }
 
-  .dot-active {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background-color: var(--accent-primary);
+  .analyst-name {
+    font-size: clamp(2rem, 3.2vw, 2.75rem);
+    margin: 0 0 8px 0;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: var(--text-primary);
   }
 
-  .card-divider {
-    height: 1px;
-    background: var(--border-light);
-    margin: 24px 0;
+  .analyst-tagline {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--accent-bronze);
+    margin-bottom: 20px;
+    line-height: 1.4;
   }
 
-  .credentials-list {
+  .bio-paragraphs {
     display: flex;
     flex-direction: column;
     gap: 14px;
+    margin-bottom: 28px;
   }
 
-  .cred-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.875rem;
-  }
-
-  .cred-label {
-    color: var(--text-muted);
-  }
-
-  .cred-value {
-    font-weight: 600;
-    color: var(--text-primary);
-  }
-
-  .mono-val {
-    font-family: monospace;
-    background: var(--bg-secondary);
-    padding: 2px 6px;
-    border-radius: 4px;
-    border: 1px solid var(--border-light);
-  }
-
-  .statutory-notice {
-    margin-top: 24px;
-    padding: 12px;
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-light);
-    border-radius: 10px;
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-  }
-
-  .statutory-notice svg {
-    color: var(--accent-primary);
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-
-  .statutory-notice p {
-    font-size: 0.75rem;
-    line-height: 1.45;
+  .bio-paragraphs p {
+    font-size: 1.03125rem;
+    line-height: 1.68;
+    color: var(--text-secondary);
     margin: 0;
-    color: var(--text-muted);
   }
 
-  @media (max-width: 900px) {
+  /* Credentials Pills */
+  .credentials-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+
+  .cred-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+    padding: 6px 14px;
+    border-radius: 9999px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  }
+
+  .cred-pill-accent {
+    background: var(--accent-soft);
+    color: var(--accent-primary);
+    font-weight: 600;
+  }
+
+  .pill-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #10B981;
+  }
+
+  /* Actions */
+  .about-actions {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary-about {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent-primary);
+    color: #FFFFFF;
+    padding: 12px 22px;
+    border-radius: 9999px;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+
+  .btn-primary-about:hover {
+    background: var(--accent-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(6, 78, 59, 0.25);
+  }
+
+  .btn-secondary-about {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-strong);
+    padding: 12px 22px;
+    border-radius: 9999px;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+
+  .btn-secondary-about:hover {
+    background: var(--bg-tertiary);
+    border-color: var(--accent-primary);
+  }
+
+  /* Right Column: Clean Interactive Image */
+  .about-media {
+    display: flex;
+    justify-content: center;
+  }
+
+  .photo-card {
+    position: relative;
+    max-width: 420px;
+    width: 100%;
+    border-radius: 22px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 16px 40px rgba(17, 24, 39, 0.08);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    background: #0E161B;
+  }
+
+  .photo-card:hover {
+    transform: translateY(-4px) scale(1.015);
+    box-shadow: 0 24px 52px rgba(17, 24, 39, 0.14);
+  }
+
+  .photo-card:focus-visible {
+    outline: 3px solid var(--accent-primary);
+    outline-offset: 4px;
+  }
+
+  .mentor-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 4.9;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .photo-card:hover .mentor-img {
+    transform: scale(1.03);
+  }
+
+  .zoom-indicator {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(14, 22, 27, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #FFFFFF;
+    padding: 6px 12px;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .photo-card:hover .zoom-indicator {
+    background: var(--accent-primary);
+    transform: translateY(-2px);
+  }
+
+  /* Lightbox Modal */
+  .lightbox-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+
+  .lightbox-modal.active {
+    display: flex;
+    animation: lightboxFadeIn 0.25s ease forwards;
+  }
+
+  @keyframes lightboxFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .lightbox-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 16, 20, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .lightbox-content {
+    position: relative;
+    max-width: 520px;
+    max-height: 90vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    animation: lightboxZoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes lightboxZoomIn {
+    from {
+      opacity: 0;
+      transform: scale(0.92);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .lightbox-close-btn {
+    position: absolute;
+    top: -46px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: #FFFFFF;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .lightbox-close-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+  }
+
+  .lightbox-img {
+    max-width: 100%;
+    max-height: 75vh;
+    object-fit: contain;
+    border-radius: 18px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+
+  .lightbox-caption {
+    margin-top: 14px;
+    text-align: center;
+    color: #FFFFFF;
+  }
+
+  .lightbox-caption h4 {
+    margin: 0 0 4px 0;
+    font-size: 1.15rem;
+    color: #FFFFFF;
+  }
+
+  .lightbox-caption p {
+    margin: 0;
+    font-size: 0.8125rem;
+    color: #94A3B8;
+  }
+
+  /* Responsive */
+  @media (max-width: 860px) {
     .about-grid {
       grid-template-columns: 1fr;
       gap: 40px;
     }
 
-    .profile-card {
-      position: static;
+    .about-media {
+      order: 2;
+    }
+
+    .about-content {
+      order: 1;
+    }
+
+    .photo-card {
+      max-width: 360px;
+      margin: 0 auto;
     }
   }
 
   @media (max-width: 640px) {
-    .axioms-grid {
-      grid-template-columns: 1fr;
+    .about-section {
+      padding: 40px 0 52px 0;
+    }
+
+    .analyst-name {
+      font-size: 2rem;
+    }
+
+    .analyst-tagline {
+      font-size: 0.95rem;
+    }
+
+    .credentials-pills {
+      gap: 8px;
+    }
+
+    .cred-pill {
+      font-size: 0.75rem;
+      padding: 5px 12px;
+    }
+
+    .about-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .btn-primary-about, .btn-secondary-about {
+      width: 100%;
+      justify-content: center;
     }
   }
 </style>

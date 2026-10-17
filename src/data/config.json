@@ -38,5 +38,17 @@
     "grievanceTurnaround": "21 working days",
     "scoresUrl": "https://scores.sebi.gov.in",
     "smartOdrUrl": "https://smartodr.in"
-  }
+  },
+  "education": [
+    { "degree": "M.A. Economics", "detail": "University Topper", "highlight": true },
+    { "degree": "MBA in Finance", "detail": "Postgraduate Specialization", "highlight": false },
+    { "degree": "B.Sc. Economics (Honours)", "detail": "Undergraduate Foundation", "highlight": false }
+  ],
+  "experienceYears": "7+ Years Active Trading & Education",
+  "nismCertifications": [
+    { "code": "NISM Series XV", "name": "Research Analyst Certification" },
+    { "code": "NISM Series VIII", "name": "Equity Derivatives Certification" },
+    { "code": "NISM Series V-A", "name": "Mutual Fund Distributors Certification" },
+    { "code": "NISM Certified", "name": "SEBI Investor Awareness & Education" }
+  ]
 }

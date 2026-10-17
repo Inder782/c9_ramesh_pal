@@ -1,380 +1,1120 @@
 ---
 import config from '../data/config.json';
 const whatsappBase = `https://wa.me/${config.whatsappPhone}?text=`;
+
+const advisoryPlans = [
+  {
+    id: "equity-cash",
+    category: "Cash Market",
+    title: "Equity Cash Segment Desk",
+    badge: "Most Versatile",
+    popular: false,
+    description: "Structured delivery and short-swing recommendations for disciplined equity investors and capital compounders.",
+    specs: [
+      { label: "Frequency", value: "5–6 Ideas / Week" },
+      { label: "Holding Horizon", value: "1 to 8 Weeks" },
+      { label: "Scanners", value: "Volume Contraction & Breakouts" }
+    ],
+    pricing: [
+      { period: "Weekly", fee: "₹5,000", tag: "Trial" },
+      { period: "Monthly", fee: "₹15,000", tag: "Standard" },
+      { period: "Quarterly", fee: "₹40,000", tag: "Best Value" }
+    ],
+    features: [
+      "5–6 high-conviction cash equity setups per week",
+      "Explicit entry price, target levels, and strict stop-loss",
+      "In-depth rationale with chart setup & sector momentum context",
+      "Real-time update alerts via private communication desk"
+    ],
+    ctaText: "Enquire for Equity Cash",
+    whatsappMsg: "Hi Ramesh Pal, I am interested in subscribing to the Equity Cash Segment Desk."
+  },
+  {
+    id: "index-fno",
+    category: "Derivatives",
+    title: "Index Options & Futures Desk",
+    badge: "Highest Demand",
+    popular: true,
+    description: "High-probability derivative setups focused purely on liquid indices with disciplined Greeks profiling.",
+    specs: [
+      { label: "Indices", value: "Nifty 50, Bank Nifty, Fin Nifty" },
+      { label: "Risk-Reward", value: "Strict 1:2 to 1:3 R:R" },
+      { label: "Methodology", value: "Option Chain & Delta Analysis" }
+    ],
+    pricing: [
+      { period: "Weekly", fee: "₹3,500", tag: "Intro" },
+      { period: "Monthly", fee: "₹10,000", tag: "Active" },
+      { period: "Quarterly", fee: "₹25,000", tag: "Save ₹5,000" }
+    ],
+    features: [
+      "Liquid Index futures and options setups (Nifty, Bank Nifty)",
+      "Defined-risk strike selection & Option Greeks awareness",
+      "Strict 1:2 to 1:3 risk-to-reward ratio with position sizing",
+      "Live market execution updates and trailing stop-loss guidance"
+    ],
+    ctaText: "Subscribe to Index F&O",
+    whatsappMsg: "Hi Ramesh Pal, I would like to join the Index Options & Futures Desk."
+  },
+  {
+    id: "short-swing",
+    category: "Technical Momentum",
+    title: "Short-Term Swing Trading",
+    badge: "Tactical Desk",
+    popular: false,
+    description: "Fast-paced momentum setups capturing explosive volatility contractions and chart pattern expansions.",
+    specs: [
+      { label: "Holding Period", value: "< 7 Trading Days" },
+      { label: "Tools", value: "Chartink & TradingView Scanners" },
+      { label: "Target Alpha", value: "Tactical Alpha Swings" }
+    ],
+    pricing: [
+      { period: "3 Months (Quarterly)", fee: "₹10,000", tag: "Cohort" }
+    ],
+    features: [
+      "Holding horizon strictly under 7 trading days",
+      "Screened via custom Chartink & TradingView momentum scanners",
+      "Predefined stop-loss and dual target profit milestones",
+      "Weekend post-market pattern audit and setup retrospective"
+    ],
+    ctaText: "Join Short-Term Swing",
+    whatsappMsg: "Hi Ramesh Pal, I am interested in the Short-Term Swing Trading advisory plan."
+  },
+  {
+    id: "long-term",
+    category: "Fundamental Wealth",
+    title: "Long-Term Wealth Portfolio",
+    badge: "Structural Compounding",
+    popular: false,
+    description: "Multi-year wealth compounders identified through fundamental DCF modeling, competitive moats, and economic moats.",
+    specs: [
+      { label: "Holding Period", value: "> 6 Months" },
+      { label: "Framework", value: "E-I-C & DCF Valuation" },
+      { label: "Focus", value: "High ROCE & Strong Balance Sheet" }
+    ],
+    pricing: [
+      { period: "3 Months (Quarterly)", fee: "₹12,000", tag: "Portfolio" }
+    ],
+    features: [
+      "High-conviction structural compounders with 6+ months horizon",
+      "Detailed fundamental research notes covering moats and governance",
+      "DCF valuation models and quarterly balance sheet updates",
+      "Periodic rebalancing alerts to optimize capital allocation"
+    ],
+    ctaText: "Apply for Wealth Portfolio",
+    whatsappMsg: "Hi Ramesh Pal, I want to subscribe to the Long-Term Wealth Portfolio advisory service."
+  },
+  {
+    id: "institutional-reports",
+    category: "Institutional Grade",
+    title: "Equity Valuation & IPO Reports",
+    badge: "Bespoke Research",
+    popular: false,
+    description: "Deep-dive institutional equity valuation dossiers, IPO pre-listing evaluations, and sector whitepapers.",
+    specs: [
+      { label: "Coverage", value: "BSE / NSE Equities & IPOs" },
+      { label: "Depth", value: "Institutional Forensic Reports" },
+      { label: "Audience", value: "HNIs, Family Offices & Corporates" }
+    ],
+    pricing: [
+      { period: "Annual Coverage", fee: "₹30,000 – ₹60,000", tag: "Annual" }
+    ],
+    features: [
+      "In-depth research notes on emerging mid-cap and small-cap leaders",
+      "Thorough IPO evaluation notes with fair value ranges and risk flags",
+      "Forensic accounting review (Cash flow vs EBITDA)",
+      "Direct consultation access with Ramesh Pal on institutional coverage"
+    ],
+    ctaText: "Request Institutional Dossier",
+    whatsappMsg: "Hi Ramesh Pal, I would like to enquire about Institutional Equity Research & IPO Reports."
+  }
+];
 ---
 
 <section class="pricing-section" id="offerings" aria-labelledby="pricing-heading">
   <div class="container">
+    <!-- Header -->
     <div class="section-head reveal-on-scroll">
-      <div class="badge-pill">Transparent Research Plans</div>
-      <h2 id="pricing-heading" class="section-title">
-        Systematic Research &amp; Advisory Offerings
-      </h2>
+      <h2 id="pricing-heading" class="section-title">Offerings &amp; Pricing</h2>
       <p class="section-lead">
-        Institutional-quality equity research delivered with pedagogical clarity. Zero profit-sharing, zero opaque lock-ins, and zero speculative claims.
+        Disciplined research advisory and structured market mentorship with complete regulatory transparency.
       </p>
     </div>
 
-    <!-- Pricing / Plans Grid -->
-    <div class="pricing-grid">
-      <!-- Plan 1: Core Positional -->
-      <div class="pricing-card reveal-on-scroll">
-        <div class="card-tier-head">
-          <span class="tier-pill">Positional Compounding</span>
-          <h3 class="tier-title">Core Equity Desk</h3>
-          <p class="tier-desc">Multi-month structural compounding for working professionals and disciplined investors.</p>
-        </div>
+    <!-- 2-Way Interactive Segmented Control Toggle -->
+    <div class="toggle-container reveal-on-scroll">
+      <div class="segmented-control" role="tablist" aria-label="Offerings View Toggle">
+        <button 
+          id="tab-btn-advisory" 
+          class="seg-btn active" 
+          role="tab" 
+          aria-selected="true" 
+          aria-controls="panel-advisory"
+          tabindex="0"
+          type="button"
+        >
+          <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+            <polyline points="17 6 23 6 23 12"></polyline>
+          </svg>
+          <span>Research Advisory Plans</span>
+          <span class="tab-micro-pill">SEBI Reg.</span>
+        </button>
 
-        <div class="tier-price-block">
-          <div class="price-val">₹14,999<span class="price-cycle"> / 6 Months</span></div>
-          <span class="price-sub">₹24,999 / Annual (Save 17%)</span>
-        </div>
-
-        <ul class="features-list" aria-label="Core Equity Desk Features">
-          <li>
-            <svg class="check-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-            <span class="sr-only">Included:</span>
-            <span>12–15 high-conviction structural compounders annually</span>
-          </li>
-          <li>
-            <svg class="check-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-            <span class="sr-only">Included:</span>
-            <span>Comprehensive research notes with fundamental rationale</span>
-          </li>
-          <li>
-            <svg class="check-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-            <span class="sr-only">Included:</span>
-            <span>Holding timeframe: 3 to 12 months</span>
-          </li>
-          <li>
-            <svg class="check-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-            <span class="sr-only">Included:</span>
-            <span>Periodic rebalancing &amp; risk invalidation alerts</span>
-          </li>
-        </ul>
-
-        <div class="card-action">
-          <a href={`${whatsappBase}${encodeURIComponent("Hi Ramesh Pal, I am interested in subscribing to the Core Equity Desk.")}`} target="_blank" rel="noopener noreferrer" class="btn-secondary w-full">
-            Enquire for Core Desk
-          </a>
-        </div>
-      </div>
-
-      <!-- Plan 2: Signature Momentum (Featured) -->
-      <div class="pricing-card featured-card reveal-on-scroll">
-        <div class="featured-ribbon">Most Popular</div>
-        <div class="card-tier-head">
-          <span class="tier-pill featured-pill">Pattern Breakouts</span>
-          <h3 class="tier-title">Signature Momentum Desk</h3>
-          <p class="tier-desc">High-probability swing setups capturing momentum bursts and volatility contractions.</p>
-        </div>
-
-        <div class="tier-price-block">
-          <div class="price-val">₹19,999<span class="price-cycle"> / 6 Months</span></div>
-          <span class="price-sub">₹34,999 / Annual (Save 15%)</span>
-        </div>
-
-        <ul class="features-list" aria-label="Signature Momentum Desk Features">
-          <li>
-            <svg class="check-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-            <span class="sr-only">Included:</span>
-            <span>3–5 curated swing ideas per month</span>
-          </li>
-          <li>
-            <svg class="check-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-            <span class="sr-only">Included:</span>
-            <span>Precise entry triggers &amp; hard stop-loss levels</span>
-          </li>
-          <li>
-            <svg class="check-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-            <span class="sr-only">Included:</span>
-            <span>Holding timeframe: 2 to 8 weeks</span>
-          </li>
-          <li>
-            <svg class="check-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-            <span class="sr-only">Included:</span>
-            <span>Real-time Telegram channel updates &amp; trade tracking</span>
-          </li>
-          <li>
-            <svg class="check-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-            <span class="sr-only">Included:</span>
-            <span>Strict 1:3 minimum risk-to-reward profiling</span>
-          </li>
-        </ul>
-
-        <div class="card-action">
-          <a href={`${whatsappBase}${encodeURIComponent("Hi Ramesh Pal, I would like to join the Signature Momentum Desk.")}`} target="_blank" rel="noopener noreferrer" class="btn-primary w-full">
-            Join Momentum Desk
-          </a>
-        </div>
-      </div>
-
-      <!-- Plan 3: Complete Mentorship & Advisory Desk -->
-      <div class="pricing-card reveal-on-scroll">
-        <div class="card-tier-head">
-          <span class="tier-pill">Full Pedagogical Access</span>
-          <h3 class="tier-title">Mastery Desk &amp; Mentorship</h3>
-          <p class="tier-desc">Dual desk access paired with weekly live webinars, setup deconstructions, and 1-on-1 interaction.</p>
-        </div>
-
-        <div class="tier-price-block">
-          <div class="price-val">₹49,999<span class="price-cycle"> / Annual</span></div>
-          <span class="price-sub">Exclusive cohort limited to 50 participants</span>
-        </div>
-
-        <ul class="features-list" aria-label="Mastery Desk Features">
-          <li>
-            <svg class="check-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-            <span class="sr-only">Included:</span>
-            <span>Full access to BOTH Core and Momentum Desks</span>
-          </li>
-          <li>
-            <svg class="check-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-            <span class="sr-only">Included:</span>
-            <span>Weekly pedagogical webinars dissecting executed patterns</span>
-          </li>
-          <li>
-            <svg class="check-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-            <span class="sr-only">Included:</span>
-            <span>Direct query resolution channel with Ramesh Pal</span>
-          </li>
-          <li>
-            <svg class="check-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-            <span class="sr-only">Included:</span>
-            <span>Access to past pattern study library &amp; case archives</span>
-          </li>
-        </ul>
-
-        <div class="card-action">
-          <a href={`${whatsappBase}${encodeURIComponent("Hi Ramesh Pal, I would like to apply for the Mastery Desk & Mentorship.")}`} target="_blank" rel="noopener noreferrer" class="btn-secondary w-full">
-            Apply for Cohort
-          </a>
-        </div>
+        <button 
+          id="tab-btn-courses" 
+          class="seg-btn" 
+          role="tab" 
+          aria-selected="false" 
+          aria-controls="panel-courses"
+          tabindex="-1"
+          type="button"
+        >
+          <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+          </svg>
+          <span>Courses &amp; Trading Academy</span>
+          <span class="tab-micro-pill academy-pill">1 Mo + 2 Mo Practice</span>
+        </button>
       </div>
     </div>
 
-    <!-- Statutory Disclaimer Note -->
-    <div class="statutory-pricing-disclaimer reveal-on-scroll">
-      <p>
-        <strong>Mandatory Regulatory Notice:</strong> Investment in securities market are subject to market risks. Read all scheme related documents carefully before investing. Fee charged is solely for independent research analysis services in compliance with SEBI (Research Analysts) Regulations, 2014. There are no assured returns, profit-sharing models, or guaranteed outcomes.
-      </p>
+    <!-- PANEL 1: RESEARCH ADVISORY PLANS -->
+    <div 
+      id="panel-advisory" 
+      class="tab-panel active-panel" 
+      role="tabpanel" 
+      aria-labelledby="tab-btn-advisory"
+    >
+      <!-- Advisory Plans Grid -->
+      <div class="advisory-grid">
+        {advisoryPlans.map((plan) => (
+          <div class={`advisory-card ${plan.popular ? 'card-popular' : ''} reveal-on-scroll`}>
+            {plan.popular && (
+              <div class="popular-ribbon">
+                <span>{plan.badge}</span>
+              </div>
+            )}
+            
+            <div class="card-tier-head">
+              <span class="tier-category">{plan.category}</span>
+              <h3 class="tier-name">{plan.title}</h3>
+              <p class="tier-desc">{plan.description}</p>
+            </div>
+
+            <!-- Key Specs Bar -->
+            <div class="specs-grid">
+              {plan.specs.map((sp) => (
+                <div class="spec-cell">
+                  <span class="spec-label">{sp.label}</span>
+                  <span class="spec-val">{sp.value}</span>
+                </div>
+              ))}
+            </div>
+
+            <!-- Fee Schedule -->
+            <div class="pricing-schedule">
+              <div class="sched-heading">Fee Schedule</div>
+              <div class="fee-rows">
+                {plan.pricing.map((pr) => (
+                  <div class="fee-row">
+                    <div class="fee-period-wrap">
+                      <span class="fee-period">{pr.period}</span>
+                      {pr.tag && <span class="fee-tag">{pr.tag}</span>}
+                    </div>
+                    <span class="fee-amount">{pr.fee}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <!-- Feature Bullet Points -->
+            <div class="card-features-block">
+              <ul class="features-list">
+                {plan.features.map((feat) => (
+                  <li>
+                    <svg class="check-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>{feat}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <!-- Action CTA Button -->
+            <div class="card-action">
+              <a 
+                href={`${whatsappBase}${encodeURIComponent(plan.whatsappMsg)}`} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class={`action-btn ${plan.popular ? 'btn-primary' : 'btn-secondary'}`}
+              >
+                <span>{plan.ctaText}</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- PANEL 2: COURSES & TRADING ACADEMY (ONE FLAGSHIP PROGRAM COVERING WHOLE LAYOUT) -->
+    <div 
+      id="panel-courses" 
+      class="tab-panel hidden-panel" 
+      role="tabpanel" 
+      aria-labelledby="tab-btn-courses"
+    >
+      <div class="flagship-container reveal-on-scroll">
+        <div class="flagship-card">
+          <!-- Top Flagship Header -->
+          <div class="flagship-head">
+            <div class="flagship-badge-row">
+              <span class="flagship-badge">⭐ Flagship Mentorship Program</span>
+              <span class="cohort-model-badge">1 Month Live Training + 2 Months Live Market Practice</span>
+            </div>
+            <h3 class="flagship-title">Master Trader 3-Month Mentorship Program</h3>
+            <p class="flagship-subtitle">
+              The definitive, structured trading program designed by Trading Mentor Remo (Dehradun Bulls). We bridge classroom discipline with live market execution to transition learners from impulsive speculation into independent, risk-controlled market practitioners.
+            </p>
+          </div>
+
+          <!-- Two-Column Interior Grid -->
+          <div class="flagship-grid">
+            <!-- Left: Methodology, Structure & Capital Rules -->
+            <div class="flagship-col-left">
+              <h4 class="col-heading">How the Mentorship Works</h4>
+              
+              <div class="timeline-steps">
+                <div class="step-card">
+                  <div class="step-num">Month 01</div>
+                  <div class="step-info">
+                    <h5>Intensive Interactive Masterclasses</h5>
+                    <p>Live evening interactive sessions covering market structure, price action, candlestick psychology, indicators (EMA, RSI, VWAP), and order book mechanics.</p>
+                  </div>
+                </div>
+
+                <div class="step-card">
+                  <div class="step-num step-highlight">Months 02 &amp; 03</div>
+                  <div class="step-info">
+                    <h5>Live Market Practice &amp; Doubt Clearing</h5>
+                    <p>Hands-on execution in active market hours. Deconstructing real-time setups, testing risk-to-reward parameters, and receiving direct personal feedback from Ramesh Pal.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="discipline-box">
+                <h5>Our Non-Negotiable Risk Pillars</h5>
+                <ul class="risk-bullets">
+                  <li><strong>1–2% Capital Rule:</strong> Hard risk ceiling per trade to safeguard compounding.</li>
+                  <li><strong>1:2 &amp; 1:3 Asymmetric R:R:</strong> Only participating in statistically advantageous setups.</li>
+                  <li><strong>Trade Journaling Architecture:</strong> Systematic logging to eliminate emotional errors.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Right: Curriculum Pillars & Enrollment Box -->
+            <div class="flagship-col-right">
+              <h4 class="col-heading">Comprehensive Syllabus Coverage</h4>
+
+              <div class="modules-compact-grid">
+                <div class="module-chip">
+                  <span class="chip-num">01</span>
+                  <span>Equity Market &amp; Exchanges (NSE/BSE)</span>
+                </div>
+                <div class="module-chip">
+                  <span class="chip-num">02</span>
+                  <span>Demat &amp; Order Types (SL, SL-M, GTT)</span>
+                </div>
+                <div class="module-chip">
+                  <span class="chip-num">03</span>
+                  <span>Fundamental Analysis &amp; E-I-C Framework</span>
+                </div>
+                <div class="module-chip">
+                  <span class="chip-num">04</span>
+                  <span>Price Action, Patterns, EMA &amp; VWAP</span>
+                </div>
+                <div class="module-chip">
+                  <span class="chip-num">05</span>
+                  <span>Futures, Options &amp; Greeks (Delta, Theta)</span>
+                </div>
+                <div class="module-chip">
+                  <span class="chip-num">06</span>
+                  <span>MCX Commodities (Crude, Gold, Silver)</span>
+                </div>
+                <div class="module-chip">
+                  <span class="chip-num">07</span>
+                  <span>Intraday Breakouts (ORB) &amp; Scalping</span>
+                </div>
+                <div class="module-chip">
+                  <span class="chip-num">08</span>
+                  <span>Mutual Funds &amp; Long-Term Compounding</span>
+                </div>
+                <div class="module-chip">
+                  <span class="chip-num">09</span>
+                  <span>Trading Psychology &amp; Emotional Equanimity</span>
+                </div>
+                <div class="module-chip">
+                  <span class="chip-num">10</span>
+                  <span>Weekly Live Setup Teardowns &amp; Q&amp;A</span>
+                </div>
+                <div class="module-chip">
+                  <span class="chip-num">11</span>
+                  <span>Lifetime Mentorship Community Access</span>
+                </div>
+              </div>
+
+              <!-- Enrollment Card CTA -->
+              <div class="enrollment-cta-card">
+                <div class="cta-card-header">
+                  <div>
+                    <span class="cohort-status">Next Cohort Admissions Open</span>
+                    <h5 class="cta-card-title">Enrol in Flagship Mentorship</h5>
+                  </div>
+                  <span class="limited-seats">Limited Seats</span>
+                </div>
+                <p class="cta-card-desc">
+                  Small cohort sizes to ensure every student receives personal doubt clearing and direct guidance from Ramesh Pal.
+                </p>
+                <a 
+                  href={`${whatsappBase}${encodeURIComponent("Hi Ramesh Pal, I would like to enrol in the Master Trader 3-Month Flagship Mentorship Program.")}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="action-btn btn-primary btn-enroll"
+                >
+                  <span>Apply for Next Cohort via WhatsApp</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- Zero-Lag Segmented Control Toggle Script -->
+<script is:inline>
+  function setupPricingToggle() {
+    const btnAdvisory = document.getElementById('tab-btn-advisory');
+    const btnCourses = document.getElementById('tab-btn-courses');
+    const panelAdvisory = document.getElementById('panel-advisory');
+    const panelCourses = document.getElementById('panel-courses');
+
+    if (!btnAdvisory || !btnCourses || !panelAdvisory || !panelCourses) return;
+
+    function switchTab(target) {
+      if (target === 'courses') {
+        btnAdvisory.classList.remove('active');
+        btnAdvisory.setAttribute('aria-selected', 'false');
+        btnAdvisory.setAttribute('tabindex', '-1');
+
+        btnCourses.classList.add('active');
+        btnCourses.setAttribute('aria-selected', 'true');
+        btnCourses.setAttribute('tabindex', '0');
+
+        panelAdvisory.classList.remove('active-panel');
+        panelAdvisory.classList.add('hidden-panel');
+
+        panelCourses.classList.remove('hidden-panel');
+        panelCourses.classList.add('active-panel');
+      } else {
+        btnCourses.classList.remove('active');
+        btnCourses.setAttribute('aria-selected', 'false');
+        btnCourses.setAttribute('tabindex', '-1');
+
+        btnAdvisory.classList.add('active');
+        btnAdvisory.setAttribute('aria-selected', 'true');
+        btnAdvisory.setAttribute('tabindex', '0');
+
+        panelCourses.classList.remove('active-panel');
+        panelCourses.classList.add('hidden-panel');
+
+        panelAdvisory.classList.remove('hidden-panel');
+        panelAdvisory.classList.add('active-panel');
+      }
+    }
+
+    btnAdvisory.addEventListener('click', () => switchTab('advisory'));
+    btnCourses.addEventListener('click', () => switchTab('courses'));
+
+    btnAdvisory.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        btnCourses.focus();
+        switchTab('courses');
+      }
+    });
+
+    btnCourses.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        btnAdvisory.focus();
+        switchTab('advisory');
+      }
+    });
+
+    if (window.location.hash === '#courses' || window.location.hash === '#academy') {
+      switchTab('courses');
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', setupPricingToggle);
+  setupPricingToggle();
+</script>
+
 <style>
   .pricing-section {
-    padding: 100px 0;
-    background-color: var(--bg-secondary);
-    border-top: 1px solid var(--border-light);
-    border-bottom: 1px solid var(--border-light);
+    padding: 64px 0 80px 0;
+    background-color: var(--bg-tertiary);
   }
 
   .section-head {
     max-width: 760px;
-    margin: 0 auto 64px auto;
+    margin: 0 auto 36px auto;
     text-align: center;
   }
 
   .section-title {
-    font-size: clamp(2rem, 3.5vw, 2.75rem);
-    margin: 16px 0 20px 0;
+    font-size: clamp(2rem, 3.2vw, 2.75rem);
+    margin: 0 0 12px 0;
     letter-spacing: -0.02em;
+    line-height: 1.25;
+    color: var(--text-primary);
   }
 
   .section-lead {
-    font-size: 1.125rem;
-    line-height: 1.68;
-    color: var(--text-secondary);
-  }
-
-  .pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-    align-items: stretch;
-    margin-bottom: 48px;
-  }
-
-  .pricing-card {
-    background: var(--bg-primary);
-    border: 1px solid var(--border-light);
-    border-radius: 20px;
-    padding: 36px 28px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: var(--shadow-sm);
-    position: relative;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-  }
-
-  .pricing-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-  }
-
-  .featured-card {
-    background: #FFFFFF;
-    border: 2px solid var(--accent-primary);
-    box-shadow: var(--shadow-lg);
-  }
-
-  .featured-ribbon {
-    position: absolute;
-    top: -12px;
-    right: 28px;
-    background: var(--accent-primary);
-    color: #FFFFFF;
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 4px 14px;
-    border-radius: 9999px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-
-  .card-tier-head {
-    margin-bottom: 24px;
-  }
-
-  .tier-pill {
-    display: inline-block;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 8px;
-  }
-
-  .featured-pill {
-    color: var(--accent-primary);
-  }
-
-  .tier-title {
-    font-size: 1.5rem;
-    margin: 0 0 8px 0;
-  }
-
-  .tier-desc {
-    font-size: 0.875rem;
-    line-height: 1.5;
+    font-size: 1.0625rem;
+    line-height: 1.65;
     color: var(--text-secondary);
     margin: 0;
   }
 
-  .tier-price-block {
-    padding: 20px 0;
-    border-top: 1px solid var(--border-light);
-    border-bottom: 1px solid var(--border-light);
-    margin-bottom: 24px;
+  /* Segmented Control Toggle */
+  .toggle-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 48px;
   }
 
-  .price-val {
-    font-family: 'Lora', Georgia, serif;
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    line-height: 1.2;
+  .segmented-control {
+    display: inline-flex;
+    background: var(--bg-secondary);
+    padding: 5px;
+    border-radius: 9999px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    gap: 6px;
+    max-width: 100%;
   }
 
-  .price-cycle {
+  .seg-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 22px;
+    border-radius: 9999px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
     font-family: 'Inter', sans-serif;
-    font-size: 0.875rem;
-    font-weight: 500;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
+  }
+
+  .seg-btn:hover {
+    color: var(--text-primary);
+  }
+
+  .seg-btn.active {
+    background: var(--accent-primary);
+    color: #FFFFFF;
+    box-shadow: 0 4px 14px rgba(6, 78, 59, 0.25);
+  }
+
+  .seg-btn:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+
+  .tab-icon {
+    flex-shrink: 0;
+  }
+
+  .tab-micro-pill {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.2);
+    color: currentColor;
+  }
+
+  .seg-btn:not(.active) .tab-micro-pill {
+    background: var(--bg-tertiary);
     color: var(--text-muted);
   }
 
-  .price-sub {
+  /* Panels */
+  .tab-panel {
+    transition: opacity 0.25s ease;
+  }
+
+  .active-panel {
     display: block;
-    font-size: 0.75rem;
+    animation: fadeIn 0.3s ease forwards;
+  }
+
+  .hidden-panel {
+    display: none;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Advisory Cards Grid with Interactive Glowing Effects */
+  .advisory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 24px;
+  }
+
+  .advisory-card {
+    background: var(--bg-secondary);
+    border-radius: 20px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .advisory-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(6, 78, 59, 0.12);
+  }
+
+  .card-popular {
+    box-shadow: 0 8px 28px rgba(6, 78, 59, 0.14);
+    background: #FFFFFF;
+  }
+
+  .card-popular:hover {
+    box-shadow: 0 20px 44px rgba(6, 78, 59, 0.18);
+  }
+
+  .popular-ribbon {
+    position: absolute;
+    top: -12px;
+    left: 24px;
+    background: var(--accent-primary);
+    color: #FFFFFF;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    box-shadow: 0 4px 12px rgba(6, 78, 59, 0.25);
+  }
+
+  .card-tier-head {
+    margin-bottom: 16px;
+  }
+
+  .tier-category {
+    display: inline-block;
+    font-size: 0.725rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent-primary);
+    margin-bottom: 6px;
+  }
+
+  .tier-name {
+    font-size: 1.25rem;
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+    color: var(--text-primary);
+  }
+
+  .tier-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+    min-height: 40px;
+  }
+
+  /* Specs Grid */
+  .specs-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+    background: var(--bg-tertiary);
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-bottom: 20px;
+  }
+
+  .spec-cell {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.7875rem;
+  }
+
+  .spec-label {
+    color: var(--text-muted);
+  }
+
+  .spec-val {
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  /* Pricing Schedule */
+  .pricing-schedule {
+    margin-bottom: 20px;
+    padding: 14px;
+    border-radius: 12px;
+    background: #FAF9F5;
+  }
+
+  .sched-heading {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+
+  .fee-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .fee-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .fee-period-wrap {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .fee-period {
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+
+  .fee-tag {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--accent-soft);
     color: var(--accent-primary);
     font-weight: 600;
-    margin-top: 6px;
+  }
+
+  .fee-amount {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  /* Features List */
+  .card-features-block {
+    flex-grow: 1;
+    margin-bottom: 24px;
   }
 
   .features-list {
     list-style: none;
     padding: 0;
-    margin: 0 0 32px 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 14px;
-    flex: 1;
+    gap: 10px;
   }
 
   .features-list li {
     display: flex;
+    gap: 8px;
     align-items: flex-start;
-    gap: 10px;
-    font-size: 0.875rem;
-    line-height: 1.5;
+    font-size: 0.825rem;
+    line-height: 1.45;
     color: var(--text-secondary);
   }
 
   .check-icon {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     color: var(--accent-primary);
     flex-shrink: 0;
     margin-top: 2px;
   }
 
+  /* Actions */
   .card-action {
     margin-top: auto;
   }
 
-  .w-full {
+  .action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.25s ease;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background: var(--accent-primary);
+    color: #FFFFFF;
+  }
+
+  .btn-primary:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(6, 78, 59, 0.3);
+  }
+
+  .btn-secondary {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+  }
+
+  .btn-secondary:hover {
+    background: var(--accent-soft);
+    color: var(--accent-primary);
+    transform: translateY(-2px);
+  }
+
+  /* ========================================================
+     FLAGSHIP PROGRAM (ONE COMPREHENSIVE CARD COVERING WHOLE LAYOUT)
+     ======================================================== */
+  .flagship-container {
     width: 100%;
   }
 
-  .statutory-pricing-disclaimer {
-    background: var(--bg-primary);
-    border: 1px solid var(--border-light);
-    border-radius: 12px;
-    padding: 16px 20px;
-    text-align: center;
+  .flagship-card {
+    background: var(--bg-secondary);
+    border-radius: 24px;
+    padding: 44px;
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
   }
 
-  .statutory-pricing-disclaimer p {
-    font-size: 0.8125rem;
+  .flagship-head {
+    margin-bottom: 36px;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 28px;
+  }
+
+  .flagship-badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .flagship-badge {
+    display: inline-block;
+    font-size: 0.775rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #FFFFFF;
+    background: var(--accent-primary);
+    padding: 5px 14px;
+    border-radius: 9999px;
+  }
+
+  .cohort-model-badge {
+    display: inline-block;
+    font-size: 0.775rem;
+    font-weight: 600;
+    color: var(--accent-bronze);
+    background: var(--accent-bronze-soft);
+    padding: 5px 14px;
+    border-radius: 9999px;
+  }
+
+  .flagship-title {
+    font-size: clamp(1.75rem, 2.8vw, 2.35rem);
+    margin: 0 0 12px 0;
+    color: var(--text-primary);
+    letter-spacing: -0.015em;
+  }
+
+  .flagship-subtitle {
+    font-size: 1.03125rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    margin: 0;
+    max-width: 900px;
+  }
+
+  /* Two-column Interior */
+  .flagship-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1.15fr;
+    gap: 44px;
+    align-items: start;
+  }
+
+  .col-heading {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 20px 0;
+    letter-spacing: -0.01em;
+  }
+
+  /* Timeline Steps */
+  .timeline-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .step-card {
+    background: var(--bg-primary);
+    border-radius: 14px;
+    padding: 18px 20px;
+  }
+
+  .step-num {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent-primary);
+    margin-bottom: 6px;
+  }
+
+  .step-highlight {
+    color: var(--accent-bronze);
+  }
+
+  .step-info h5 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+    color: var(--text-primary);
+  }
+
+  .step-info p {
+    font-size: 0.845rem;
     line-height: 1.55;
-    color: var(--text-muted);
+    color: var(--text-secondary);
     margin: 0;
   }
 
+  /* Discipline Box */
+  .discipline-box {
+    background: #FFFDF7;
+    border-left: 4px solid var(--accent-bronze);
+    border-radius: 0 14px 14px 0;
+    padding: 16px 20px;
+  }
+
+  .discipline-box h5 {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--accent-bronze);
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .risk-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    line-height: 1.45;
+  }
+
+  /* Right Column: Compact Modules */
+  .modules-compact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .module-chip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-primary);
+    padding: 9px 14px;
+    border-radius: 10px;
+    font-size: 0.825rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    transition: transform 0.15s ease;
+  }
+
+  .module-chip:hover {
+    transform: translateX(4px);
+  }
+
+  .chip-num {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    flex-shrink: 0;
+  }
+
+  /* Enrollment CTA Card */
+  .enrollment-cta-card {
+    background: #0E161B;
+    color: #FFFFFF;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  }
+
+  .cta-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+  }
+
+  .cohort-status {
+    font-size: 0.725rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #34D399;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .cta-card-title {
+    font-size: 1.15rem;
+    margin: 0;
+    color: #FFFFFF;
+  }
+
+  .limited-seats {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #FCD34D;
+    background: rgba(252, 211, 77, 0.15);
+    padding: 3px 8px;
+    border-radius: 9999px;
+  }
+
+  .cta-card-desc {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: #94A3B8;
+    margin: 0 0 18px 0;
+  }
+
+  .btn-enroll {
+    padding: 13px 20px;
+    font-size: 0.9375rem;
+    background: #10B981;
+    color: #0E161B;
+    font-weight: 700;
+  }
+
+  .btn-enroll:hover {
+    background: #34D399;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+  }
+
+  /* Responsive */
   @media (max-width: 960px) {
-    .pricing-grid {
+    .flagship-grid {
       grid-template-columns: 1fr;
-      max-width: 520px;
-      margin-left: auto;
-      margin-right: auto;
+      gap: 32px;
+    }
+
+    .flagship-card {
+      padding: 32px 24px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .pricing-section {
+      padding: 44px 0 60px 0;
+    }
+
+    .toggle-container {
+      margin-bottom: 28px;
+    }
+
+    .segmented-control {
+      flex-direction: column;
+      border-radius: 16px;
+      width: 100%;
+    }
+
+    .seg-btn {
+      width: 100%;
+      justify-content: center;
+      border-radius: 12px;
+      padding: 10px 16px;
+      font-size: 0.875rem;
+    }
+
+    .advisory-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .flagship-card {
+      padding: 24px 16px;
     }
   }
 </style>

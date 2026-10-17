@@ -1,59 +1,20 @@
 ---
 import config from '../data/config.json';
 import LegalModals from './LegalModals.astro';
-
-const phoneDigits = config.phone.replace(/[^0-9]/g, '');
-const whatsappCta = config.whatsappUrl || `https://wa.me/${config.whatsappPhone}`;
 ---
 
 <footer class="site-footer" role="contentinfo">
   <div class="container footer-container">
     
-    <!-- Investor Fit Qualification Matrix -->
-    <div class="footer-fit-card reveal-on-scroll">
-      <div class="fit-card-head">
-        <span class="fit-badge">Investor Qualification</span>
-        <h3 class="fit-title">Is Ramesh Pal Research Right For You?</h3>
-      </div>
-
-      <div class="fit-grid">
-        <div class="fit-col ideal-col">
-          <h4 class="fit-col-head">
-            <span class="icon-indicator" aria-hidden="true">✓</span>
-            Ideal Partnership Profile (This is for you if:)
-          </h4>
-          <ul class="fit-list">
-            <li>You value structured pedagogical rules over emotional gambling and speculative tips.</li>
-            <li>You have patience to repeat proven patterns until consistency compounds capital.</li>
-            <li>You accept that stop-losses are the essential tuition fee of disciplined market participation.</li>
-            <li>You want independent, objective research directly from a SEBI-registered professional.</li>
-          </ul>
-        </div>
-
-        <div class="fit-col exclusion-col">
-          <h4 class="fit-col-head">
-            <span class="icon-indicator" aria-hidden="true">&times;</span>
-            Strict Exclusion Criteria (NOT for you if:)
-          </h4>
-          <ul class="fit-list">
-            <li>You are looking for guaranteed profits, assured returns, or fixed gain promises.</li>
-            <li>You want rapid intraday calls, high-leverage F&amp;O gambling, or overnight get-rich schemes.</li>
-            <li>You expect every single trade idea to be a winner without tolerating standard risk invalidations.</li>
-            <li>You refuse to perform basic homework and study the provided research rationale.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Main Footer Grid -->
+    <!-- Main Lean Footer Grid -->
     <div class="footer-grid">
-      <!-- Col 1: Identity -->
+      <!-- Col 1: Identity & Glowing Socials -->
       <div class="footer-col">
         <a href="#home" class="footer-brand" aria-label={`${config.brandName} Home`}>
           <img src="/logo.svg" alt={`${config.brandName} Logo`} width="180" height="36" class="footer-logo-img" />
         </a>
         <p class="footer-about-text">
-          Institutional-grade equity research governed by the discipline of an accredited educator. We eliminate emotional guesswork through systematic pattern repetition and mathematical risk control.
+          Institutional-grade equity research governed by the discipline of an accredited educator. Systematic pattern repetition and mathematical risk control.
         </p>
         <div class="analyst-sebi-meta">
           <p><strong>SEBI Reg. No:</strong> {config.sebiRegNo}</p>
@@ -61,26 +22,55 @@ const whatsappCta = config.whatsappUrl || `https://wa.me/${config.whatsappPhone}
           <p><strong>Registration Type:</strong> Individual Research Analyst</p>
         </div>
 
+        <!-- Glowing Social Icons -->
         <div class="footer-socials">
-          <span class="socials-label">Official Channels:</span>
-          <div class="social-chips">
-            <a href={config.socials.telegram} target="_blank" rel="noopener noreferrer" class="social-chip">Telegram</a>
-            <a href={config.socials.youtube} target="_blank" rel="noopener noreferrer" class="social-chip">YouTube</a>
-            <a href={config.socials.twitter} target="_blank" rel="noopener noreferrer" class="social-chip">X (Twitter)</a>
-            <a href={config.socials.instagram} target="_blank" rel="noopener noreferrer" class="social-chip">Instagram</a>
-            <a href={config.socials.linkedin} target="_blank" rel="noopener noreferrer" class="social-chip">LinkedIn</a>
+          <span class="socials-label">Official Socials:</span>
+          <div class="social-icons-row">
+            <!-- Telegram -->
+            <a href={config.socials.telegram} target="_blank" rel="noopener noreferrer" class="glow-icon-btn glow-telegram" aria-label="Official Telegram Channel" title="Telegram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.12.03-1.99 1.27-5.63 3.73-.53.36-1.02.54-1.45.53-.48-.01-1.4-.27-2.09-.49-.84-.27-1.51-.42-1.45-.88.03-.24.37-.49 1.02-.75 3.99-1.74 6.66-2.88 8.01-3.44 3.81-1.59 4.6-1.87 5.12-1.88.11 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.16-.04.32z"/>
+              </svg>
+            </a>
+
+            <!-- YouTube -->
+            <a href={config.socials.youtube} target="_blank" rel="noopener noreferrer" class="glow-icon-btn glow-youtube" aria-label="Official YouTube Channel" title="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+            </a>
+
+            <!-- X (Twitter) -->
+            <a href={config.socials.twitter} target="_blank" rel="noopener noreferrer" class="glow-icon-btn glow-x" aria-label="Official X (Twitter) Profile" title="X (Twitter)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+
+            <!-- Instagram -->
+            <a href={config.socials.instagram} target="_blank" rel="noopener noreferrer" class="glow-icon-btn glow-instagram" aria-label="Official Instagram Profile" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href={config.socials.linkedin} target="_blank" rel="noopener noreferrer" class="glow-icon-btn glow-linkedin" aria-label="Official LinkedIn Profile" title="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
           </div>
         </div>
       </div>
 
-      <!-- Col 2: Quick Links -->
+      <!-- Col 2: Navigation -->
       <div class="footer-col">
         <h4 class="footer-col-title">Navigation</h4>
         <ul class="footer-links-list">
           <li><a href="#home" class="footer-link">Home</a></li>
           <li><a href="#about" class="footer-link">About Analyst</a></li>
-          <li><a href="#philosophy" class="footer-link">Signature Framework</a></li>
-          <li><a href="#offerings" class="footer-link">Research Offerings</a></li>
+          <li><a href="#offerings" class="footer-link">Advisory Offerings</a></li>
           <li><a href="#investor-charter" class="footer-link">Investor Charter</a></li>
           <li><a href="#compliance" class="footer-link">Grievance Redressal</a></li>
           <li><a href="#regulatory" class="footer-link">Investor Complaints</a></li>
@@ -116,7 +106,7 @@ const whatsappCta = config.whatsappUrl || `https://wa.me/${config.whatsappPhone}
 
       <!-- Col 4: Contact & Regulatory Portals -->
       <div class="footer-col">
-        <h4 class="footer-col-title">Regulatory &amp; Support</h4>
+        <h4 class="footer-col-title">Contact &amp; Portals</h4>
         <div class="contact-card-footer">
           <p><strong>Email:</strong> <a href={`mailto:${config.email}`} class="footer-link">{config.email}</a></p>
           <p><strong>Phone:</strong> {config.phone}</p>
@@ -135,20 +125,17 @@ const whatsappCta = config.whatsappUrl || `https://wa.me/${config.whatsappPhone}
       </div>
     </div>
 
-    <!-- Mandatory Statutory Disclaimer Banner -->
-    <div class="footer-regulatory-disclaimer">
-      <p>
-        <strong>Mandatory Securities Market Disclaimer:</strong> Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI, enlistment with BSE, and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. The securities quoted are for illustration only and are not recommendatory.
-      </p>
-    </div>
-
-    <!-- Bottom Bar -->
+    <!-- Bottom Bar with Yellow Heart Credit -->
     <div class="footer-bottom">
       <p class="copyright-text">
-        &copy; {new Date().getFullYear()} {config.brandName}. All rights reserved. SEBI Registration No: {config.sebiRegNo}.
+        &copy; {new Date().getFullYear()} {config.brandName}. All rights reserved. SEBI Reg No: {config.sebiRegNo}.
       </p>
-      <p class="accessibility-note">
-        Built strictly in compliance with WCAG 2.2 Level AA &amp; IAAP Accessibility Standards.
+      
+      <p class="developer-credit">
+        Developed with <span class="heart-emoji" role="img" aria-label="yellow love">💛</span> by 
+        <a href="https://lightspeeddev.com" target="_blank" rel="noopener noreferrer" class="lightspeed-link">
+          Lightspeed Dev
+        </a>
       </p>
     </div>
 
@@ -162,103 +149,20 @@ const whatsappCta = config.whatsappUrl || `https://wa.me/${config.whatsappPhone}
   .site-footer {
     background-color: var(--dark-surface);
     color: #F8FAFC;
-    padding: 80px 0 32px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 64px 0 28px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .footer-container {
     display: flex;
     flex-direction: column;
-    gap: 56px;
-  }
-
-  /* Fit Qualification Card */
-  .footer-fit-card {
-    background: #111827;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 36px 32px;
-  }
-
-  .fit-card-head {
-    margin-bottom: 24px;
-  }
-
-  .fit-badge {
-    display: inline-block;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #A7F3D0;
-    background: rgba(6, 95, 70, 0.4);
-    padding: 3px 10px;
-    border-radius: 9999px;
-    margin-bottom: 8px;
-  }
-
-  .fit-title {
-    font-size: 1.5rem;
-    color: #F8FAFC;
-    margin: 0;
-  }
-
-  .fit-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-  }
-
-  .fit-col {
-    padding: 20px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.02);
-  }
-
-  .ideal-col {
-    border-left: 3px solid #059669;
-  }
-
-  .exclusion-col {
-    border-left: 3px solid #DC2626;
-  }
-
-  .fit-col-head {
-    font-size: 0.9375rem;
-    margin: 0 0 14px 0;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .ideal-col .fit-col-head {
-    color: #34D399;
-  }
-
-  .exclusion-col .fit-col-head {
-    color: #F87171;
-  }
-
-  .fit-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .fit-list li {
-    font-size: 0.8125rem;
-    line-height: 1.55;
-    color: #CBD5E1;
+    gap: 44px;
   }
 
   /* Main Grid */
   .footer-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1.25fr;
+    grid-template-columns: 1.4fr 1fr 1fr 1.25fr;
     gap: 40px;
   }
 
@@ -267,18 +171,18 @@ const whatsappCta = config.whatsappUrl || `https://wa.me/${config.whatsappPhone}
     height: 32px;
     width: auto;
     display: block;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
 
   .footer-about-text {
-    font-size: 0.875rem;
-    line-height: 1.6;
+    font-size: 0.85rem;
+    line-height: 1.55;
     color: #94A3B8;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
   }
 
   .analyst-sebi-meta {
-    font-size: 0.8125rem;
+    font-size: 0.8rem;
     color: #CBD5E1;
     display: flex;
     flex-direction: column;
@@ -289,53 +193,93 @@ const whatsappCta = config.whatsappUrl || `https://wa.me/${config.whatsappPhone}
     margin: 0;
   }
 
+  /* Glowing Social Media Buttons */
   .footer-socials {
-    margin-top: 20px;
+    margin-top: 18px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
   }
 
   .socials-label {
-    font-size: 0.75rem;
-    font-weight: 600;
+    font-size: 0.725rem;
+    font-weight: 700;
     color: #94A3B8;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
   }
 
-  .social-chips {
+  .social-icons-row {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+    align-items: center;
+    gap: 12px;
   }
 
-  .social-chip {
-    display: inline-block;
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: #F8FAFC;
+  .glow-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
     background: rgba(255, 255, 255, 0.06);
+    color: #CBD5E1;
     border: 1px solid rgba(255, 255, 255, 0.12);
-    padding: 4px 10px;
-    border-radius: 6px;
-    text-decoration: underline;
-    text-decoration-color: rgba(167, 243, 208, 0.5);
-    text-underline-offset: 2px;
-    transition: background 0.2s, border-color 0.2s, color 0.2s;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
   }
 
-  .social-chip:hover {
-    background: rgba(6, 95, 70, 0.3);
-    border-color: #34D399;
-    color: #A7F3D0;
+  /* Telegram Cyan Glow */
+  .glow-telegram:hover {
+    color: #229ED9;
+    border-color: #229ED9;
+    background: rgba(34, 158, 217, 0.16);
+    box-shadow: 0 0 16px rgba(34, 158, 217, 0.65), 0 0 30px rgba(34, 158, 217, 0.3);
+    transform: translateY(-3px) scale(1.08);
   }
 
+  /* YouTube Red Glow */
+  .glow-youtube:hover {
+    color: #FF0000;
+    border-color: #FF0000;
+    background: rgba(255, 0, 0, 0.16);
+    box-shadow: 0 0 16px rgba(255, 0, 0, 0.7), 0 0 30px rgba(255, 0, 0, 0.35);
+    transform: translateY(-3px) scale(1.08);
+  }
+
+  /* X / Twitter Silver-White Glow */
+  .glow-x:hover {
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 16px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px) scale(1.08);
+  }
+
+  /* Instagram Magenta Glow */
+  .glow-instagram:hover {
+    color: #E1306C;
+    border-color: #E1306C;
+    background: rgba(225, 48, 108, 0.16);
+    box-shadow: 0 0 16px rgba(225, 48, 108, 0.7), 0 0 30px rgba(225, 48, 108, 0.35);
+    transform: translateY(-3px) scale(1.08);
+  }
+
+  /* LinkedIn Blue Glow */
+  .glow-linkedin:hover {
+    color: #0A66C2;
+    border-color: #0A66C2;
+    background: rgba(10, 102, 194, 0.16);
+    box-shadow: 0 0 16px rgba(10, 102, 194, 0.7), 0 0 30px rgba(10, 102, 194, 0.35);
+    transform: translateY(-3px) scale(1.08);
+  }
+
+  /* Titles & Links */
   .footer-col-title {
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 0.95rem;
+    font-weight: 700;
     color: #F8FAFC;
-    margin: 0 0 20px 0;
+    margin: 0 0 16px 0;
     letter-spacing: -0.01em;
   }
 
@@ -345,14 +289,14 @@ const whatsappCta = config.whatsappUrl || `https://wa.me/${config.whatsappPhone}
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 9px;
   }
 
   .footer-link {
-    font-size: 0.875rem;
+    font-size: 0.845rem;
     color: #CBD5E1;
     text-decoration: underline;
-    text-decoration-color: rgba(203, 213, 225, 0.4);
+    text-decoration-color: rgba(203, 213, 225, 0.3);
     text-underline-offset: 3px;
     transition: color 0.2s, text-decoration-color 0.2s;
   }
@@ -366,10 +310,10 @@ const whatsappCta = config.whatsappUrl || `https://wa.me/${config.whatsappPhone}
     background: transparent;
     border: none;
     padding: 0;
-    font-size: 0.875rem;
+    font-size: 0.845rem;
     color: #CBD5E1;
     text-decoration: underline;
-    text-decoration-color: rgba(203, 213, 225, 0.4);
+    text-decoration-color: rgba(203, 213, 225, 0.3);
     text-underline-offset: 3px;
     cursor: pointer;
     font-family: inherit;
@@ -383,7 +327,7 @@ const whatsappCta = config.whatsappUrl || `https://wa.me/${config.whatsappPhone}
   }
 
   .contact-card-footer {
-    font-size: 0.875rem;
+    font-size: 0.845rem;
     color: #94A3B8;
     display: flex;
     flex-direction: column;
@@ -401,8 +345,8 @@ const whatsappCta = config.whatsappUrl || `https://wa.me/${config.whatsappPhone}
 
   .ext-portals {
     display: flex;
-    gap: 12px;
-    margin-top: 12px;
+    gap: 10px;
+    margin-top: 10px;
     flex-wrap: wrap;
   }
 
@@ -410,39 +354,20 @@ const whatsappCta = config.whatsappUrl || `https://wa.me/${config.whatsappPhone}
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    font-size: 0.75rem;
+    font-size: 0.725rem;
     font-weight: 600;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: #CBD5E1;
-    padding: 5px 10px;
+    padding: 4px 9px;
     border-radius: 6px;
     text-decoration: none;
     transition: background 0.2s;
   }
 
   .portal-link:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.12);
     color: #FFFFFF;
-  }
-
-  /* Regulatory Disclaimer */
-  .footer-regulatory-disclaimer {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
-    padding: 20px;
-  }
-
-  .footer-regulatory-disclaimer p {
-    font-size: 0.75rem;
-    line-height: 1.6;
-    color: #94A3B8;
-    margin: 0;
-  }
-
-  .footer-regulatory-disclaimer strong {
-    color: #CBD5E1;
   }
 
   /* Bottom Bar */
@@ -450,26 +375,74 @@ const whatsappCta = config.whatsappUrl || `https://wa.me/${config.whatsappPhone}
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 24px;
+    padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     flex-wrap: wrap;
     gap: 12px;
   }
 
-  .copyright-text, .accessibility-note {
-    font-size: 0.75rem;
-    color: #64748B;
+  .copyright-text {
+    font-size: 0.775rem;
+    color: #94A3B8;
     margin: 0;
   }
 
+  .developer-credit {
+    font-size: 0.775rem;
+    color: #CBD5E1;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .heart-emoji {
+    display: inline-block;
+    filter: drop-shadow(0 0 4px rgba(250, 204, 21, 0.6));
+    animation: pulseHeart 2s infinite ease-in-out;
+  }
+
+  @keyframes pulseHeart {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+  }
+
+  .lightspeed-link {
+    color: #FACC15;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(250, 204, 21, 0.4);
+    padding-bottom: 1px;
+    transition: all 0.2s ease;
+  }
+
+  .lightspeed-link:hover {
+    color: #FEF08A;
+    border-bottom-style: solid;
+    text-shadow: 0 0 10px rgba(250, 204, 21, 0.7);
+  }
+
   @media (max-width: 900px) {
-    .fit-grid, .footer-grid {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .site-footer {
+      padding: 48px 0 24px;
+    }
+
+    .footer-grid {
       grid-template-columns: 1fr;
+      gap: 28px;
     }
 
     .footer-bottom {
       flex-direction: column;
-      text-align: center;
+      align-items: flex-start;
+      gap: 8px;
     }
   }
 </style>
