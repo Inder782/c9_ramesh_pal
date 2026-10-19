@@ -1,0 +1,50 @@
+[
+  {
+    "image": "/images/mentorship/gallery-1.jpg",
+    "tag": "Student Milestone",
+    "title": "Felicitation & Trader Recognition",
+    "subtitle": "Celebrating students who achieved strict risk discipline and consistent execution."
+  },
+  {
+    "image": "/images/mentorship/gallery-2.jpg",
+    "tag": "Academy Cohort",
+    "title": "Batch Graduation & Honors",
+    "subtitle": "Recognizing cohort participants completing rigorous market structure training."
+  },
+  {
+    "image": "/images/mentorship/gallery-3.jpg",
+    "tag": "Live Classroom",
+    "title": "Interactive Chart & Volume Study",
+    "subtitle": "In-person classroom sessions decoding supply-demand imbalances in real time."
+  },
+  {
+    "image": "/images/mentorship/gallery-4.jpg",
+    "tag": "Trading Floor",
+    "title": "Multi-Screen Live Market Setup",
+    "subtitle": "Live market execution environment monitoring index breadth and institutional flow."
+  },
+  {
+    "image": "/images/mentorship/gallery-5.jpg",
+    "tag": "Hands-on Workshop",
+    "title": "In-Person Strategy Execution",
+    "subtitle": "Step-by-step guidance on order sizing, stop placement, and trade management."
+  },
+  {
+    "image": "/images/mentorship/gallery-6.jpg",
+    "tag": "Technical Analysis",
+    "title": "Chart Pattern & Zone Validation",
+    "subtitle": "Deep-dive analysis of price action inflection points with academic precision."
+  },
+  {
+    "image": "/images/mentorship/gallery-7.jpg",
+    "tag": "Strategy Debrief",
+    "title": "Post-Market Review & Journaling",
+    "subtitle": "Analyzing trade outcomes, emotional triggers, and statistical edge refinement."
+  },
+  {
+    "image": "/images/mentorship/gallery-8.jpg",
+    "tag": "Mentorship",
+    "title": "Trader Psychology & Capital Rules",
+    "subtitle": "Instilling the uncompromising 1–2% capital risk rule for lasting market longevity."
+  }
+]

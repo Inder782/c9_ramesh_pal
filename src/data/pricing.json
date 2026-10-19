@@ -1,0 +1,334 @@
+{
+  "advisoryPlans": [
+    {
+      "id": "equity-cash",
+      "category": "Cash Market",
+      "title": "Equity Cash Segment Desk",
+      "badge": "Versatile",
+      "popular": false,
+      "accentColor": "#064E3B",
+      "description": "Delivery & short-swing ideas for disciplined equity capital compounding.",
+      "specs": [
+        {
+          "label": "Frequency",
+          "value": "5–6 Ideas / Wk"
+        },
+        {
+          "label": "Horizon",
+          "value": "1 to 8 Weeks"
+        },
+        {
+          "label": "Method",
+          "value": "Volume Breakouts"
+        }
+      ],
+      "pricing": {
+        "weekly": {
+          "fee": "₹5,000",
+          "cycle": "/ week",
+          "note": "Introductory Trial"
+        },
+        "monthly": {
+          "fee": "₹15,000",
+          "cycle": "/ month",
+          "note": "Standard Monthly"
+        },
+        "quarterly": {
+          "fee": "₹40,000",
+          "cycle": "/ 3 months",
+          "note": "Best Value (Save ₹5K)"
+        }
+      },
+      "features": [
+        "5–6 high-conviction cash setups / week",
+        "Explicit entry price, targets & stop-loss",
+        "Detailed fundamental & chart rationale",
+        "Real-time update alerts via private desk"
+      ],
+      "ctaText": "Enquire for Cash",
+      "whatsappMsg": "Hi Ramesh Pal, I am interested in subscribing to the Equity Cash Segment Desk."
+    },
+    {
+      "id": "index-fno",
+      "category": "Derivatives",
+      "title": "Index Options & Futures Desk",
+      "badge": "Most Popular",
+      "popular": true,
+      "accentColor": "#10B981",
+      "description": "High-probability derivative setups focused purely on liquid indices.",
+      "specs": [
+        {
+          "label": "Indices",
+          "value": "Nifty, Bank Nifty"
+        },
+        {
+          "label": "Risk-Reward",
+          "value": "Strict 1:2 to 1:3"
+        },
+        {
+          "label": "Analysis",
+          "value": "Option Chain & Greeks"
+        }
+      ],
+      "pricing": {
+        "weekly": {
+          "fee": "₹3,500",
+          "cycle": "/ week",
+          "note": "Weekly Desk"
+        },
+        "monthly": {
+          "fee": "₹10,000",
+          "cycle": "/ month",
+          "note": "Active Traders"
+        },
+        "quarterly": {
+          "fee": "₹25,000",
+          "cycle": "/ 3 months",
+          "note": "Save ₹5,000"
+        }
+      },
+      "features": [
+        "Liquid Nifty & Bank Nifty F&O setups",
+        "Defined-risk strike selection & Greeks",
+        "Strict 1:2 to 1:3 asymmetric R:R",
+        "Real-time market trailing guidance"
+      ],
+      "ctaText": "Join Index Desk",
+      "whatsappMsg": "Hi Ramesh Pal, I would like to join the Index Options & Futures Desk."
+    },
+    {
+      "id": "short-swing",
+      "category": "Technical Momentum",
+      "title": "Short-Term Swing Trading",
+      "badge": "Tactical",
+      "popular": false,
+      "accentColor": "#D97706",
+      "description": "Fast momentum capturing explosive volatility contractions & expansions.",
+      "specs": [
+        {
+          "label": "Holding",
+          "value": "< 7 Trading Days"
+        },
+        {
+          "label": "Tools",
+          "value": "Chartink Scanners"
+        },
+        {
+          "label": "Target",
+          "value": "Tactical Alpha"
+        }
+      ],
+      "pricing": {
+        "weekly": {
+          "fee": "₹10,000",
+          "cycle": "/ 3 months",
+          "note": "Quarterly Cohort Only"
+        },
+        "monthly": {
+          "fee": "₹10,000",
+          "cycle": "/ 3 months",
+          "note": "Quarterly Cohort Only"
+        },
+        "quarterly": {
+          "fee": "₹10,000",
+          "cycle": "/ 3 months",
+          "note": "Complete Swing Cohort"
+        }
+      },
+      "features": [
+        "Holding strictly under 7 trading days",
+        "Screened via custom Chartink scanners",
+        "Predefined stop-loss & dual targets",
+        "Weekend post-market pattern audit"
+      ],
+      "ctaText": "Join Swing Desk",
+      "whatsappMsg": "Hi Ramesh Pal, I am interested in the Short-Term Swing Trading advisory plan."
+    },
+    {
+      "id": "long-term",
+      "category": "Fundamental Wealth",
+      "title": "Long-Term Wealth Portfolio",
+      "badge": "Compounding",
+      "popular": false,
+      "accentColor": "#0284C7",
+      "description": "Multi-year wealth compounders identified via fundamental DCF valuation.",
+      "specs": [
+        {
+          "label": "Holding",
+          "value": "> 6 Months"
+        },
+        {
+          "label": "Framework",
+          "value": "E-I-C & DCF"
+        },
+        {
+          "label": "Focus",
+          "value": "High ROCE & Moats"
+        }
+      ],
+      "pricing": {
+        "weekly": {
+          "fee": "₹12,000",
+          "cycle": "/ 3 months",
+          "note": "Quarterly Desk Only"
+        },
+        "monthly": {
+          "fee": "₹12,000",
+          "cycle": "/ 3 months",
+          "note": "Quarterly Desk Only"
+        },
+        "quarterly": {
+          "fee": "₹12,000",
+          "cycle": "/ 3 months",
+          "note": "Structural Portfolio"
+        }
+      },
+      "features": [
+        "High-conviction structural compounders",
+        "Fundamental notes on moats & governance",
+        "DCF valuation & balance sheet audits",
+        "Periodic allocation rebalancing alerts"
+      ],
+      "ctaText": "Apply for Wealth",
+      "whatsappMsg": "Hi Ramesh Pal, I want to subscribe to the Long-Term Wealth Portfolio advisory service."
+    },
+    {
+      "id": "institutional-reports",
+      "category": "Institutional",
+      "title": "Valuation & IPO Reports",
+      "badge": "Bespoke",
+      "popular": false,
+      "accentColor": "#B45309",
+      "description": "Institutional equity valuation dossiers, IPO evaluations & whitepapers.",
+      "specs": [
+        {
+          "label": "Coverage",
+          "value": "BSE / NSE Equities"
+        },
+        {
+          "label": "Depth",
+          "value": "Forensic Dossiers"
+        },
+        {
+          "label": "Audience",
+          "value": "HNIs & Corporates"
+        }
+      ],
+      "pricing": {
+        "weekly": {
+          "fee": "₹30K – ₹60K",
+          "cycle": "/ year",
+          "note": "Annual Desk Only"
+        },
+        "monthly": {
+          "fee": "₹30K – ₹60K",
+          "cycle": "/ year",
+          "note": "Annual Desk Only"
+        },
+        "quarterly": {
+          "fee": "₹30K – ₹60K",
+          "cycle": "/ year",
+          "note": "Annual Research Retainer"
+        }
+      },
+      "features": [
+        "In-depth mid & small cap coverage notes",
+        "Comprehensive IPO evaluation notes",
+        "Forensic review (Cash Flow vs EBITDA)",
+        "Direct consultation access with analyst"
+      ],
+      "ctaText": "Request Dossier",
+      "whatsappMsg": "Hi Ramesh Pal, I would like to enquire about Institutional Equity Research & IPO Reports."
+    }
+  ],
+  "courseTrackModules": [
+    {
+      "num": 1,
+      "title": "Equity Market & Exchanges",
+      "tag": "NSE/BSE & SEBI Laws",
+      "desc": "Capital market architecture, primary vs secondary markets, clearing corporations & trade settlement cycles.",
+      "phase": "Month 01 • Part 1 (Weeks 1 & 2)",
+      "row": 1
+    },
+    {
+      "num": 2,
+      "title": "Demat & Terminal Operations",
+      "tag": "Order Mechanics",
+      "desc": "Mastering practical terminal execution: Limit, Market, Stop-Loss (SL), SL-M, and GTT trigger orders.",
+      "phase": "Month 01 • Part 1 (Weeks 1 & 2)",
+      "row": 1
+    },
+    {
+      "num": 3,
+      "title": "Fundamental Analysis Framework",
+      "tag": "E-I-C & DCF",
+      "desc": "Economy-Industry-Company (E-I-C) analysis, reading Balance Sheets, ROCE, Debt-to-Equity & DCF valuation.",
+      "phase": "Month 01 • Part 1 (Weeks 1 & 2)",
+      "row": 1
+    },
+    {
+      "num": 4,
+      "title": "Price Action & Charting Mastery",
+      "tag": "Candlestick Psychology",
+      "desc": "Support/Resistance, classical chart patterns, multi-timeframe trendlines, EMA 20/50/200, and VWAP.",
+      "phase": "Month 01 • Part 1 (Weeks 1 & 2)",
+      "row": 1
+    },
+    {
+      "num": 5,
+      "title": "Futures, Options & Greeks",
+      "tag": "Delta, Theta & Hedging",
+      "desc": "Futures pricing, Option Chain analysis, Greeks (Delta, Theta, Gamma), and multi-leg hedging spreads.",
+      "phase": "Month 01 • Part 2 (Weeks 3 & 4)",
+      "row": 2
+    },
+    {
+      "num": 6,
+      "title": "MCX Commodities Operations",
+      "tag": "Crude Oil & Bullion",
+      "desc": "Trading Gold, Silver, Crude Oil and Natural Gas with global macroeconomic alignment.",
+      "phase": "Month 01 • Part 2 (Weeks 3 & 4)",
+      "row": 2
+    },
+    {
+      "num": 7,
+      "title": "Intraday Breakout Strategies",
+      "tag": "ORB & Scalping",
+      "desc": "High-probability Opening Range Breakouts (ORB), liquidity sweeps, and fast volume contraction entries.",
+      "phase": "Month 01 • Part 2 (Weeks 3 & 4)",
+      "row": 2
+    },
+    {
+      "num": 8,
+      "title": "Mutual Funds & Compounding",
+      "tag": "Alpha/Beta Allocation",
+      "desc": "Active vs passive allocation, SIP compounding calculus, Sharpe ratios, and long-term rebalancing.",
+      "phase": "Month 01 • Part 2 (Weeks 3 & 4)",
+      "row": 2
+    },
+    {
+      "num": 9,
+      "title": "Trading Psychology & Risk Math",
+      "tag": "1–2% Hard Capital Rule",
+      "desc": "Disciplined position sizing, non-negotiable 1:2 and 1:3 asymmetric R:R, and managing drawdown emotions.",
+      "phase": "Months 02 & 03 • Live Practice",
+      "row": 3
+    },
+    {
+      "num": 10,
+      "title": "Weekly Live Setup Teardowns",
+      "tag": "Live Market Execution",
+      "desc": "Active market hours execution, real-time chart deconstructions, live doubt clearing, and mentor feedback.",
+      "phase": "Months 02 & 03 • Live Practice",
+      "row": 3
+    },
+    {
+      "num": 11,
+      "title": "Ongoing Community Mentorship",
+      "tag": "Lifetime Network",
+      "desc": "Daily pre-market watchlists, ongoing doubt resolution, and continuous access to the alumni network.",
+      "phase": "Months 02 & 03 • Live Practice",
+      "row": 3
+    }
+  ]
+}
