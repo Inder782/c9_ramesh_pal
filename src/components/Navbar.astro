@@ -9,7 +9,8 @@ const whatsappCta = config.whatsappUrl || `https://wa.me/${phoneDigits}`;
     <div class="nav-container">
       <!-- Brand Logo -->
       <a href="#home" class="brand-link" aria-label={`${config.brandName} Home`}>
-        <img src="/logo.svg" alt={`${config.brandName} Logo`} class="brand-logo-img" width="160" height="32" />
+        <img src="/images/logo.png" alt={`${config.brandName} Logo`} class="brand-logo-img logo-dark" width="160" height="36" />
+        <img src="/images/logo-light.png" alt={`${config.brandName} Logo`} class="brand-logo-img logo-light" width="160" height="36" />
       </a>
 
       <!-- Desktop Navigation Links -->
@@ -50,7 +51,7 @@ const whatsappCta = config.whatsappUrl || `https://wa.me/${phoneDigits}`;
 <aside class="mobile-drawer" id="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation" aria-hidden="true" inert>
   <div class="drawer-head">
     <a href="#home" class="brand-link" aria-label={`${config.brandName} Home`}>
-      <img src="/logo.svg" alt={`${config.brandName} Logo`} width="140" height="28" />
+      <img src="/images/logo.png" alt={`${config.brandName} Logo`} class="drawer-logo-img" width="140" height="32" />
     </a>
     <button class="drawer-close" id="drawer-close" type="button" aria-label="Close navigation menu">
       <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -144,8 +145,27 @@ const whatsappCta = config.whatsappUrl || `https://wa.me/${phoneDigits}`;
   }
 
   .brand-logo-img {
-    height: 30px;
+    height: 38px;
     width: auto;
+    max-width: 170px;
+    object-fit: contain;
+    display: block;
+    transition: opacity 0.25s ease;
+  }
+
+  .brand-logo-img.logo-light {
+    display: none;
+  }
+
+  .brand-logo-img.logo-dark {
+    display: block;
+  }
+
+  .drawer-logo-img {
+    height: 34px;
+    width: auto;
+    max-width: 150px;
+    object-fit: contain;
     display: block;
   }
 
@@ -302,8 +322,12 @@ const whatsappCta = config.whatsappUrl || `https://wa.me/${phoneDigits}`;
       0 0 0 1px rgba(255, 255, 255, 0.18);
   }
 
-  .floating-header.is-on-hero .brand-logo-img {
-    filter: invert(1) hue-rotate(180deg) brightness(1.1);
+  .floating-header.is-on-hero .brand-logo-img.logo-dark {
+    display: none;
+  }
+
+  .floating-header.is-on-hero .brand-logo-img.logo-light {
+    display: block;
   }
 
   .floating-header.is-on-hero .nav-list {
@@ -504,8 +528,9 @@ const whatsappCta = config.whatsappUrl || `https://wa.me/${phoneDigits}`;
     }
 
     .brand-logo-img {
-      width: 125px;
-      height: 25px;
+      height: 30px;
+      width: auto;
+      max-width: 130px;
     }
 
     .btn-lean-cta span {
@@ -609,26 +634,36 @@ const whatsappCta = config.whatsappUrl || `https://wa.me/${phoneDigits}`;
   // Dynamic theme switching based on position on the page & Active section scroll spy
   const headerEl = document.getElementById('main-header');
   const heroEl = document.getElementById('home');
-  const sections = document.querySelectorAll<HTMLElement>('section[id], div[id]');
+  const navSectionIds = ['home', 'about', 'offerings', 'compliance', 'regulatory'];
 
   let cachedHeroBottom = 600;
-  let cachedSections: Array<{ id: string; top: number; bottom: number }> = [];
-  let lastActiveId = '';
+  let cachedNavSections: Array<{ id: string; top: number; bottom: number; link: HTMLAnchorElement }> = [];
   let isCurrentlyOnHero = true;
   let scrollTicking = false;
 
   function measureLayout() {
     if (heroEl) {
-      cachedHeroBottom = heroEl.offsetTop + heroEl.offsetHeight - 80;
+      const heroRect = heroEl.getBoundingClientRect();
+      cachedHeroBottom = heroRect.top + window.scrollY + heroEl.offsetHeight - 80;
     }
-    cachedSections = Array.from(sections).map(section => {
-      const top = section.offsetTop;
-      return {
-        id: section.getAttribute('id') || '',
-        top,
-        bottom: top + section.offsetHeight
-      };
+
+    cachedNavSections = [];
+    navSectionIds.forEach(id => {
+      const el = document.getElementById(id);
+      const link = document.querySelector<HTMLAnchorElement>(`.desktop-nav .nav-link[href="#${id}"]`);
+      if (el && link) {
+        const rect = el.getBoundingClientRect();
+        const top = rect.top + window.scrollY;
+        cachedNavSections.push({
+          id,
+          top,
+          bottom: top + el.offsetHeight,
+          link
+        });
+      }
     });
+
+    cachedNavSections.sort((a, b) => a.top - b.top);
   }
 
   // Initial measurement & resize handler
@@ -651,27 +686,27 @@ const whatsappCta = config.whatsappUrl || `https://wa.me/${phoneDigits}`;
       }
     }
 
-    // Active section scroll spy
-    let currentId = '';
-    const scrollPos = scrollY + 140;
+    // Active section scroll spy: high precision, backwards traversal
+    let matchedLink: HTMLAnchorElement | null = null;
 
-    for (let i = 0; i < cachedSections.length; i++) {
-      const sec = cachedSections[i];
-      if (sec.id && scrollPos >= sec.top && scrollPos < sec.bottom) {
-        currentId = sec.id;
-        break;
-      }
-    }
-
-    if (currentId && currentId !== lastActiveId) {
-      lastActiveId = currentId;
-      for (let i = 0; i < links.length; i++) {
-        const link = links[i];
-        if (link.getAttribute('href') === `#${currentId}`) {
-          setActiveSection(link);
+    if (scrollY < 220) {
+      matchedLink = document.querySelector<HTMLAnchorElement>('.desktop-nav .nav-link[href="#home"]');
+    } else {
+      const scrollPos = scrollY + 160;
+      for (let i = cachedNavSections.length - 1; i >= 0; i--) {
+        const sec = cachedNavSections[i];
+        if (scrollPos >= sec.top) {
+          matchedLink = sec.link;
           break;
         }
       }
+      if (!matchedLink && cachedNavSections.length > 0) {
+        matchedLink = cachedNavSections[0].link;
+      }
+    }
+
+    if (matchedLink && matchedLink !== currentActiveSectionLink) {
+      setActiveSection(matchedLink);
     }
 
     scrollTicking = false;

@@ -10,7 +10,7 @@ import config from '../data/config.json';
         <span class="sub-label">About the Analyst</span>
         <h2 id="about-heading" class="analyst-name">{config.analystName}</h2>
         <p class="analyst-tagline">
-          SEBI Registered Research Analyst &bull; Founder, Dehradun Bulls
+          SEBI Registered Research Analyst
         </p>
 
         <div class="bio-paragraphs">
@@ -36,18 +36,9 @@ import config from '../data/config.json';
         </div>
       </div>
 
-      <!-- Right Column: Borderless Image with Radiant Mixing Ambient Orbs Behind -->
+      <!-- Right Column: Clean Studio Portrait Card -->
       <div class="about-media reveal-on-scroll">
         <div class="image-stage">
-          <!-- Fluid Mixing Glow Orbs Directly Behind Image -->
-          <div class="orbs-container" aria-hidden="true">
-            <div class="glow-orb orb-emerald"></div>
-            <div class="glow-orb orb-amber"></div>
-            <div class="glow-orb orb-tangerine"></div>
-            <div class="glow-orb orb-teal"></div>
-            <div class="glow-orb orb-gold-mist"></div>
-          </div>
-
           <!-- Clean Borderless Photo Card -->
           <div class="photo-card">
             <!-- Subtle Studio Depth Lighting -->
@@ -56,7 +47,7 @@ import config from '../data/config.json';
             <!-- Crisp Portrait (100% Borderless) -->
             <img 
               src="/images/ramesh-pal.jpg" 
-              alt="Ramesh Pal - SEBI Registered Research Analyst and Founder of Dehradun Bulls" 
+              alt="Ramesh Pal - SEBI Registered Research Analyst" 
               class="mentor-img"
               width="972"
               height="1200"
@@ -180,120 +171,7 @@ import config from '../data/config.json';
     align-items: center;
   }
 
-  /* Orbs Container Layer Directly Behind Photo (Natural Unclipped Atmosphere) */
-  .orbs-container {
-    position: absolute;
-    inset: -80px;
-    pointer-events: none;
-    z-index: 1;
-    overflow: visible;
-  }
 
-  .glow-orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(52px);
-    opacity: 0.55;
-    will-change: transform;
-    pointer-events: none;
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-
-  /* Orb 1: Vibrant Emerald / Mint (Top-Left) */
-  .orb-emerald {
-    width: 320px;
-    height: 320px;
-    background: radial-gradient(circle, rgba(16, 185, 129, 0.65) 0%, rgba(5, 150, 105, 0.3) 45%, rgba(6, 78, 59, 0.1) 70%, transparent 100%);
-    top: -40px;
-    left: -50px;
-    animation: driftOrb1 10s ease-in-out infinite alternate;
-  }
-
-  /* Orb 2: Warm Golden Amber (Top-Right) */
-  .orb-amber {
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(245, 158, 11, 0.65) 0%, rgba(217, 119, 6, 0.3) 45%, rgba(180, 83, 9, 0.08) 70%, transparent 100%);
-    top: -30px;
-    right: -40px;
-    animation: driftOrb2 11s ease-in-out infinite alternate-reverse;
-  }
-
-  /* Orb 3: Luminous Tangerine Glow (Mid-Right Edge) */
-  .orb-tangerine {
-    width: 260px;
-    height: 260px;
-    background: radial-gradient(circle, rgba(251, 146, 60, 0.6) 0%, rgba(234, 88, 12, 0.25) 45%, transparent 75%);
-    top: 38%;
-    right: -50px;
-    animation: driftOrb3 12s ease-in-out infinite alternate;
-  }
-
-  /* Orb 4: Deep Mountain Teal & Pine (Bottom-Left) */
-  .orb-teal {
-    width: 290px;
-    height: 290px;
-    background: radial-gradient(circle, rgba(13, 148, 136, 0.6) 0%, rgba(6, 78, 59, 0.28) 45%, transparent 75%);
-    bottom: -40px;
-    left: -40px;
-    animation: driftOrb2 10.5s ease-in-out infinite alternate;
-  }
-
-  /* Orb 5: Warm Center-Bottom Golden Radiance */
-  .orb-gold-mist {
-    width: 280px;
-    height: 240px;
-    background: radial-gradient(ellipse, rgba(252, 211, 77, 0.5) 0%, rgba(245, 158, 11, 0.2) 50%, transparent 75%);
-    bottom: -25px;
-    left: 20%;
-    opacity: 0.45;
-    animation: driftOrb1 9.5s ease-in-out infinite alternate-reverse;
-  }
-
-  /* Fluid Hardware-Accelerated 3D Drifting Animations (0% CPU Paint Cost) */
-  @keyframes driftOrb1 {
-    0% {
-      transform: translate3d(0, 0, 0) scale(1);
-    }
-    100% {
-      transform: translate3d(22px, 16px, 0) scale(1.12);
-    }
-  }
-
-  @keyframes driftOrb2 {
-    0% {
-      transform: translate3d(0, 0, 0) scale(1);
-    }
-    100% {
-      transform: translate3d(-18px, -14px, 0) scale(1.1);
-    }
-  }
-
-  @keyframes driftOrb3 {
-    0% {
-      transform: translate3d(0, 0, 0) scale(1);
-    }
-    100% {
-      transform: translate3d(-12px, 20px, 0) scale(1.14);
-    }
-  }
-
-  /* Hover Intensification */
-  .image-stage:hover .glow-orb {
-    opacity: 0.75;
-  }
-
-  .image-stage:hover .orb-emerald {
-    transform: scale(1.15) translate3d(-12px, -8px, 0);
-  }
-
-  .image-stage:hover .orb-amber {
-    transform: scale(1.15) translate3d(12px, -8px, 0);
-  }
-
-  .image-stage:hover .orb-tangerine {
-    transform: scale(1.18) translate3d(14px, 10px, 0);
-  }
 
   /* Clean Borderless Photo Card */
   .photo-card {

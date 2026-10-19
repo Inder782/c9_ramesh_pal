@@ -11,7 +11,7 @@ import LegalModals from './LegalModals.astro';
       <!-- Col 1: Identity & Glowing Socials -->
       <div class="footer-col">
         <a href="#home" class="footer-brand" aria-label={`${config.brandName} Home`}>
-          <img src="/logo.svg" alt={`${config.brandName} Logo`} width="180" height="36" class="footer-logo-img" />
+          <img src="/images/logo-light.png" alt={`${config.brandName} Logo`} width="180" height="40" class="footer-logo-img" />
         </a>
         <p class="footer-about-text">
           Institutional-grade equity research governed by the discipline of an accredited educator. Systematic pattern repetition and mathematical risk control.
@@ -167,9 +167,10 @@ import LegalModals from './LegalModals.astro';
   }
 
   .footer-logo-img {
-    filter: brightness(0) invert(1);
-    height: 32px;
+    height: 40px;
     width: auto;
+    max-width: 180px;
+    object-fit: contain;
     display: block;
     margin-bottom: 14px;
   }
