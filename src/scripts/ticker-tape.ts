@@ -9,7 +9,7 @@
     script.innerHTML = JSON.stringify({
       symbols: [
         { proName: "BSE:SENSEX", title: "S&P BSE SENSEX" },
-        { proName: "NSE:NIFTY", title: "NIFTY 50" },
+        { proName: "BSE:SBIN", title: "State Bank of India" },
         { proName: "BSE:RELIANCE", title: "Reliance" },
         { proName: "BSE:HDFCBANK", title: "HDFC Bank" },
         { proName: "BSE:TCS", title: "TCS" },

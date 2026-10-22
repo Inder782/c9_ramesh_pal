@@ -11,8 +11,20 @@
   margin-bottom: 36px;
 }
 
+.mentorship-header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
 .header-content {
   max-width: 780px;
+}
+
+.mentorship-control-wrap {
+  flex-shrink: 0;
+  margin-bottom: 8px;
 }
 
 .sub-label {
@@ -94,31 +106,36 @@
   overflow: hidden;
 }
 
-/* Accessible Pause/Play Button */
+/* Accessible Pause/Play Button (Sleek Institutional Badge) */
 .reel-toggle-btn {
-  position: absolute;
-  top: -46px;
-  right: 24px;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   background: var(--bg-secondary);
-  color: var(--text-secondary);
-  border: 1px solid var(--border-light);
-  padding: 5px 12px;
+  color: var(--text-primary);
+  border: 1.5px solid var(--border-light);
+  padding: 8px 16px;
   border-radius: 9999px;
-  font-size: 0.78rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   cursor: pointer;
   box-shadow: var(--shadow-sm);
   transition: all 0.2s ease;
-  z-index: 10;
 }
 
-.reel-toggle-btn:hover {
+.reel-toggle-btn:hover,
+.reel-toggle-btn:focus-visible {
   background: var(--accent-primary);
   color: #FFFFFF;
   border-color: var(--accent-primary);
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+.btn-icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .reel-toggle-btn .icon-play {
@@ -133,6 +150,12 @@
   display: inline-block;
 }
 
+.reel-toggle-btn.is-paused {
+  background: var(--accent-primary);
+  color: #FFFFFF;
+  border-color: var(--accent-primary);
+}
+
 /* Viewport with smooth edge gradient fade masks */
 .reel-viewport {
   width: 100%;
@@ -142,13 +165,13 @@
   -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 4%, #000 96%, transparent 100%);
 }
 
-/* Smooth Infinite Hardware-Accelerated Gliding Track */
+/* Smooth Infinite Hardware-Accelerated Gliding Track (Slowed down for optimal comprehension) */
 .reel-track {
   display: flex;
   gap: 22px;
   width: max-content;
   will-change: transform;
-  animation: smoothGlidingReel 52s linear infinite;
+  animation: smoothGlidingReel 82s linear infinite;
 }
 
 /* Pause smoothly when hovered, focused or user paused */
@@ -308,12 +331,14 @@
     margin: 0 5px;
   }
 
-  .reel-toggle-btn {
-    position: static;
-    margin-bottom: 14px;
-    margin-left: auto;
-    margin-right: 16px;
-    display: flex;
+  .mentorship-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .mentorship-control-wrap {
+    margin-bottom: 0;
   }
 
   .reel-card {
@@ -324,7 +349,7 @@
 
   .reel-track {
     gap: 14px;
-    animation-duration: 44s;
+    animation-duration: 72s;
   }
 
   .card-info {

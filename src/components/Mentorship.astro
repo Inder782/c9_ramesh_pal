@@ -9,47 +9,54 @@ const trackItems = [...mentorshipItems, ...mentorshipItems];
 
 <section class="mentorship-section" id="mentorship" aria-labelledby="mentorship-heading">
   <div class="container mentorship-header-container reveal-on-scroll">
-    <div class="header-content">
-      <span class="sub-label">ACADEMY &amp; FLOOR MENTORSHIP</span>
-      <h2 id="mentorship-heading" class="section-title">
-        Where Theory Meets Live Market Execution
-      </h2>
-      
-      <!-- Highlighted Eyebrow Effect in One Line -->
-      <div class="mentorship-eyebrow-line" role="note" aria-label="Mentorship Highlights">
-        <span class="eyebrow-glow-dot" aria-hidden="true"></span>
-        <span class="eyebrow-line-content">
-          Offline Cohorts &amp; Workshops <span class="sep" aria-hidden="true">&bull;</span> Multi-Screen Trading Floor <span class="sep" aria-hidden="true">&bull;</span> Strict Capital Risk Discipline <span class="sep" aria-hidden="true">&bull;</span> Student Milestones
-        </span>
+    <div class="mentorship-header-row">
+      <div class="header-content">
+        <span class="sub-label">ACADEMY &amp; FLOOR MENTORSHIP</span>
+        <h2 id="mentorship-heading" class="section-title">
+          Where Theory Meets Live Market Execution
+        </h2>
+        
+        <!-- Highlighted Eyebrow Effect in One Line -->
+        <div class="mentorship-eyebrow-line" role="note" aria-label="Mentorship Highlights">
+          <span class="eyebrow-glow-dot" aria-hidden="true"></span>
+          <span class="eyebrow-line-content">
+            Offline Cohorts &amp; Workshops <span class="sep" aria-hidden="true">&bull;</span> Multi-Screen Trading Floor <span class="sep" aria-hidden="true">&bull;</span> Strict Capital Risk Discipline <span class="sep" aria-hidden="true">&bull;</span> Student Milestones
+          </span>
+        </div>
+
+        <p class="section-description">
+          Beyond theory and static books—hands-on offline classroom sessions, multi-screen live trading desk breakdowns, and real-time capital protection discipline.
+        </p>
       </div>
 
-      <p class="section-description">
-        Beyond theory and static books—hands-on offline classroom sessions, multi-screen live trading desk breakdowns, and real-time capital protection discipline.
-      </p>
+      <!-- Accessible Pause/Play Floating Control (Visible & Non-Clipped) -->
+      <div class="mentorship-control-wrap">
+        <button 
+          type="button" 
+          class="reel-toggle-btn" 
+          id="mentorship-toggle-btn" 
+          aria-label="Pause Gallery" 
+          aria-pressed="false"
+          aria-controls="mentorship-reel-track"
+          title="Pause / Resume gallery motion"
+        >
+          <span class="btn-icon-wrap" aria-hidden="true">
+            <svg class="icon-pause" aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+              <rect x="6" y="4" width="4" height="16" rx="1.5"></rect>
+              <rect x="14" y="4" width="4" height="16" rx="1.5"></rect>
+            </svg>
+            <svg class="icon-play" aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+              <path d="M7 4.5v15c0 .8.9 1.3 1.6.9l12-7.5c.7-.4.7-1.4 0-1.8l-12-7.5c-.7-.4-1.6.1-1.6.9z"></path>
+            </svg>
+          </span>
+          <span class="toggle-text" id="mentorship-toggle-text">Pause Gallery</span>
+        </button>
+      </div>
     </div>
   </div>
 
   <!-- Smooth Flowing Reel Stage -->
   <div class="reel-stage" id="mentorship-reel-stage" aria-label="Mentorship photo showcase carousel">
-    <!-- Accessible Pause/Play Floating Control -->
-    <button 
-      type="button" 
-      class="reel-toggle-btn" 
-      id="mentorship-toggle-btn" 
-      aria-label="Pause moving showcase gallery" 
-      aria-pressed="false"
-      title="Pause / Resume gallery motion"
-    >
-      <svg class="icon-pause" aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
-        <rect x="6" y="4" width="4" height="16" rx="1.5"></rect>
-        <rect x="14" y="4" width="4" height="16" rx="1.5"></rect>
-      </svg>
-      <svg class="icon-play" aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
-        <path d="M7 4.5v15c0 .8.9 1.3 1.6.9l12-7.5c.7-.4.7-1.4 0-1.8l-12-7.5c-.7-.4-1.6.1-1.6.9z"></path>
-      </svg>
-      <span class="toggle-text" id="mentorship-toggle-text">Pause</span>
-    </button>
-
     <!-- Infinite Continuous Track Container -->
     <div class="reel-viewport" id="mentorship-reel-viewport">
       <div class="reel-track" id="mentorship-reel-track">

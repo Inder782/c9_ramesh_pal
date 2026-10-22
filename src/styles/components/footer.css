@@ -44,6 +44,11 @@
 
   .analyst-sebi-meta p {
     margin: 0;
+    color: #CBD5E1;
+  }
+
+  .analyst-sebi-meta strong {
+    color: #F8FAFC;
   }
 
   /* Glowing Social Media Buttons */

@@ -16,6 +16,8 @@ function setPausedState(paused: boolean) {
   }
   if (toggleBtn) {
     toggleBtn.setAttribute('aria-pressed', String(isPaused));
+    toggleBtn.setAttribute('aria-label', isPaused ? 'Resume Gallery' : 'Pause Gallery');
+    toggleBtn.setAttribute('title', isPaused ? 'Resume Gallery' : 'Pause Gallery');
     if (isPaused) {
       toggleBtn.classList.add('is-paused');
     } else {
@@ -23,10 +25,17 @@ function setPausedState(paused: boolean) {
     }
   }
   if (toggleText) {
-    toggleText.textContent = isPaused ? 'Resume' : 'Pause';
+    toggleText.textContent = isPaused ? 'Resume Gallery' : 'Pause Gallery';
   }
 }
 
 toggleBtn?.addEventListener('click', () => {
   setPausedState(!isPaused);
+});
+
+toggleBtn?.addEventListener('keydown', (e: KeyboardEvent) => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    setPausedState(!isPaused);
+  }
 });
