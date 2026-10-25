@@ -11,10 +11,10 @@ import '../styles/components/ticker-tape.css';
         id="ticker-toggle-btn" 
         class="ticker-control-btn" 
         type="button" 
-        aria-label="Pause scrolling stock ticker" 
+        aria-label="Pause ticker" 
         aria-pressed="false" 
         aria-controls="ticker-track-container" 
-        title="Pause scrolling stock ticker"
+        title="Pause ticker"
       >
         <span class="ticker-btn-icon" aria-hidden="true">
           <svg class="icon-pause" aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
@@ -25,9 +25,20 @@ import '../styles/components/ticker-tape.css';
             <path d="M7 4.5v15c0 .8.9 1.3 1.6.9l12-7.5c.7-.4.7-1.4 0-1.8l-12-7.5c-.7-.4-1.6.1-1.6.9z"></path>
           </svg>
         </span>
-        <span class="ticker-btn-text" id="ticker-btn-text">Pause</span>
+        <span class="ticker-btn-text" id="ticker-btn-text">Pause ticker</span>
       </button>
       <span id="ticker-status-announcer" class="sr-only" aria-live="polite">Stock ticker is scrolling</span>
+
+      <!-- Accessible Market Data Alternative Link for Screen Reader & Keyboard Navigation -->
+      <a 
+        href="https://www.bseindia.com/markets.html" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="ticker-alt-link"
+        aria-label="View live market data on BSE India (accessible alternative)"
+      >
+        View live market data on BSE India
+      </a>
     </div>
 
     <!-- Scrolling Ticker Container -->
@@ -36,20 +47,35 @@ import '../styles/components/ticker-tape.css';
         <div class="tradingview-widget-container__widget"></div>
       </div>
 
-      <!-- Accessible Paused State Overlay -->
+      <!-- Accessible Paused State Overlay with Movement Stopped & On-demand values check -->
       <div 
         id="ticker-paused-overlay" 
         class="ticker-paused-overlay" 
-        tabindex="0" 
-        role="button" 
-        aria-label="Stock ticker paused. Click to resume scrolling."
+        role="region" 
+        aria-label="Stock ticker paused display"
       >
-        <span class="ticker-paused-badge">
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true">
-            <path d="M7 4.5v15c0 .8.9 1.3 1.6.9l12-7.5c.7-.4.7-1.4 0-1.8l-12-7.5c-.7-.4-1.6.1-1.6.9z"></path>
-          </svg>
-          Ticker Paused <span aria-hidden="true">&bull;</span> Click to Resume
-        </span>
+        <div class="ticker-paused-content">
+          <button 
+            id="ticker-resume-overlay-btn"
+            type="button"
+            class="ticker-paused-badge"
+            aria-label="Ticker Paused Play ticker"
+          >
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true">
+              <path d="M7 4.5v15c0 .8.9 1.3 1.6.9l12-7.5c.7-.4.7-1.4 0-1.8l-12-7.5c-.7-.4-1.6.1-1.6.9z"></path>
+            </svg>
+            <span>Ticker Paused <span aria-hidden="true">&bull;</span> Play ticker</span>
+          </button>
+          <a 
+            href="https://www.bseindia.com/markets.html" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="ticker-paused-ondemand-link"
+            aria-label="Check current values on BSE India (opens in new tab)"
+          >
+            Check current values on BSE India <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>

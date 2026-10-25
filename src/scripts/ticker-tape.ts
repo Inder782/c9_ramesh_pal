@@ -22,10 +22,37 @@
       showSymbolLogo: true,
       colorTheme: "dark",
       isTransparent: true,
-      displayMode: "regular",
+      displayMode: "adaptive",
       locale: "in"
     });
     container.appendChild(script);
+
+    // Apply descriptive title and relative scalable sizing to TradingView iframe per WCAG 1.4.4 & 4.1.2
+    const applyIframeAccessibility = () => {
+      const iframes = container.querySelectorAll('iframe');
+      iframes.forEach((iframe) => {
+        if (iframe.getAttribute('title') !== 'Live market ticker') {
+          iframe.setAttribute('title', 'Live market ticker');
+          iframe.setAttribute('aria-label', 'Live market ticker showing BSE S&P Sensex and major equities');
+        }
+        iframe.style.minHeight = '3.75rem';
+        iframe.style.height = '100%';
+        iframe.style.width = '100%';
+      });
+    };
+
+    const observer = new MutationObserver(() => {
+      applyIframeAccessibility();
+    });
+    observer.observe(container, { childList: true, subtree: true });
+
+    const pollTimer = setInterval(() => {
+      if (container.querySelector('iframe')) {
+        applyIframeAccessibility();
+        clearInterval(pollTimer);
+      }
+    }, 100);
+    setTimeout(() => clearInterval(pollTimer), 10000);
   }
 
   function initTickerControl() {
@@ -35,7 +62,7 @@
     const toggleBtn = document.getElementById('ticker-toggle-btn');
     const btnText = document.getElementById('ticker-btn-text');
     const announcer = document.getElementById('ticker-status-announcer');
-    const pausedOverlay = document.getElementById('ticker-paused-overlay');
+    const resumeOverlayBtn = document.getElementById('ticker-resume-overlay-btn');
 
     if (!wrapper || !toggleBtn) return;
 
@@ -46,17 +73,17 @@
       if (isPaused) {
         wrapper?.classList.add('ticker-paused');
         toggleBtn?.setAttribute('aria-pressed', 'true');
-        toggleBtn?.setAttribute('aria-label', 'Resume scrolling stock ticker');
-        toggleBtn?.setAttribute('title', 'Resume scrolling stock ticker');
-        if (btnText) btnText.textContent = 'Resume';
-        if (announcer) announcer.textContent = 'Stock ticker paused';
+        toggleBtn?.setAttribute('aria-label', 'Play ticker');
+        toggleBtn?.setAttribute('title', 'Play ticker');
+        if (btnText) btnText.textContent = 'Play ticker';
+        if (announcer) announcer.textContent = 'Stock ticker paused. All movement stopped.';
       } else {
         wrapper?.classList.remove('ticker-paused');
         toggleBtn?.setAttribute('aria-pressed', 'false');
-        toggleBtn?.setAttribute('aria-label', 'Pause scrolling stock ticker');
-        toggleBtn?.setAttribute('title', 'Pause scrolling stock ticker');
-        if (btnText) btnText.textContent = 'Pause';
-        if (announcer) announcer.textContent = 'Stock ticker is scrolling';
+        toggleBtn?.setAttribute('aria-label', 'Pause ticker');
+        toggleBtn?.setAttribute('title', 'Pause ticker');
+        if (btnText) btnText.textContent = 'Pause ticker';
+        if (announcer) announcer.textContent = 'Stock ticker is scrolling.';
       }
     }
 
@@ -65,17 +92,17 @@
       setPaused(!isPaused);
     });
 
-    if (pausedOverlay) {
-      pausedOverlay.addEventListener('click', () => {
+    toggleBtn.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+        e.preventDefault();
+        setPaused(!isPaused);
+      }
+    });
+
+    if (resumeOverlayBtn) {
+      resumeOverlayBtn.addEventListener('click', () => {
         setPaused(false);
         toggleBtn.focus();
-      });
-      pausedOverlay.addEventListener('keydown', (e: KeyboardEvent) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          setPaused(false);
-          toggleBtn.focus();
-        }
       });
     }
 

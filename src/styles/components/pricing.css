@@ -577,8 +577,8 @@
   }
 
   .rail-track-amber {
-    border-top: 3.5px dashed #D97706;
-    box-shadow: 0 0 10px rgba(245, 158, 11, 0.35);
+    border-top: 3.5px dashed #92400E;
+    box-shadow: 0 0 10px rgba(146, 64, 14, 0.35);
   }
 
   .rail-track-gold {
@@ -689,15 +689,15 @@
   }
 
   .dot-amber {
-    border: 3px solid #D97706;
-    color: #D97706;
+    border: 3px solid #92400E;
+    color: #92400E;
   }
 
   .track-station:hover .dot-amber,
   .track-station.is-active .dot-amber {
-    background: #D97706;
+    background: #92400E;
     color: #FFFFFF;
-    box-shadow: 0 0 22px rgba(217, 119, 6, 0.65);
+    box-shadow: 0 0 22px rgba(146, 64, 14, 0.65);
     transform: scale(1.15);
   }
 

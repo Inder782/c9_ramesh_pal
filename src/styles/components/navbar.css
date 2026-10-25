@@ -301,12 +301,13 @@
     z-index: 1001;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
   }
 
   .drawer-backdrop.active {
     opacity: 1;
     visibility: visible;
+    transition: opacity 0.3s ease, visibility 0s 0s;
   }
 
   .mobile-drawer {
@@ -320,7 +321,7 @@
     z-index: 1002;
     transform: translateX(100%);
     visibility: hidden;
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s ease;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0s 0.35s;
     display: flex;
     flex-direction: column;
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
@@ -329,6 +330,7 @@
   .mobile-drawer.active {
     transform: translateX(0);
     visibility: visible;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0s 0s;
   }
 
   .drawer-head {

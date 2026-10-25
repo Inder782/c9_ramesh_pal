@@ -11,10 +11,10 @@ const trackItems = [...mentorshipItems, ...mentorshipItems];
   <div class="container mentorship-header-container reveal-on-scroll">
     <div class="mentorship-header-row">
       <div class="header-content">
-        <span class="sub-label">ACADEMY &amp; FLOOR MENTORSHIP</span>
-        <h2 id="mentorship-heading" class="section-title">
+        <h2 id="mentorship-heading" class="sub-label">ACADEMY &amp; FLOOR MENTORSHIP</h2>
+        <p class="section-title">
           Where Theory Meets Live Market Execution
-        </h2>
+        </p>
         
         <!-- Highlighted Eyebrow Effect in One Line -->
         <div class="mentorship-eyebrow-line" role="note" aria-label="Mentorship Highlights">
@@ -61,7 +61,13 @@ const trackItems = [...mentorshipItems, ...mentorshipItems];
     <div class="reel-viewport" id="mentorship-reel-viewport">
       <div class="reel-track" id="mentorship-reel-track">
         {trackItems.map((item, index) => (
-          <div class="reel-card" role="group" aria-label={`Mentorship Photo ${index % 8 + 1}: ${item.title}`}>
+          <div 
+            class="reel-card" 
+            role="group" 
+            aria-label={`Mentorship Photo ${index % 8 + 1}: ${item.title}`}
+            aria-hidden={index >= mentorshipItems.length ? "true" : undefined}
+            inert={index >= mentorshipItems.length ? true : undefined}
+          >
             <div class="card-inner">
               <img 
                 src={item.image} 

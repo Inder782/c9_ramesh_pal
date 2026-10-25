@@ -27,17 +27,21 @@
   margin-bottom: 8px;
 }
 
-.sub-label {
+.mentorship-section .sub-label {
   display: inline-block;
+  font-family: inherit;
   font-size: 0.8125rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--accent-primary);
-  margin-bottom: 10px;
+  margin: 0 0 10px 0;
+  line-height: 1.4;
 }
 
-.section-title {
+.mentorship-section .section-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
   font-size: clamp(1.85rem, 3.2vw, 2.5rem);
   color: var(--text-primary);
   letter-spacing: -0.02em;

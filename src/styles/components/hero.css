@@ -340,6 +340,7 @@
     font-family: 'Instrument Serif', Georgia, serif;
     font-style: italic;
     font-weight: 400;
+    color: #92400E;
     background: linear-gradient(
       115deg,
       #F3D079 0%,
@@ -392,6 +393,7 @@
   }
 
   .flourish-glow-path {
+    stroke: #92400E;
     stroke-dasharray: 380;
     stroke-dashoffset: 380;
     animation: drawQuickSignatureLine 0.55s cubic-bezier(0.2, 0.9, 0.3, 1) 0.68s forwards;
@@ -1305,7 +1307,7 @@
     }
 
     .signature-word {
-      color: #F3D079 !important;
+      color: #92400E !important;
     }
 
     .flourish-glow-path {
