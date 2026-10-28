@@ -556,7 +556,7 @@ const row3Stations = courseTrackModules.filter(m => m.row === 3);
 
                 <!-- Finish Station Node -->
                 <div class="track-station station-finish">
-                  <div class="station-node-dot dot-finish" aria-label="Course Completion Milestone">
+                  <div class="station-node-dot dot-finish" aria-hidden="true">
                     <span>🏁</span>
                   </div>
                   <div class="station-content">
@@ -571,7 +571,7 @@ const row3Stations = courseTrackModules.filter(m => m.row === 3);
         </div>
 
         <!-- MOBILE STREAMLINED VERTICAL TRACK VIEW (< 960px) -->
-        <div class="mobile-vertical-track" aria-label="Course Modules Mobile View">
+        <div class="mobile-vertical-track">
           {courseTrackModules.map((m) => (
             <div class="mobile-track-stop">
               <div class="mobile-dot-col">
