@@ -1,10 +1,20 @@
 {
-  "lastUpdated": "October 16, 2026",
+  "lastUpdated": "November 7, 2026",
   "circularRef": "SEBI/HO/IMD/IMD-II_DOF10/P/CIR/2021/671",
   "monthly": [
     {
       "srNo": 1,
       "receivedFrom": "September 2026",
+      "carriedForward": 0,
+      "received": 0,
+      "resolved": 0,
+      "pending": 0,
+      "pendingLT3Months": 0,
+      "pendingGT3Months": 0
+    },
+    {
+      "srNo": 2,
+      "receivedFrom": "October 2026",
       "carriedForward": 0,
       "received": 0,
       "resolved": 0,
